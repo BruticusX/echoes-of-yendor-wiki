@@ -176,8 +176,9 @@
       melee: "Every melee weapon can be made of any metal. The metal multiplies its damage, so a tungsten dagger can out-hit a tin greataxe. Damage below is for <a href=\"#/mechanics/metals\">tin</a>, the weakest metal. Speed and damage come from the weapon's real weight: light weapons attack faster, heavy weapons hit disproportionately hard.",
       thrown: "Thrown weapons are made of metals too, and they wear down and break with use. The metal multiplies their damage the same way it does for melee weapons.",
       armor: "Armor comes in cloth, leather and metal. Cloth and leather resist magic, metal blocks the most but its weight costs you evasion and stealth. The material multiplies the block value; see <a href=\"#/mechanics/metals\">Metals &amp; Materials</a>.",
-      enchantments: "Enchantments add a power to a weapon. Enchanted blades show painted elemental effects.",
-      glyphs: "Glyphs are the armor equivalent of enchantments.",
+      enchantments: "Enchantments add a power to a weapon. They have no sprite of their own: an enchanted weapon glows in the enchantment's colour, and many show painted elemental effects along the blade. The icons show each one on a longsword.",
+      glyphs: "Glyphs are the armor equivalent of enchantments. Glyphed armor glows in the glyph's colour, often with a painted aura. The icons show each one on plate armor.",
+      curses: "Curses have no sprite of their own: cursed gear glows black with curls of dark smoke, so every curse looks the same on a weapon or armor until you learn which one it is. Weapon curses are shown on a longsword, armor curses on plate armor.",
       scrolls: "Scrolls of Upgrade are gone in Echoes of Yendor. Gear is improved at the <a href=\"#/mechanics/forging\">anvil</a> instead, and three new scrolls were added: Mending, Focus and Smelting."
     }[c];
     if (intro) h += "<p>" + intro + "</p>";

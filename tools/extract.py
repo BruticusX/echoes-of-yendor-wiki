@@ -768,6 +768,64 @@ for sid, const, kind, nkey, dkey in [("ingot", "INGOT", "metal", "ingot", "desc_
         desc += "\n\n" + MSG.get("items.materialitem.desc_obsidian", "")
     items.append(dict(id=sid, cls="MaterialItem", name=nm, cat="materials", desc=desc, img="img/items/%s.png" % sid, variants=vs))
 
+
+# ---------- enchantment / glyph / curse icons ----------
+# These have no item sprite in the game: they show on gear as a pulsing glow (ItemSprite.Glowing, up to 60% tint)
+# plus a painted aura (effects/ItemAura: ElementalVfx frames from effects/enchant_vfx.png; every curse uses smoke).
+# The wiki icon is a longsword (weapon effects) or plate armor (armor effects) wearing that glow and aura.
+from PIL import ImageFilter
+aura_src = strip_comments(read(os.path.join(SRC, "effects/ItemAura.java")))
+VFX_KIND = {"FIRE": 0, "FROST": 1, "LIGHTNING": 2, "POISON": 3, "SMOKE": 4, "GLINT": 5, "BLOOD": 6, "ARCANE": 7}
+AURA = {}
+for m in re.finditer(r"FACTORIES\.put\(\s*(?:[\w.]+\.)?(\w+)\.class\s*,\s*ElementalVfx\.factory\(ElementalVfx\.(\w+)", aura_src):
+    AURA[m.group(1)] = VFX_KIND[m.group(2)]
+vfx_sheet = Image.open(os.path.join(AST, "effects/enchant_vfx.png")).convert("RGBA")
+def vfx(kind, frame=2):
+    i = kind * 4 + frame
+    return vfx_sheet.crop(((i % 4) * 48, (i // 4) * 48, (i % 4) * 48 + 48, (i // 4) * 48 + 48))
+def effect_icon(base_idx, color, kind, spots, curse):
+    base = item_icon(base_idx, "iron")
+    if base is None:
+        return None
+    base = base.resize((64, 64), Image.NEAREST)
+    r, g, b = (color >> 16) & 255, (color >> 8) & 255, color & 255
+    # tint the item toward the glow colour (the game pulses between 0 and 60%)
+    px = base.load(); amt = 0.42
+    for y in range(64):
+        for x in range(64):
+            pr, pg, pb, pa = px[x, y]
+            if pa:
+                px[x, y] = (int(pr + (r - pr) * amt), int(pg + (g - pg) * amt), int(pb + (b - pb) * amt), pa)
+    # soft halo in the glow colour behind it (curses: a dark violet-black haze)
+    hc = (40, 10, 50) if curse else (r, g, b)
+    sil = Image.new("RGBA", (64, 64), hc + (0,))
+    sil.putalpha(base.split()[3].point(lambda a: 200 if a else 0))
+    halo = sil.filter(ImageFilter.GaussianBlur(3.2))
+    out = Image.new("RGBA", (64, 64), (0, 0, 0, 0))
+    out.alpha_composite(halo); out.alpha_composite(halo); out.alpha_composite(base)
+    if kind is not None:
+        for (cx, cy, size, frame) in spots:
+            v = vfx(kind, frame).resize((size, size), Image.LANCZOS)
+            out.alpha_composite(v, (int(cx - size / 2), int(cy - size / 2)))
+    return out
+SWORD_SPOTS = [(36, 28, 40, 2), (50, 13, 32, 1)]     # along the blade
+ARMOR_SPOTS = [(22, 20, 36, 2), (44, 42, 32, 1)]     # on the chest and side
+for it in items:
+    if it["cat"] not in ("enchantments", "glyphs", "curses"):
+        continue
+    paths = [p_ for p_ in CLASSES.get(it["cls"], []) if re.search(r"[\\/](enchantments|glyphs|curses)[\\/]", p_)]
+    src_ = strip_comments(read(paths[0])) if paths else ""
+    mc = re.search(r"Glowing\(\s*0x([0-9A-Fa-f]{6})", src_)
+    color = int(mc.group(1), 16) if mc else 0xFFFFFF
+    armor = "/armor/" in (paths[0].replace("\\", "/") if paths else "")
+    curse = it["cat"] == "curses"
+    kind = VFX_KIND["SMOKE"] if curse else AURA.get(it["cls"])
+    ic = effect_icon(CONST["ARMOR_PLATE"] if armor else CONST["LONGSWORD"], color, kind, ARMOR_SPOTS if armor else SWORD_SPOTS, curse)
+    if ic is not None:
+        ic.save(os.path.join(IMG, "items", it["id"] + ".png"))
+        it["img"] = "img/items/%s.png" % it["id"]
+        it["appliesTo"] = "armor" if armor else "weapon"
+
 # armor stats (mirrors Armor.armorKg / baseBlock / levelBlock / weightPenalty)
 ARMOR_T = {"ClothArmor": (3, "cloth", 1), "Gambeson": (5, "cloth", 1), "LeatherArmor": (6, "leather", 1),
            "StuddedLeather": (8, "leather", 1), "Brigandine": (10, "metal", 2), "MailArmor": (12, "metal", 2),
