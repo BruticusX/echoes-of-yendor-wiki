@@ -147,6 +147,7 @@ footer { max-width: 1280px; margin: 0 auto; padding: 0 16px 30px; color: #77776f
 .infobox { float: right; width: 290px; margin: 0 0 12px 16px; }
 .infobox .art { display: flex; align-items: center; justify-content: center; min-height: 150px; padding: 8px; }
 .infobox .art img { max-width: 220px; max-height: 220px; }
+.infobox .art img.hero { height: 200px; max-height: none; }
 .infobox .art img.small { width: 128px; height: 128px; object-fit: contain; }
 .infobox h3 { text-align: center; text-transform: capitalize; margin: 0 0 6px; }
 .kv { width: 100%; border-collapse: collapse; font-size: 16px; }

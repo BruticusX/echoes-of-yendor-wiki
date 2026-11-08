@@ -112,7 +112,7 @@
     var x = byId(D.heroes, id);
     if (!x) return notFound();
     var h = crumbs([["Home", "#/"], ["Heroes", "#/heroes"], [title(x.name)]]);
-    h += '<div class="infobox window silver"><div class="art">' + img(x.img) + "</div><h3>" + esc(x.name) + '</h3><table class="kv">' +
+    h += '<div class="infobox window silver"><div class="art">' + img(x.img, "hero") + "</div><h3>" + esc(x.name) + '</h3><table class="kv">' +
       "<tr><th>Subclasses</th><td>" + x.subclasses.map(function (s) { return title(s.name); }).join(", ") + "</td></tr></table></div>";
     h += "<h1 class=\"cap\">" + esc(x.name) + "</h1>" + fmt(x.desc);
     if (x.unlock) h += '<div class="note">' + fmt(x.unlock) + "</div>";
