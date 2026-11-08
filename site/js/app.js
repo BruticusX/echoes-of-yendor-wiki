@@ -77,7 +77,8 @@
   // ---------- pages ----------
   function pageHome() {
     var n = D.items.length, m = D.mobs.filter(function (x) { return x.kind !== "npc"; }).length;
-    var h = '<div class="hero-banner">' + img("img/ui/title_logo.png", "", "Echoes of Yendor") + "</div>";
+    var h = '<div class="hero-banner"><div class="logo-anim" id="logoAnim">' + img("img/ui/title_logo.png", "logo-img", "Echoes of Yendor") +
+      '<canvas class="flame left"></canvas><canvas class="flame right"></canvas>' + img("img/ui/title_logo_glow.png", "logo-glow") + "</div></div>";
     h += "<h1>Welcome to the Echoes of Yendor Wiki</h1>";
     h += "<p><span class=\"hl\">Echoes of Yendor</span> is a roguelike dungeon crawler built on Shattered Pixel Dungeon. Descend through five regions of the dungeon, forge your gear from the metals you find, master your weapons and claim the <a href=\"#/item/amulet\">Amulet of Yendor</a>.</p>";
     h += "<p>This wiki covers every hero, item, enemy and system in the game. Stats are pulled straight from the game's own data, so they match what you'll see when you play.</p>";
@@ -459,6 +460,8 @@
     main.innerHTML = html;
     document.title = (name ? name + " - " : "") + "Echoes of Yendor Wiki";
     enableSort(); markNav();
+    var la = document.getElementById("logoAnim");
+    if (la && window.EOYLogo) window.EOYLogo.mount(la);
     nav.classList.remove("open");
     if (anchor) { var el = document.getElementById(anchor); if (el) { el.scrollIntoView(); return; } }
     window.scrollTo(0, 0);

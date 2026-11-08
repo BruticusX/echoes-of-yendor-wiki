@@ -564,6 +564,7 @@ for name, sheet, box in [("window", cg, (0, 0, 20, 20)), ("window_menu", cm, (0,
 import shutil
 for f in ["title_logo.png", "eoy_icon.png", "arcs1.png", "arcs2.png", "title_logo_glow.png"]:
     shutil.copy(os.path.join(AST, "interfaces", f), os.path.join(ui, f))
+shutil.copy(os.path.join(AST, "effects/fireball-short.png"), os.path.join(ui, "fireball.png"))  # title torches
 # the title-screen background art (ui/TitleBackground.java), animated by site/js/title-bg.js
 for f in ["echoes_bg", "echoes_fog", "echoes_glow"]:
     shutil.copy(os.path.join(AST, "splashes/title/%s.png" % f), os.path.join(ui, f.replace("echoes_", "title_") + ".png"))
