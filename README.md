@@ -11,6 +11,12 @@ The header and home page show a Google Play button. It says "Coming soon" until 
 When it's live, open `site/js/config.js` and change `published: false` to `published: true`.
 The link already points at the app ID `io.github.bruticusx.echoesofyendor`.
 
+## Background music
+
+The game's menu theme (`site/audio/`) loops in the background. Browsers only allow sound after a visitor
+clicks or presses a key, so it starts then. The note button in the bottom-right corner turns it off or on,
+and each visitor's choice is remembered in their browser. Volume is set at the top of `site/js/music.js`.
+
 ## Updating after game changes
 
 ```sh

@@ -885,6 +885,10 @@ for name, sheet, box in [("window", cg, (0, 0, 20, 20)), ("window_menu", cm, (0,
 import shutil
 for f in ["title_logo.png", "eoy_icon.png", "arcs1.png", "arcs2.png", "title_logo_glow.png"]:
     shutil.copy(os.path.join(AST, "interfaces", f), os.path.join(ui, f))
+# the menu theme for the background music toggle (site/js/music.js); the MP3 copy is for browsers without Ogg
+os.makedirs(os.path.join(WIKI, "audio"), exist_ok=True)
+shutil.copy(os.path.join(AST, "music/menu_theme.ogg"), os.path.join(WIKI, "audio/menu_theme.ogg"))
+os.system('ffmpeg -v error -y -i "%s" -codec:a libmp3lame -b:a 112k "%s"' % (os.path.join(WIKI, "audio/menu_theme.ogg"), os.path.join(WIKI, "audio/menu_theme.mp3")))
 shutil.copy(os.path.join(AST, "effects/fireball-short.png"), os.path.join(ui, "fireball.png"))  # title torches
 # the title-screen background art (ui/TitleBackground.java), animated by site/js/title-bg.js
 for f in ["echoes_bg", "echoes_fog", "echoes_glow"]:

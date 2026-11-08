@@ -29,6 +29,10 @@ images = {p: uri(p) for p in sorted(paths)}
 css = re.sub(r'url\("\.\./([^"]+)"\)', lambda m: 'url("%s")' % uri(m.group(1)), css)
 # the app builds <img src> from paths: resolve them through a lookup table
 shim = "window.__IMG=%s;window.__DATA=%s;" % (json.dumps(images), json.dumps(data))
+# the menu theme, inline (MP3 plays everywhere)
+with open(os.path.join(site, "audio/menu_theme.mp3"), "rb") as f:
+    shim += "window.__AUDIO=%s;" % json.dumps(base64.b64encode(f.read()).decode())
+musicjs = open(os.path.join(site, "js/music.js"), encoding="utf-8").read()
 js = js.replace('fetch("data/game.json").then(function (r) { return r.json(); })', "Promise.resolve(window.__DATA)")
 js = js.replace("function img(src, cls, alt) { return src ? '<img class=\"px ' + (cls || \"\") + '\" src=\"' + src + '\"",
                 "function img(src, cls, alt) { return src ? '<img class=\"px ' + (cls || \"\") + '\" src=\"' + (window.__IMG[src] || src) + '\"")
@@ -36,6 +40,7 @@ html = re.sub(r'<link rel="preload"[^>]*>\n', "", html)
 html = html.replace('<link rel="stylesheet" href="css/style.css">', "<style>" + css + "</style>")
 html = html.replace('<script src="js/title-bg.js"></script>\n', "").replace('<script src="js/title-logo.js"></script>\n', "").replace('<script src="js/config.js"></script>\n', "")
 html = html.replace('<script src="js/app.js"></script>', "<script>" + shim + "</script><script>" + bgjs + "</script><script>" + js + "</script>")
+html = html.replace('<script src="js/music.js"></script>', "<script>" + musicjs + "</script>")
 for p in ("img/ui/eoy_icon.png",):
     html = html.replace('src="%s"' % p, 'src="%s"' % images[p]).replace('href="%s"' % p, 'href="%s"' % images[p])
 open(out, "w", encoding="utf-8").write(html)

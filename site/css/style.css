@@ -206,6 +206,17 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .play-row { text-align: center; margin: 4px 0 14px; }
 #playTop .play-btn { margin-left: 4px; }
 
+/* ---------- music toggle (js/music.js), bottom-right corner ---------- */
+.music-btn { position: fixed; right: 14px; bottom: 14px; z-index: 50; width: 64px; height: 64px; padding: 0 !important;
+  display: flex !important; align-items: center; justify-content: center; filter: drop-shadow(0 4px 6px rgba(0,0,0,.6)); }
+.music-btn svg { width: 28px; height: 28px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.music-btn .slash { display: none; }
+.music-btn.muted .slash { display: block; }
+.music-btn.muted > svg:first-child { opacity: .55; }
+.music-btn:not(.muted) > svg:first-child { animation: notebob 1.6s ease-in-out infinite; }
+@keyframes notebob { 0%, 100% { transform: translate(-50%, -50%) rotate(-6deg); } 50% { transform: translate(-50%, -58%) rotate(6deg); } }
+@media (prefers-reduced-motion: reduce) { .music-btn:not(.muted) > svg:first-child { animation: none; } }
+
 /* ---------- small screens ---------- */
 @media (max-width: 820px) {
   body { font-size: 17px; }
@@ -217,6 +228,7 @@ th.sort::after { content: " \2195"; color: #77776f; }
   .wrap { grid-template-columns: 1fr; }
   #menuBtn { display: inline-block; }
   #playTop { display: none; }
+  .music-btn { right: 10px; bottom: 10px; width: 56px; height: 56px; }
   nav.side { display: none; position: static; max-height: none; }
   nav.side.open { display: block; }
   .infobox { float: none; width: auto; margin: 0 0 12px; }
