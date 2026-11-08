@@ -32,3 +32,8 @@ Hand-written pages (mechanics, home, changes) live in `site/js/app.js`.
 ```sh
 cd site && python3 -m http.server 8000
 ```
+
+## Name and logo
+
+The Echoes of Yendor&trade; name and logo aren't covered by the game's GPL license. See the game repo's
+[TRADEMARKS.md](https://github.com/BruticusX/echoes-of-yendor/blob/master/TRADEMARKS.md).
