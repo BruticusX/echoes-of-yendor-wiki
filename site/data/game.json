@@ -486,14 +486,6 @@
    "img": "img/items/scrolloftransmutation.png"
   },
   {
-   "id": "scrollofupgrade",
-   "cls": "ScrollOfUpgrade",
-   "name": "scroll of upgrade",
-   "cat": "scrolls",
-   "desc": "This scroll will upgrade a single item or set of thrown weapons. Wands will increase in power and number of charges, weapons and armor will deal and block more damage, thrown weapon sets will be fully repaired and more durable, and the effects of rings will intensify.\n\nIt can even weaken or sometimes totally dispel curses, though it is not as potent as a scroll of remove curse. Unfortunately, the upgrading magic can also erase enchantments or glyphs on higher level gear.",
-   "img": "img/items/scrollofupgrade.png"
-  },
-  {
    "id": "scrollofantimagic",
    "cls": "ScrollOfAntiMagic",
    "name": "scroll of anti-magic",
@@ -2239,15 +2231,6 @@
     "tungsten": "img/metals/mace_tungsten.png",
     "obsidian": "img/metals/mace_obsidian.png"
    }
-  },
-  {
-   "id": "magesstaff",
-   "cls": "MagesStaff",
-   "name": "mage's staff",
-   "cat": "melee",
-   "desc": "Crafted by the Mage himself, this staff is a unique magical weapon which can be imbued with a wand.",
-   "img": "img/items/magesstaff.png",
-   "sprite": 101
   },
   {
    "id": "magictome",

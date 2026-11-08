@@ -484,7 +484,9 @@ for m in mobs:
     if m["cls"] in SPECIAL:
         m["where"] = SPECIAL[m["cls"]]
 
-items = [i for i in items if i["cls"] not in ("VaultBeacon", "EscapeCrystal")]
+# not obtainable in Echoes of Yendor: vault/mine quest items, the Mage's staff (replaced by his tome,
+# 0 drop chance) and Scrolls of Upgrade (replaced by the anvil; the class only remains as forge code)
+items = [i for i in items if i["cls"] not in ("VaultBeacon", "EscapeCrystal", "MagesStaff", "ScrollOfUpgrade")]
 # forging materials (one MaterialItem class in game, shown as four wiki entries with every material colour)
 CAT_LABEL["materials"] = "Forging Materials"
 for sid, const, kind, nkey, dkey in [("ingot", "INGOT", "metal", "ingot", "desc_ingot"), ("ore", "METAL_ORE", "metal", "ore", "desc_ore"),
