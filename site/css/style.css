@@ -28,18 +28,12 @@ body {
   font-family: "Pixel", monospace;
   font-size: 18px;
   line-height: 1.45;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(110, 60, 150, .28), transparent 60%),
-    radial-gradient(ellipse at 50% 120%, rgba(0, 0, 0, .9), transparent 70%),
-    url("../img/ui/arcs2.png") repeat,
-    var(--bg);
-  background-size: auto, auto, 192px, auto;
-  background-attachment: fixed;
+  background: #0b0912;
   min-height: 100vh;
 }
-body::before { /* darken the arcs so text stays readable */
-  content: ""; position: fixed; inset: 0; background: rgba(10, 8, 6, .82); z-index: -1;
-}
+/* the animated title-screen background (js/title-bg.js) */
+#titleBg { position: fixed; inset: 0; z-index: -1; display: block; pointer-events: none; }
+header.top .brand b, header.top .brand span, footer { text-shadow: 2px 2px 0 #000; }
 img.px, .px img, .icon { image-rendering: pixelated; image-rendering: crisp-edges; }
 a { color: var(--title); text-decoration: none; }
 a:hover { text-decoration: underline; }

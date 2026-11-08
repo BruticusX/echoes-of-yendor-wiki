@@ -564,6 +564,9 @@ for name, sheet, box in [("window", cg, (0, 0, 20, 20)), ("window_menu", cm, (0,
 import shutil
 for f in ["title_logo.png", "eoy_icon.png", "arcs1.png", "arcs2.png", "title_logo_glow.png"]:
     shutil.copy(os.path.join(AST, "interfaces", f), os.path.join(ui, f))
+# the title-screen background art (ui/TitleBackground.java), animated by site/js/title-bg.js
+for f in ["echoes_bg", "echoes_fog", "echoes_glow"]:
+    shutil.copy(os.path.join(AST, "splashes/title/%s.png" % f), os.path.join(ui, f.replace("echoes_", "title_") + ".png"))
 os.makedirs(os.path.join(WIKI, "fonts"), exist_ok=True)
 shutil.copy(os.path.join(AST, "fonts/pixel_font.ttf"), os.path.join(WIKI, "fonts/pixel_font.ttf"))
 # floor tiles for background (first 16x16-ish floor tile of each region, HD sheets)
