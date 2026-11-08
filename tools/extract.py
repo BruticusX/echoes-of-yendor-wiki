@@ -234,6 +234,8 @@ for root, _, files in os.walk(item_root):
                 if idx is not None:
                     break
         mic = re.search(r"icon\s*=\s*ItemSpriteSheet\.Icons\.(\w+)\s*;", ci["src"])
+        if cname == "Bag":
+            idx = CONST["BACKPACK"]
         cat = next(c for pfx, c, _ in CATS if rel == pfx or rel.startswith(pfx + "/") or pfx == "")
         slug = re.sub(r"[^a-z0-9]+", "-", cname.lower()).strip("-")
         it = dict(id=slug, cls=cname, name=name, cat=cat, desc=clean(desc))
@@ -473,8 +475,35 @@ for mob in mobs:
 # content that is unreachable in Echoes of Yendor (Blacksmith mine and Dwarven Vault were removed)
 REMOVED = {"CrystalGuardian", "CrystalSpire", "CrystalWisp", "FungalCore", "FungalSentry", "FungalSpinner",
            "GnollGeomancer", "GnollGuard", "GnollSapper", "VaultBossElemental", "VaultLaser", "VaultMirror",
-           "VaultSentry", "VaultTokenDoor"}
+           "VaultSentry", "VaultTokenDoor", "VaultShaman"}
 mobs = [m for m in mobs if m["cls"] not in REMOVED]
+
+# creatures drawn from the HD hero sheets in code (StatueSprite, MirrorSprite, PrismaticSprite):
+# first idle frame of an armor row, trimmed
+def hero_frame(sheet, frame, row):
+    im = Image.open(os.path.join(AST, "sprites", sheet)).convert("RGBA")
+    c = im.crop((0, row * frame, frame, row * frame + frame))
+    return c.crop(c.getbbox()) if c.getbbox() else None
+def tint(img, r, g, b, amount):
+    px = img.load()
+    for y in range(img.height):
+        for x in range(img.width):
+            pr, pg, pb, pa = px[x, y]
+            if pa:
+                px[x, y] = (int(pr + (r * 255 - pr) * amount), int(pg + (g * 255 - pg) * amount), int(pb + (b * 255 - pb) * amount), pa)
+    return img
+HERO_SPRITES = {
+    "Statue": lambda: hero_frame("hero_hd_warrior_stone.png", 72, 0),        # StatueSprite default armor
+    "ArmoredStatue": lambda: hero_frame("hero_hd_warrior_stone.png", 72, 3), # wears armor; mail is its fallback
+    "MirrorImage": lambda: hero_frame("hero_hd_warrior.png", 72, 0),         # looks like the hero
+    "PrismaticImage": lambda: tint(hero_frame("hero_hd_warrior.png", 72, 0), 0.55, 0.35, 1.0, 0.5),  # shifting tint
+}
+for m in mobs:
+    if m["cls"] in HERO_SPRITES and not m.get("img"):
+        fr = HERO_SPRITES[m["cls"]]()
+        if fr is not None:
+            fr.save(os.path.join(IMG, "mobs", m["id"] + ".png"))
+            m["img"] = "img/mobs/%s.png" % m["id"]; m["imgSize"] = list(fr.size)
 SPECIAL = {"Mimic": "Hides as a chest in any region", "GoldenMimic": "Hides as a chest in any region",
            "CrystalMimic": "Hides as a chest in any region", "EbonyMimic": "Hides as a chest in any region",
            "Statue": "Guards weapon vaults", "ArmoredStatue": "Guards armor vaults", "Piranha": "Lurks in deep water",
@@ -486,7 +515,11 @@ for m in mobs:
 
 # not obtainable in Echoes of Yendor: vault/mine quest items, the Mage's staff (replaced by his tome,
 # 0 drop chance) and Scrolls of Upgrade (replaced by the anvil; the class only remains as forge code)
-items = [i for i in items if i["cls"] not in ("VaultBeacon", "EscapeCrystal", "MagesStaff", "ScrollOfUpgrade")]
+_drop = ("VaultBeacon", "EscapeCrystal", "MagesStaff", "ScrollOfUpgrade")
+for i in items:
+    if i["cls"] in _drop and i.get("img") and os.path.exists(os.path.join(WIKI, i["img"])):
+        os.remove(os.path.join(WIKI, i["img"]))
+items = [i for i in items if i["cls"] not in _drop]
 # forging materials (one MaterialItem class in game, shown as four wiki entries with every material colour)
 CAT_LABEL["materials"] = "Forging Materials"
 for sid, const, kind, nkey, dkey in [("ingot", "INGOT", "metal", "ingot", "desc_ingot"), ("ore", "METAL_ORE", "metal", "ore", "desc_ore"),

@@ -2815,7 +2815,9 @@
    "cls": "Bag",
    "name": "backpack",
    "cat": "bags",
-   "desc": ""
+   "desc": "",
+   "img": "img/items/bag.png",
+   "sprite": 481
   },
   {
    "id": "forgesatchel",
@@ -4767,6 +4769,11 @@
    "group": "",
    "depths": [],
    "region": "other",
+   "img": "img/mobs/armoredstatue.png",
+   "imgSize": [
+    22,
+    64
+   ],
    "where": "Guards armor vaults"
   },
   {
@@ -6168,6 +6175,11 @@
    "group": "",
    "depths": [],
    "region": "other",
+   "img": "img/mobs/statue.png",
+   "imgSize": [
+    22,
+    64
+   ],
    "where": "Guards weapon vaults"
   },
   {
@@ -6504,35 +6516,6 @@
    "region": "caves"
   },
   {
-   "id": "vaultshaman",
-   "cls": "VaultShaman",
-   "name": "captured shaman",
-   "kind": "enemy",
-   "desc": "These gnoll shamans are clearly from the caves, but have a strange metal mask that looks dwarven. The fit on the mask is extremely tight, and the shamans move in an awkward stilted manner. Is the mask made to control them?",
-   "hp": 35,
-   "damage": [
-    5,
-    25
-   ],
-   "accuracy": 25,
-   "armor": [
-    0,
-    6
-   ],
-   "evasion": 18,
-   "exp": 0,
-   "maxLvl": 30,
-   "props": [],
-   "group": "quest/vault",
-   "depths": [
-    11,
-    12,
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
    "id": "vaultskeleton",
    "cls": "VaultSkeleton",
    "name": "dwarven skeleton",
@@ -6737,7 +6720,12 @@
    "props": [],
    "group": "npcs",
    "depths": [],
-   "region": "npc"
+   "region": "npc",
+   "img": "img/mobs/mirrorimage.png",
+   "imgSize": [
+    22,
+    64
+   ]
   },
   {
    "id": "prismaticimage",
@@ -6755,7 +6743,12 @@
    "props": [],
    "group": "npcs",
    "depths": [],
-   "region": "npc"
+   "region": "npc",
+   "img": "img/mobs/prismaticimage.png",
+   "imgSize": [
+    22,
+    64
+   ]
   },
   {
    "id": "ratking",
