@@ -155,15 +155,15 @@
     });
     return h + "</tbody></table></div>";
   }
-  function speedText(d) { return d === 1 ? "normal" : (d < 1 ? "x" + (Math.round(100 / d) / 100) + " fast" : (Math.round(d * 100) / 100) + " turns"); }
+  function speedText(d) { return d === 1 ? "Normal" : (d < 1 ? (Math.round(100 / d) / 100) + "&times; faster" : (Math.round(d * 100) / 100) + " turns"); }
   function famName(f) { var x = byId(D.families, f); return x ? x.name : (f || "-"); }
 
   function armorTable(list) {
     var h = '<div class="scroll-x"><table class="data sortable"><thead><tr><th></th><th class="sort">Armor</th><th class="sort">Made of</th><th class="sort n">Weight</th><th class="sort n">Block (base)</th><th class="sort n">Per level</th><th class="sort n">Evasion &amp; stealth</th></tr></thead><tbody>';
     list.forEach(function (i) {
       var a = i.armor;
-      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(title(i.name)) + '</a></td><td class="cap">' + a.kind + '</td><td class="n" data-v="' + a.kg + '">' + a.kg + ' kg</td><td class="n" data-v="' + a.baseBlock + '">0&ndash;' + a.baseBlock +
-        '</td><td class="n">+' + a.levelBlock + '</td><td class="n" data-v="' + (-a.penalty) + '">' + (a.penalty < 0 ? '<span class="pos">+' + pct(-a.penalty) + "</span>" : a.penalty > 0 ? '<span class="neg">&minus;' + pct(a.penalty) + "</span>" : "none") + "</td></tr>";
+      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(title(i.name)) + '</a></td><td>' + title(a.kind) + '</td><td class="n" data-v="' + a.kg + '">' + a.kg + ' kg</td><td class="n" data-v="' + a.baseBlock + '">0&ndash;' + a.baseBlock +
+        '</td><td class="n">+' + a.levelBlock + '</td><td class="n" data-v="' + (-a.penalty) + '">' + (a.penalty < 0 ? '<span class="pos">+' + pct(-a.penalty) + "</span>" : a.penalty > 0 ? '<span class="neg">&minus;' + pct(a.penalty) + "</span>" : "None") + "</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
@@ -202,7 +202,7 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Metal</th><th class="n">+0</th><th class="n">+3</th><th class="n">+5</th><th class="n">Durability</th><th class="n">Found on floors</th></tr></thead><tbody>';
     D.metalsSorted.forEach(function (m) {
       function at(l) { var mn = Math.max(0, rnd((s.min + l * s.lvlMin) * m.damageMult)); var mx = Math.max(mn, rnd((s.max + l * s.lvlMax) * m.damageMult)); return mn + "&ndash;" + mx; }
-      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + at(5) + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
+      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + at(5) + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "Rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
@@ -223,7 +223,7 @@
     var kv = "<tr><th>Type</th><td>" + esc(D.cats[i.cat]) + "</td></tr>";
     if (i.stats) {
       kv += "<tr><th>Family</th><td><a class=\"cap\" href=\"#/mechanics/skills#" + i.family + "\">" + esc(title(famName(i.family))) + "</a></td></tr>";
-      kv += "<tr><th>Weight</th><td>" + i.stats.kg + " kg (" + i.stats.weight.toLowerCase() + ")</td></tr>";
+      kv += "<tr><th>Weight</th><td>" + i.stats.kg + " kg (" + i.stats.weight + ")</td></tr>";
       kv += "<tr><th>Damage</th><td>" + i.stats.min + "&ndash;" + i.stats.max + " <span class=\"dim\">at tin</span></td></tr>";
       kv += "<tr><th>Per level</th><td>+" + i.stats.lvlMin + " min, +" + i.stats.lvlMax + " max</td></tr>";
       kv += "<tr><th>Speed</th><td>" + speedText(i.stats.delay) + "</td></tr>";
@@ -231,9 +231,9 @@
       if (i.twoHanded) kv += "<tr><th>Hands</th><td>Two-handed</td></tr>";
     }
     if (i.armor) {
-      kv += "<tr><th>Made of</th><td class=\"cap\">" + i.armor.kind + "</td></tr><tr><th>Weight</th><td>" + i.armor.kg + " kg</td></tr><tr><th>Block</th><td>0&ndash;" + i.armor.baseBlock + " <span class=\"dim\">base</span></td></tr>";
+      kv += "<tr><th>Made of</th><td>" + title(i.armor.kind) + "</td></tr><tr><th>Weight</th><td>" + i.armor.kg + " kg</td></tr><tr><th>Block</th><td>0&ndash;" + i.armor.baseBlock + " <span class=\"dim\">base</span></td></tr>";
     }
-    if (i.ability_name) kv += "<tr><th>Duelist ability</th><td class=\"cap\">" + esc(i.ability_name) + "</td></tr>";
+    if (i.ability_name) kv += "<tr><th>Duelist ability</th><td>" + esc(title(i.ability_name)) + "</td></tr>";
     h += '<div class="infobox window silver"><div class="art">' + (i.img ? img(i.img, "small") : "") + "</div><h3>" + esc(title(i.name)) + '</h3><table class="kv">' + kv + "</table></div>";
     h += '<h1 class="cap">' + esc(title(i.name)) + "</h1>" + fmt(i.desc);
     if (i.stats_desc) h += fmt(i.stats_desc);
@@ -352,7 +352,7 @@
         h += '<div class="scroll-x"><table class="data"><thead><tr><th>Action</th><th>Where</th><th>Cost</th><th>Result</th></tr></thead><tbody>' +
           "<tr><td class=\"hl\">Melt</td><td>Furnace</td><td>An unequipped weapon or armor</td><td>Half its forging cost (rounded up) in its material</td></tr>" +
           "<tr><td class=\"hl\">Smelt</td><td>Furnace</td><td>Ore</td><td>One ingot per ore</td></tr>" +
-          "<tr><td class=\"hl\">Reforge</td><td>Anvil</td><td>Its forging cost in the new material (x3 for umbralite)</td><td>Changes the item to any material of its kind</td></tr>" +
+          "<tr><td class=\"hl\">Reforge</td><td>Anvil</td><td>Its forging cost in the new material (&times;3 for umbralite)</td><td>Changes the item to any material of its kind</td></tr>" +
           "<tr><td class=\"hl\">Enhance</td><td>Anvil</td><td>Its forging cost in its own material</td><td>+1 level</td></tr>" +
           "<tr><td class=\"hl\">Repair</td><td>Anvil</td><td>1 of its own material</td><td>+50% durability</td></tr>" +
           "<tr><td class=\"hl\">Meld</td><td>Anywhere</td><td>1 umbralite ingot</td><td>+1 umbralite level to any upgradable item (max +5)</td></tr>" +
@@ -364,7 +364,7 @@
         break;
       case "proficiency":
         h += "<p>Every weapon type belongs to a <span class=\"hl\">family</span>, and each family has its own <span class=\"hl\">proficiency</span> from 0 to 10. You raise it by defeating enemies with weapons from that family (tough enemies count for more). Proficiency is <span class=\"hl\">kept per hero across runs</span>.</p>";
-        h += "<h2>What it does</h2><ul><li>Accuracy: x0.85 at level 0, up to x1.35 at level 10.</li><li>Damage: +2% per level.</li><li><span class=\"hl\">Glancing blows</span>: a miss can still land for 40% damage. The chance is 20% at level 0 plus 5% per level (70% at 10), and 10% less per tier of gear above what you've trained for.</li><li>Each level gives one <a href=\"#/mechanics/skills\">skill point</a>. Ultimates need level 8.</li></ul>";
+        h += "<h2>What it does</h2><ul><li>Accuracy: &times;0.85 at level 0, up to &times;1.35 at level 10.</li><li>Damage: +2% per level.</li><li><span class=\"hl\">Glancing blows</span>: a miss can still land for 40% damage. The chance is 20% at level 0 plus 5% per level (70% at 10), and 10% less per tier of gear above what you've trained for.</li><li>Each level gives one <a href=\"#/mechanics/skills\">skill point</a>. Ultimates need level 8.</li></ul>";
         h += "<h2>Experience needed</h2>" + '<div class="scroll-x"><table class="data"><thead><tr><th>Level</th>' + THRESH.map(function (t, i) { return '<th class="n">' + (i + 1) + "</th>"; }).join("") + "</tr></thead><tbody><tr><td>Total XP</td>" + THRESH.map(function (t) { return '<td class="n">' + t + "</td>"; }).join("") + "</tr></tbody></table></div>";
         h += "<p class=\"dim\">About one XP per kill. The <a href=\"#/item/scrolloffocus\">Scroll of Focus</a> doubles proficiency gain for 300 turns, and the Duelist trains every family 25% faster.</p>";
         h += "<h2>Starting families</h2><ul><li>Warrior: Swords</li><li>Mage: Magic (his tome)</li><li>Rogue: Daggers</li><li>Huntress: Ranged and Fist</li><li>Duelist: Swords</li><li>Cleric: Blunt</li></ul>";
@@ -378,7 +378,7 @@
           sk.sort(function (a, b) { return (a.kind === "ultimate") - (b.kind === "ultimate"); });
           h += '<h2 id="' + f.id + '" class="cap">' + esc(title(f.name)) + "</h2><div class=\"skilltree\">";
           sk.forEach(function (s) {
-            h += '<div class="skill ' + s.kind + '">' + img(s.img) + "<div><b>" + esc(title(s.name)) + '</b> <span class="chip' + (s.kind === "ultimate" ? " gold" : "") + '">' + s.kind + "</span>" +
+            h += '<div class="skill ' + s.kind + '">' + img(s.img) + "<div><b>" + esc(title(s.name)) + '</b> <span class="chip' + (s.kind === "ultimate" ? " gold" : "") + '">' + title(s.kind) + "</span>" +
               (s.cooldowns.length ? ' <span class="dim">' + s.cooldowns.join(" / ") + " turns</span>" : "") + "<div>" + fmt(s.desc) + "</div></div></div>";
           });
           h += "</div>";
@@ -393,7 +393,7 @@
         h += "<h2>Armor weight</h2><p>Metal armor costs evasion and stealth equal to its weight &divide; 80 (plate armor: about &minus;31%), and heavy metal armor is noisy. Leather has no penalty and cloth gives +5% evasion. Cloth and leather resist magic.</p>";
         break;
       case "enemies-rules":
-        h += "<h2>Tougher enemies</h2><ul><li>Early enemies have more health so they aren't one-shot: <span class=\"hl\">x1.5</span> on floors 1&ndash;5, <span class=\"hl\">x1.3</span> on 6&ndash;10, <span class=\"hl\">x1.15</span> on 11&ndash;15, then another x1.1 on top everywhere.</li>" +
+        h += "<h2>Tougher enemies</h2><ul><li>Early enemies have more health so they aren't one-shot: <span class=\"hl\">&times;1.5</span> on floors 1&ndash;5, <span class=\"hl\">&times;1.3</span> on 6&ndash;10, <span class=\"hl\">&times;1.15</span> on 11&ndash;15, then another &times;1.1 on top everywhere.</li>" +
           "<li>Enemies block <span class=\"hl\">25% more</span> damage.</li><li>Deeper enemies are better armored: about <span class=\"hl\">+2 armor</span> at floor 5, +4 at 10 and +8 at 20.</li><li>Bosses are unchanged.</li></ul>";
         h += '<h2>Elites</h2><p>About <span class="hl">1 in 25</span> regular enemies spawns as an <span style="color:var(--gold)">elite</span>, surrounded by a gold aura. Elites:</p><ul>' +
           "<li>Have 60% more health and are a little stronger.</li><li>Are <span class=\"hl\">not hostile until provoked</span>: they wander the floor and leave you alone.</li>" +
@@ -415,8 +415,8 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Material</th>' + (metal ? '<th class="n">Damage</th>' : "") + '<th class="n">Block</th><th class="n">Magic resist</th><th class="n">Durability</th><th class="n">Floors</th></tr></thead><tbody>';
     var demo = metal ? byId(D.items, "longsword") : byId(D.items, list[0].kind === "cloth" ? "clotharmor" : "leatherarmor");
     list.forEach(function (m) {
-      h += "<tr><td>" + img(demo && demo.variants && demo.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + "</td>" + (metal ? '<td class="n">x' + m.damageMult + "</td>" : "") +
-        '<td class="n">x' + m.armorMult + '</td><td class="n">' + (m.magicResist ? pct(m.magicResist) : "&ndash;") + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
+      h += "<tr><td>" + img(demo && demo.variants && demo.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + "</td>" + (metal ? '<td class="n">&times;' + m.damageMult + "</td>" : "") +
+        '<td class="n">&times;' + m.armorMult + '</td><td class="n">' + (m.magicResist ? pct(m.magicResist) : "&ndash;") + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "Rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
