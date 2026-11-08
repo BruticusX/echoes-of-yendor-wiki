@@ -7,7 +7,14 @@
 
   // ---------- helpers ----------
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function title(s) { return String(s || "").replace(/(^|[\s-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); }); }
+  var NO_CAPS = { a: 1, an: 1, and: 1, of: 1, by: 1, to: 1, the: 1, x: 1, "for": 1 };
+  function title(s) {
+    var out = String(s || "").split(/(\s+)/).map(function (w) {
+      if (/^\s+$/.test(w) || NO_CAPS[w.toLowerCase().replace(/[:0-9]/g, "")]) return w;
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join("");
+    return out.charAt(0).toUpperCase() + out.slice(1);
+  }
   // game text: _x_ = highlight, \n = paragraph
   function fmt(t) {
     if (!t) return "";
@@ -29,7 +36,7 @@
     "trinkets", "potions", "exotic-potions", "brews", "scrolls", "exotic-scrolls", "stones", "spells", "materials", "food", "bombs", "bags", "quest", "misc"];
   var FAMILY_ICON = { daggers: "dagger", swords: "sword", axes: "battleaxe", blunt: "mace", polearms: "spear", staves: "quarterstaff",
     fist: "gloves", shields: "roundshield", flexible: "whip", ranged: "spiritbow", wands: "magictome" };
-  var REGION_ICON = { sewers: "rat", prison: "skeleton", caves: "bat", city: "ghoul", halls: "succubus", other: "mimic", npc: "shopkeeper" };
+  var REGION_ICON = { sewers: "rat", prison: "skeleton", caves: "bat", city: "ghoul", halls: "succubus", other: "mimic", npc: "shopkeeper", allies: "mirrorimage" };
   var MECH = [
     ["metals", "Metals & Materials", "ingot"],
     ["durability", "Durability & Repair", "repairkit"],
@@ -59,7 +66,7 @@
       h += '<a href="#/items/' + c + '">' + img(first && first.img) + esc(D.cats[c]) + "</a>";
     });
     h += "<h4>Enemies</h4>";
-    D.regions.concat([{ id: "other", name: "Special" }, { id: "npc", name: "NPCs & Allies" }]).forEach(function (r) {
+    D.regions.concat([{ id: "other", name: "Special" }, { id: "npc", name: "NPCs" }, { id: "allies", name: "Allies" }]).forEach(function (r) {
       h += '<a href="#/enemies/' + r.id + '">' + img(mobImg(REGION_ICON[r.id])) + esc(r.name) + "</a>";
     });
     h += "<h4>Mechanics</h4>";
@@ -76,7 +83,7 @@
 
   // ---------- pages ----------
   function pageHome() {
-    var n = D.items.length, m = D.mobs.filter(function (x) { return x.kind !== "npc"; }).length;
+    var n = D.items.length, m = D.mobs.filter(function (x) { return x.kind !== "npc" && x.kind !== "ally"; }).length;
     var h = '<div class="hero-banner"><div class="logo-anim" id="logoAnim">' + img("img/ui/title_logo.png", "logo-img", "Echoes of Yendor") +
       '<canvas class="flame left"></canvas><canvas class="flame right"></canvas>' + img("img/ui/title_logo_glow.png", "logo-glow") + "</div></div>";
     h += "<h1>Welcome to the Echoes of Yendor Wiki</h1>";
@@ -103,7 +110,7 @@
     var h = crumbs([["Home", "#/"], ["Heroes"]]) + "<h1>Heroes</h1><p>Each hero starts with their own gear and a starting weapon family already at proficiency level 1. Every hero can pick one of two subclasses later in the run.</p>";
     h += '<div class="hero-row">';
     D.heroes.forEach(function (x) {
-      h += '<a class="hero-card" href="#/hero/' + x.id + '">' + img(x.img) + "<b>" + esc(x.name) + '</b><small class="dim">' +
+      h += '<a class="hero-card" href="#/hero/' + x.id + '">' + img(x.img) + "<b>" + esc(title(x.name)) + '</b><small class="dim">' +
         x.subclasses.map(function (s) { return title(s.name); }).join(" &middot; ") + "</small></a>";
     });
     return win(h + "</div>");
@@ -113,17 +120,17 @@
     var x = byId(D.heroes, id);
     if (!x) return notFound();
     var h = crumbs([["Home", "#/"], ["Heroes", "#/heroes"], [title(x.name)]]);
-    h += '<div class="infobox window silver"><div class="art">' + img(x.img, "hero") + "</div><h3>" + esc(x.name) + '</h3><table class="kv">' +
+    h += '<div class="infobox window silver"><div class="art">' + img(x.img, "hero") + "</div><h3>" + esc(title(x.name)) + '</h3><table class="kv">' +
       "<tr><th>Subclasses</th><td>" + x.subclasses.map(function (s) { return title(s.name); }).join(", ") + "</td></tr></table></div>";
-    h += "<h1 class=\"cap\">" + esc(x.name) + "</h1>" + fmt(x.desc);
+    h += "<h1 class=\"cap\">" + esc(title(x.name)) + "</h1>" + fmt(x.desc);
     if (x.unlock) h += '<div class="note">' + fmt(x.unlock) + "</div>";
     h += "<h2>Subclasses</h2>";
-    x.subclasses.forEach(function (s) { h += '<h3 class="cap">' + esc(s.name) + "</h3>" + fmt(s.desc); });
+    x.subclasses.forEach(function (s) { h += '<h3 class="cap">' + esc(title(s.name)) + "</h3>" + fmt(s.desc); });
     return win(h + '<div class="clear"></div>');
   }
 
   function itemTile(i) {
-    return '<a class="tile" href="#/item/' + i.id + '">' + (i.img ? img(i.img) : '<div style="height:68px"></div>') + "<span>" + esc(i.name) + "</span>" +
+    return '<a class="tile" href="#/item/' + i.id + '">' + (i.img ? img(i.img) : '<div style="height:68px"></div>') + "<span>" + esc(title(i.name)) + "</span>" +
       (i.stats ? "<small>" + i.stats.min + "&ndash;" + i.stats.max + " dmg</small>" : "") + "</a>";
   }
 
@@ -142,8 +149,8 @@
     var h = '<div class="scroll-x"><table class="data sortable"><thead><tr><th></th><th class="sort">Weapon</th><th class="sort">Family</th><th class="sort n">Weight</th><th class="sort n">Damage (tin)</th><th class="sort n">Per level</th><th class="sort n">Speed</th><th class="sort n">Armor pierce</th></tr></thead><tbody>';
     list.forEach(function (i) {
       var s = i.stats;
-      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(i.name) + "</a>" + (i.twoHanded ? ' <span class="chip">2H</span>' : "") +
-        '</td><td class="cap">' + esc(famName(i.family)) + '</td><td class="n" data-v="' + s.kg + '">' + s.kg + ' kg</td><td class="n" data-v="' + (s.min + s.max) + '">' + s.min + "&ndash;" + s.max +
+      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(title(i.name)) + "</a>" + (i.twoHanded ? ' <span class="chip">2H</span>' : "") +
+        '</td><td class="cap">' + esc(title(famName(i.family))) + '</td><td class="n" data-v="' + s.kg + '">' + s.kg + ' kg</td><td class="n" data-v="' + (s.min + s.max) + '">' + s.min + "&ndash;" + s.max +
         '</td><td class="n">+' + s.lvlMin + "/+" + s.lvlMax + '</td><td class="n" data-v="' + s.delay + '">' + speedText(s.delay) + '</td><td class="n" data-v="' + (i.pierce || 0) + '">' + pct(i.pierce || 0) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
@@ -155,7 +162,7 @@
     var h = '<div class="scroll-x"><table class="data sortable"><thead><tr><th></th><th class="sort">Armor</th><th class="sort">Made of</th><th class="sort n">Weight</th><th class="sort n">Block (base)</th><th class="sort n">Per level</th><th class="sort n">Evasion &amp; stealth</th></tr></thead><tbody>';
     list.forEach(function (i) {
       var a = i.armor;
-      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(i.name) + '</a></td><td class="cap">' + a.kind + '</td><td class="n" data-v="' + a.kg + '">' + a.kg + ' kg</td><td class="n" data-v="' + a.baseBlock + '">0&ndash;' + a.baseBlock +
+      h += "<tr><td>" + img(i.img) + '</td><td><a class="cap" href="#/item/' + i.id + '">' + esc(title(i.name)) + '</a></td><td class="cap">' + a.kind + '</td><td class="n" data-v="' + a.kg + '">' + a.kg + ' kg</td><td class="n" data-v="' + a.baseBlock + '">0&ndash;' + a.baseBlock +
         '</td><td class="n">+' + a.levelBlock + '</td><td class="n" data-v="' + (-a.penalty) + '">' + (a.penalty < 0 ? '<span class="pos">+' + pct(-a.penalty) + "</span>" : a.penalty > 0 ? '<span class="neg">&minus;' + pct(a.penalty) + "</span>" : "none") + "</td></tr>";
     });
     return h + "</tbody></table></div>";
@@ -183,7 +190,7 @@
       h += armorTable(list.filter(function (i) { return i.armor; }));
       h += "<h2>Class Armor</h2><div class=\"grid\">" + list.filter(function (i) { return !i.armor; }).map(itemTile).join("") + "</div>";
     } else if (!list.some(function (i) { return i.img; })) {
-      h += list.map(function (i) { return '<h3 class="cap"><a href="#/item/' + i.id + '">' + esc(i.name) + "</a></h3>" + fmt(i.desc); }).join("");
+      h += list.map(function (i) { return '<h3 class="cap"><a href="#/item/' + i.id + '">' + esc(title(i.name)) + "</a></h3>" + fmt(i.desc); }).join("");
     } else {
       h += '<div class="grid">' + list.map(itemTile).join("") + "</div>";
     }
@@ -195,7 +202,7 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Metal</th><th class="n">+0</th><th class="n">+3</th><th class="n">+5</th><th class="n">Durability</th><th class="n">Found on floors</th></tr></thead><tbody>';
     D.metalsSorted.forEach(function (m) {
       function at(l) { var mn = Math.max(0, rnd((s.min + l * s.lvlMin) * m.damageMult)); var mx = Math.max(mn, rnd((s.max + l * s.lvlMax) * m.damageMult)); return mn + "&ndash;" + mx; }
-      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(m.name) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + at(5) + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
+      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + at(5) + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
@@ -204,7 +211,7 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Material</th><th class="n">Block +0</th><th class="n">Block +3</th><th class="n">Magic resist</th><th class="n">Durability</th></tr></thead><tbody>';
     D.materials.filter(function (m) { return m.kind === a.kind; }).forEach(function (m) {
       function at(l) { return "0&ndash;" + rnd((a.baseBlock + l * a.levelBlock) * m.armorMult); }
-      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(m.name) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + (m.magicResist ? pct(m.magicResist) : "&ndash;") + '</td><td class="n">' + m.hits + " hits</td></tr>";
+      h += "<tr><td>" + img(i.variants && i.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + '</td><td class="n">' + at(0) + '</td><td class="n">' + at(3) + '</td><td class="n">' + (m.magicResist ? pct(m.magicResist) : "&ndash;") + '</td><td class="n">' + m.hits + " hits</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
@@ -215,7 +222,7 @@
     var h = crumbs([["Home", "#/"], ["Items", "#/items"], [D.cats[i.cat], "#/items/" + i.cat], [title(i.name)]]);
     var kv = "<tr><th>Type</th><td>" + esc(D.cats[i.cat]) + "</td></tr>";
     if (i.stats) {
-      kv += "<tr><th>Family</th><td><a class=\"cap\" href=\"#/mechanics/skills#" + i.family + "\">" + esc(famName(i.family)) + "</a></td></tr>";
+      kv += "<tr><th>Family</th><td><a class=\"cap\" href=\"#/mechanics/skills#" + i.family + "\">" + esc(title(famName(i.family))) + "</a></td></tr>";
       kv += "<tr><th>Weight</th><td>" + i.stats.kg + " kg (" + i.stats.weight.toLowerCase() + ")</td></tr>";
       kv += "<tr><th>Damage</th><td>" + i.stats.min + "&ndash;" + i.stats.max + " <span class=\"dim\">at tin</span></td></tr>";
       kv += "<tr><th>Per level</th><td>+" + i.stats.lvlMin + " min, +" + i.stats.lvlMax + " max</td></tr>";
@@ -227,13 +234,13 @@
       kv += "<tr><th>Made of</th><td class=\"cap\">" + i.armor.kind + "</td></tr><tr><th>Weight</th><td>" + i.armor.kg + " kg</td></tr><tr><th>Block</th><td>0&ndash;" + i.armor.baseBlock + " <span class=\"dim\">base</span></td></tr>";
     }
     if (i.ability_name) kv += "<tr><th>Duelist ability</th><td class=\"cap\">" + esc(i.ability_name) + "</td></tr>";
-    h += '<div class="infobox window silver"><div class="art">' + (i.img ? img(i.img, "small") : "") + "</div><h3>" + esc(i.name) + '</h3><table class="kv">' + kv + "</table></div>";
-    h += '<h1 class="cap">' + esc(i.name) + "</h1>" + fmt(i.desc);
+    h += '<div class="infobox window silver"><div class="art">' + (i.img ? img(i.img, "small") : "") + "</div><h3>" + esc(title(i.name)) + '</h3><table class="kv">' + kv + "</table></div>";
+    h += '<h1 class="cap">' + esc(title(i.name)) + "</h1>" + fmt(i.desc);
     if (i.stats_desc) h += fmt(i.stats_desc);
     if (i.variants && Object.keys(i.variants).length) {
       h += "<h2>Materials</h2><div class=\"variants\">";
       Object.keys(i.variants).forEach(function (k) {
-        h += '<figure><div class="slot">' + img(i.variants[k]) + '</div><figcaption class="cap">' + esc(metalName(k)) + "</figcaption></figure>";
+        h += '<figure><div class="slot">' + img(i.variants[k]) + '</div><figcaption class="cap">' + esc(title(metalName(k))) + "</figcaption></figure>";
       });
       h += "</div>";
       if (i.stats) h += metalDamageTable(i);
@@ -245,10 +252,10 @@
   }
 
   function mobTile(m) {
-    return '<a class="tile" href="#/enemy/' + m.id + '">' + (m.img ? img(m.img) : '<div style="height:100px"></div>') + "<span>" + esc(m.name) + "</span>" +
-      (m.kind === "boss" ? '<small class="hl">Boss</small>' : m.kind === "miniboss" ? '<small class="hl">Mini-boss</small>' : m.hp ? "<small>" + m.hp + " HP</small>" : "") + "</a>";
+    return '<a class="tile" href="#/enemy/' + m.id + '">' + (m.img ? img(m.img) : '<div style="height:100px"></div>') + "<span>" + esc(title(m.name)) + "</span>" +
+      (m.kind === "boss" ? '<small class="hl">Boss</small>' : m.kind === "miniboss" ? '<small class="hl">Mini-boss</small>' : m.rare ? '<small style="color:var(--gold)">Rare' + (m.hp ? " &middot; " + m.hp + " HP" : "") + "</small>" : m.hp ? "<small>" + m.hp + " HP</small>" : "") + "</a>";
   }
-  function regionName(r) { var x = byId(D.regions, r); return x ? x.name : (r === "npc" ? "NPCs & Allies" : "Special"); }
+  function regionName(r) { var x = byId(D.regions, r); return x ? x.name : ({ npc: "NPCs", allies: "Allies" }[r] || "Special"); }
 
   function pageEnemies(r) {
     var list = D.mobs.filter(function (m) { return m.region === r; });
@@ -256,15 +263,17 @@
     var reg = byId(D.regions, r);
     var h = crumbs([["Home", "#/"], ["Enemies"], [regionName(r)]]) + "<h1>" + esc(regionName(r)) + "</h1>";
     if (reg) h += "<p class=\"dim\">Floors " + reg.lo + "&ndash;" + reg.hi + "</p>";
-    if (r !== "npc") h += '<div class="note">Enemies are tougher than the numbers in their base stats: see <a href="#/mechanics/enemies-rules">Tougher Enemies &amp; Elites</a>.</div>';
-    var order = { boss: 0, miniboss: 1, enemy: 2, npc: 3 };
+    if (r === "allies") h += "<p>Creatures that fight on your side: summoned by spells, wands, artifacts and hero abilities.</p>";
+    if (r !== "npc" && r !== "allies") h += '<div class="note">Enemies are tougher than the numbers in their base stats: see <a href="#/mechanics/enemies-rules">Tougher Enemies &amp; Elites</a>.</div>';
+    var order = { boss: 0, miniboss: 1, enemy: 2, npc: 3, ally: 4 };
     list.sort(function (a, b) { return (order[a.kind] - order[b.kind]) || ((a.depths[0] || 99) - (b.depths[0] || 99)) || a.name.localeCompare(b.name); });
     h += '<div class="grid mobs">' + list.map(mobTile).join("") + "</div>";
     var stat = list.filter(function (m) { return m.hp && m.kind !== "npc"; });
+    list.forEach(function (m) { if (m.rare) m._rare = true; });
     if (stat.length) {
       h += '<h2>Stats</h2><div class="scroll-x"><table class="data sortable"><thead><tr><th></th><th class="sort">Name</th><th class="sort n">HP</th><th class="sort n">Damage</th><th class="sort n">Accuracy</th><th class="sort n">Evasion</th><th class="sort n">Armor</th><th class="sort n">XP</th><th class="sort n">Floors</th></tr></thead><tbody>';
       stat.forEach(function (m) {
-        h += "<tr><td>" + img(m.img) + '</td><td><a class="cap" href="#/enemy/' + m.id + '">' + esc(m.name) + '</a></td><td class="n">' + m.hp + '</td><td class="n" data-v="' + (m.damage ? m.damage[1] : 0) + '">' + (m.damage ? m.damage.join("&ndash;") : "&ndash;") + '</td><td class="n">' + (m.accuracy || "&ndash;") + '</td><td class="n">' + (m.evasion || 0) + '</td><td class="n" data-v="' + (m.armor ? m.armor[1] : 0) + '">' + (m.armor ? m.armor.join("&ndash;") : "0") + '</td><td class="n">' + m.exp + '</td><td class="n" data-v="' + (m.depths[0] || 0) + '">' + depthText(m.depths) + "</td></tr>";
+        h += "<tr><td>" + img(m.img) + '</td><td><a class="cap" href="#/enemy/' + m.id + '">' + esc(title(m.name)) + '</a></td><td class="n">' + m.hp + '</td><td class="n" data-v="' + (m.damage ? m.damage[1] : 0) + '">' + (m.damage ? m.damage.join("&ndash;") : "&ndash;") + '</td><td class="n">' + (m.accuracy || "&ndash;") + '</td><td class="n">' + (m.evasion || 0) + '</td><td class="n" data-v="' + (m.armor ? m.armor[1] : 0) + '">' + (m.armor ? m.armor.join("&ndash;") : "0") + '</td><td class="n">' + m.exp + '</td><td class="n" data-v="' + (m.depths[0] || 0) + '">' + depthText(m.depths) + "</td></tr>";
       });
       h += "</tbody></table></div>";
     }
@@ -292,15 +301,16 @@
     if (m.accuracy) kv += "<tr><th>Accuracy</th><td>" + m.accuracy + "</td></tr>";
     if (m.evasion) kv += "<tr><th>Evasion</th><td>" + m.evasion + "</td></tr>";
     if (m.armor) kv += "<tr><th>Armor</th><td>" + m.armor.join("&ndash;") + "</td></tr>";
-    if (m.kind !== "npc") kv += "<tr><th>Experience</th><td>" + m.exp + "</td></tr>";
+    if (m.kind !== "npc" && m.kind !== "ally") kv += "<tr><th>Experience</th><td>" + m.exp + "</td></tr>";
     if (m.maxLvl) kv += "<tr><th>XP until level</th><td>" + m.maxLvl + "</td></tr>";
     if (m.depths && m.depths.length) kv += "<tr><th>Floors</th><td>" + depthText(m.depths) + "</td></tr>";
     if (m.where) kv += "<tr><th>Found</th><td>" + esc(m.where) + "</td></tr>";
     var props = (m.props || []).map(function (p) { return PROP[p]; }).filter(Boolean);
-    h += '<div class="infobox window silver"><div class="art">' + img(m.img) + "</div><h3>" + esc(m.name) + "</h3>" +
-      (props.length ? '<div class="chips" style="justify-content:center;margin-bottom:6px">' + props.map(function (p) { return '<span class="chip' + (p === "Boss" || p === "Mini-boss" ? " gold" : "") + '">' + p + "</span>"; }).join("") + "</div>" : "") +
+    if (m.rare) props.unshift("Rare variant");
+    h += '<div class="infobox window silver"><div class="art">' + img(m.img) + "</div><h3>" + esc(title(m.name)) + "</h3>" +
+      (props.length ? '<div class="chips" style="justify-content:center;margin-bottom:6px">' + props.map(function (p) { return '<span class="chip' + (p === "Boss" || p === "Mini-boss" || p === "Rare variant" ? " gold" : "") + '">' + p + "</span>"; }).join("") + "</div>" : "") +
       '<table class="kv">' + kv + "</table></div>";
-    h += '<h1 class="cap">' + esc(m.name) + "</h1>" + fmt(m.desc);
+    h += '<h1 class="cap">' + esc(title(m.name)) + "</h1>" + fmt(m.desc);
     if (m.kind === "enemy" || m.kind === "miniboss") h += '<div class="note">Listed stats are the base values. In Echoes of Yendor, regular enemies get extra health and armor depending on the floor, and 1 in 25 can spawn as an <a href="#/mechanics/enemies-rules">elite</a>.</div>';
     var same = D.mobs.filter(function (x) { return x.region === m.region && x.id !== m.id; }).slice(0, 10);
     if (same.length) h += '<div class="clear"></div><h2>Also in ' + esc(regionName(m.region)) + '</h2><div class="grid mobs">' + same.map(mobTile).join("") + "</div>";
@@ -335,7 +345,7 @@
           "<li><a href=\"#/mechanics/forging\">Anvil</a>: +50% durability for one unit of the item's own material.</li>" +
           "<li>The Warrior's <span class=\"hl\">Field Repairs</span> talent makes repair kits and anvil repairs restore 50% or 100% more.</li></ul>";
         h += "<h2>Lifespan by material</h2>" + '<div class="scroll-x"><table class="data"><thead><tr><th>Material</th><th class="n">Hits from 100% to 0%</th><th class="n">Wear per use</th></tr></thead><tbody>' +
-          D.materials.map(function (m) { return '<tr><td class="cap">' + esc(m.name) + '</td><td class="n">' + m.hits + '</td><td class="n">' + (Math.round(m.wearPerUse * 100) / 100) + "%</td></tr>"; }).join("") + "</tbody></table></div>";
+          D.materials.map(function (m) { return '<tr><td class="cap">' + esc(title(m.name)) + '</td><td class="n">' + m.hits + '</td><td class="n">' + (Math.round(m.wearPerUse * 100) / 100) + "%</td></tr>"; }).join("") + "</tbody></table></div>";
         break;
       case "forging":
         h += '<p>A <span class="hl">furnace</span> ' + img("img/mobs/furnace.png", "", "furnace").replace("<img", '<img style="height:32px;vertical-align:middle"') + ' and an <span class="hl">anvil</span> ' + img("img/mobs/anvil.png", "", "anvil").replace("<img", '<img style="height:32px;vertical-align:middle"') + " stand next to each alchemy pot. Together they replace Scrolls of Upgrade.</p>";
@@ -362,13 +372,13 @@
         break;
       case "skills":
         h += "<p>Each weapon family has <span class=\"hl\">2 active skills</span> and <span class=\"hl\">2 passive skills</span> with 3 ranks each, plus <span class=\"hl\">1 ultimate</span> (1 rank, needs proficiency 8). You get one skill point per proficiency level. Active skills run on cooldowns (in turns, shown per rank).</p>";
-        h += '<div class="tabs">' + D.families.map(function (f) { return '<a class="btn" href="#/mechanics/skills#' + f.id + '">' + img(itemImg(FAMILY_ICON[f.id])).replace("<img", '<img style="width:20px;height:20px;vertical-align:middle"') + " " + esc(f.name) + "</a>"; }).join("") + "</div>";
+        h += '<div class="tabs">' + D.families.map(function (f) { return '<a class="btn" href="#/mechanics/skills#' + f.id + '">' + img(itemImg(FAMILY_ICON[f.id])).replace("<img", '<img style="width:20px;height:20px;vertical-align:middle"') + " " + esc(title(f.name)) + "</a>"; }).join("") + "</div>";
         D.families.forEach(function (f) {
           var sk = D.skills.filter(function (s) { return s.family === f.id; });
           sk.sort(function (a, b) { return (a.kind === "ultimate") - (b.kind === "ultimate"); });
-          h += '<h2 id="' + f.id + '" class="cap">' + esc(f.name) + "</h2><div class=\"skilltree\">";
+          h += '<h2 id="' + f.id + '" class="cap">' + esc(title(f.name)) + "</h2><div class=\"skilltree\">";
           sk.forEach(function (s) {
-            h += '<div class="skill ' + s.kind + '">' + img(s.img) + "<div><b>" + esc(s.name) + '</b> <span class="chip' + (s.kind === "ultimate" ? " gold" : "") + '">' + s.kind + "</span>" +
+            h += '<div class="skill ' + s.kind + '">' + img(s.img) + "<div><b>" + esc(title(s.name)) + '</b> <span class="chip' + (s.kind === "ultimate" ? " gold" : "") + '">' + s.kind + "</span>" +
               (s.cooldowns.length ? ' <span class="dim">' + s.cooldowns.join(" / ") + " turns</span>" : "") + "<div>" + fmt(s.desc) + "</div></div></div>";
           });
           h += "</div>";
@@ -405,7 +415,7 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Material</th>' + (metal ? '<th class="n">Damage</th>' : "") + '<th class="n">Block</th><th class="n">Magic resist</th><th class="n">Durability</th><th class="n">Floors</th></tr></thead><tbody>';
     var demo = metal ? byId(D.items, "longsword") : byId(D.items, list[0].kind === "cloth" ? "clotharmor" : "leatherarmor");
     list.forEach(function (m) {
-      h += "<tr><td>" + img(demo && demo.variants && demo.variants[m.id]) + '</td><td class="cap">' + esc(m.name) + "</td>" + (metal ? '<td class="n">x' + m.damageMult + "</td>" : "") +
+      h += "<tr><td>" + img(demo && demo.variants && demo.variants[m.id]) + '</td><td class="cap">' + esc(title(m.name)) + "</td>" + (metal ? '<td class="n">x' + m.damageMult + "</td>" : "") +
         '<td class="n">x' + m.armorMult + '</td><td class="n">' + (m.magicResist ? pct(m.magicResist) : "&ndash;") + '</td><td class="n">' + m.hits + ' hits</td><td class="n">' + (m.id === "obsidian" ? "rare" : m.minDepth + "&ndash;" + m.maxDepth) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
@@ -414,8 +424,8 @@
     var h = '<div class="scroll-x"><table class="data"><thead><tr><th></th><th>Family</th><th class="n">Armor pierce</th><th>Weapons</th></tr></thead><tbody>';
     D.families.forEach(function (f) {
       var ws = D.items.filter(function (i) { return i.family === f.id && i.cat === "melee"; });
-      h += "<tr><td>" + img(itemImg(FAMILY_ICON[f.id])) + '</td><td class="cap"><a href="#/mechanics/skills#' + f.id + '">' + esc(f.name) + '</a></td><td class="n">' + pct(f.pierce) + "</td><td>" +
-        (f.id === "ranged" ? "Bows, crossbows and thrown weapons" : ws.map(function (w) { return '<a class="cap" href="#/item/' + w.id + '">' + esc(w.name) + "</a>"; }).join(", ") || (f.id === "wands" ? "The Mage's tome and wands" : "")) + "</td></tr>";
+      h += "<tr><td>" + img(itemImg(FAMILY_ICON[f.id])) + '</td><td class="cap"><a href="#/mechanics/skills#' + f.id + '">' + esc(title(f.name)) + '</a></td><td class="n">' + pct(f.pierce) + "</td><td>" +
+        (f.id === "ranged" ? "Bows, crossbows and thrown weapons" : ws.map(function (w) { return '<a class="cap" href="#/item/' + w.id + '">' + esc(title(w.name)) + "</a>"; }).join(", ") || (f.id === "wands" ? "The Mage's tome and wands" : "")) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
   }
@@ -471,7 +481,7 @@
   var INDEX = [];
   function buildIndex() {
     D.items.forEach(function (i) { INDEX.push({ n: i.name, h: "#/item/" + i.id, img: i.img, t: D.cats[i.cat] }); });
-    D.mobs.forEach(function (m) { INDEX.push({ n: m.name, h: "#/enemy/" + m.id, img: m.img, t: m.kind === "npc" ? "NPC" : m.kind === "boss" ? "Boss" : "Enemy" }); });
+    D.mobs.forEach(function (m) { INDEX.push({ n: m.name, h: "#/enemy/" + m.id, img: m.img, t: { npc: "NPC", ally: "Ally", boss: "Boss", miniboss: "Mini-boss" }[m.kind] || "Enemy" }); });
     D.heroes.forEach(function (x) { INDEX.push({ n: x.name, h: "#/hero/" + x.id, img: x.img, t: "Hero" }); x.subclasses.forEach(function (s) { INDEX.push({ n: s.name, h: "#/hero/" + x.id, img: x.img, t: "Subclass" }); }); });
     D.skills.forEach(function (s) { INDEX.push({ n: s.name, h: "#/mechanics/skills#" + s.family, img: s.img, t: "Skill" }); });
     D.materials.forEach(function (m) { INDEX.push({ n: m.name, h: "#/mechanics/metals", img: null, t: "Material" }); });
@@ -486,7 +496,7 @@
       hits.sort(function (a, b) { return (a.n.toLowerCase().indexOf(q) - b.n.toLowerCase().indexOf(q)) || a.n.length - b.n.length; });
       hits = hits.slice(0, 12); sel = -1;
       box.classList.toggle("window", hits.length > 0);
-      box.innerHTML = hits.map(function (e) { return '<a href="' + e.h + '">' + (e.img ? img(e.img) : '<span style="width:32px"></span>') + '<span class="cap">' + esc(e.n) + "</span><small>" + esc(e.t) + "</small></a>"; }).join("");
+      box.innerHTML = hits.map(function (e) { return '<a href="' + e.h + '">' + (e.img ? img(e.img) : '<span style="width:32px"></span>') + '<span class="cap">' + esc(title(e.n)) + "</span><small>" + esc(e.t) + "</small></a>"; }).join("");
     }
     input.addEventListener("input", render);
     input.addEventListener("keydown", function (e) {

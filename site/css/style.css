@@ -46,7 +46,7 @@ p { margin: .4em 0 .8em; }
 .dim { color: var(--dim); }
 .neg { color: var(--neg); }
 .pos { color: var(--pos); }
-.cap { text-transform: capitalize; }
+.cap { }
 
 /* ---------- UI chrome: the game's window art, redrawn in high resolution with gold embroidery (tools/make_ui.py) ---------- */
 .window {
@@ -124,7 +124,7 @@ footer { max-width: 1280px; margin: 0 auto; padding: 0 16px 30px; color: #77776f
 }
 .tile:hover, .hero-card:hover, .callout:hover { border-image-source: url("../img/ui/hd/slot_hover.svg"); text-decoration: none; }
 .tile img { width: 64px; height: 64px; object-fit: contain; margin-bottom: 4px; }
-.tile span { font-size: 16px; line-height: 1.15; text-transform: capitalize; }
+.tile span { font-size: 16px; line-height: 1.15; }
 .tile small { color: var(--dim); font-size: 14px; }
 .grid.mobs { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
 .grid.mobs .tile img { width: 96px; height: 96px; }
@@ -138,7 +138,7 @@ footer { max-width: 1280px; margin: 0 auto; padding: 0 16px 30px; color: #77776f
 .infobox .art img { max-width: 220px; max-height: 220px; }
 .infobox .art img.hero { height: 200px; max-height: none; }
 .infobox .art img.small { width: 128px; height: 128px; object-fit: contain; }
-.infobox h3 { text-align: center; text-transform: capitalize; margin: 0 0 6px; }
+.infobox h3 { text-align: center; margin: 0 0 6px; }
 .kv { width: 100%; border-collapse: collapse; font-size: 16px; }
 .kv th { text-align: left; font-weight: normal; color: var(--dim); padding: 2px 6px 2px 0; vertical-align: top; white-space: nowrap; }
 .kv td { padding: 2px 0; }
@@ -167,7 +167,7 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .hero-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
 .hero-card { text-align: center; color: var(--text); padding: 6px 2px; border: 8px solid transparent; border-image: url("../img/ui/hd/slot.svg") 8 fill / 8px stretch; }
 .hero-card img { height: 140px; }
-.hero-card b { display: block; color: var(--title); font-weight: normal; font-size: 22px; text-transform: capitalize; }
+.hero-card b { display: block; color: var(--title); font-weight: normal; font-size: 22px; }
 
 .skilltree { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
 .skill { display: flex; gap: 10px; padding: 2px; border: 8px solid transparent; border-image: url("../img/ui/hd/slot.svg") 8 fill / 8px stretch; }

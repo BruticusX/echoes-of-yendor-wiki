@@ -3914,147 +3914,147 @@
   {
    "id": "affection",
    "cls": "Affection",
-   "name": "of affection",
+   "name": "glyph of affection",
    "cat": "glyphs",
    "desc": "This powerful glyph manipulates the mind of attackers, charming them temporarily."
   },
   {
    "id": "antimagic",
    "cls": "AntiMagic",
-   "name": "of anti-magic",
+   "name": "glyph of anti-magic",
    "cat": "glyphs",
    "desc": "This powerful glyph allows armor to defend its wearer against magical attacks as well as physical ones. This magical defence is not affected by the armor's material."
   },
   {
    "id": "brimstone",
    "cls": "Brimstone",
-   "name": "of brimstone",
+   "name": "glyph of brimstone",
    "cat": "glyphs",
    "desc": "This glyph shields the wearer and their belongings from fire, completely nullifying its damage and negative effects."
   },
   {
    "id": "camouflage",
    "cls": "Camouflage",
-   "name": "of camouflage",
+   "name": "glyph of camouflage",
    "cat": "glyphs",
    "desc": "This glyph allows the wearer to blend into tall grass, granting them temporary invisibility."
   },
   {
    "id": "entanglement",
    "cls": "Entanglement",
-   "name": "of entanglement",
+   "name": "glyph of entanglement",
    "cat": "glyphs",
    "desc": "This glyph grows earthen armor around the wearer to absorb damage, but this armor will break if the wearer moves."
   },
   {
    "id": "flow",
    "cls": "Flow",
-   "name": "of flow",
+   "name": "glyph of flow",
    "cat": "glyphs",
    "desc": "This glyph manipulates the flow of water around the wearer, making them much faster when moving through it."
   },
   {
    "id": "obfuscation",
    "cls": "Obfuscation",
-   "name": "of obfuscation",
+   "name": "glyph of obfuscation",
    "cat": "glyphs",
    "desc": "This glyph obscures the wearer, making them more difficult to detect."
   },
   {
    "id": "potential",
    "cls": "Potential",
-   "name": "of potential",
+   "name": "glyph of potential",
    "cat": "glyphs",
    "desc": "This glyph builds energy when struck, granting charge to the wearer's wand when it activates."
   },
   {
    "id": "repulsion",
    "cls": "Repulsion",
-   "name": "of repulsion",
+   "name": "glyph of repulsion",
    "cat": "glyphs",
    "desc": "This glyph rebounds force against attackers, sending them flying back."
   },
   {
    "id": "stone",
    "cls": "Stone",
-   "name": "of stone",
+   "name": "glyph of stone",
    "cat": "glyphs",
    "desc": "This glyph surrounds the armor with heavy magical stone that makes dodging impossible, but blocks damage in proportion with evasion."
   },
   {
    "id": "swiftness",
    "cls": "Swiftness",
-   "name": "of swiftness",
+   "name": "glyph of swiftness",
    "cat": "glyphs",
    "desc": "This glyph enhances the speed of the wearer whenever they aren't near to an enemy."
   },
   {
    "id": "thorns",
    "cls": "Thorns",
-   "name": "of thorns",
+   "name": "glyph of thorns",
    "cat": "glyphs",
    "desc": "This powerful glyph harms attackers, causing them to slowly bleed when they attack the wearer."
   },
   {
    "id": "viscosity",
    "cls": "Viscosity",
-   "name": "of viscosity",
+   "name": "glyph of viscosity",
    "cat": "glyphs",
    "desc": "This glyph is able to store damage dealt to the wearer, dealing it to them slowly rather than all at once."
   },
   {
    "id": "antientropy",
    "cls": "AntiEntropy",
-   "name": "of anti-entropy",
+   "name": "curse of anti-entropy",
    "cat": "curses",
    "desc": "The Anti-entropy curse works against the forces of the universe, pulling energy into the wearer and away from their surroundings. This briefly sets the wearer on fire, but freezes everything around them!"
   },
   {
    "id": "bulk",
    "cls": "Bulk",
-   "name": "of bulk",
+   "name": "curse of bulk",
    "cat": "curses",
    "desc": "Armor of bulk looks larger and more imposing, but doesn't actually have enhanced defense. Even worse, the added size makes moving into doorways very difficult."
   },
   {
    "id": "corrosion",
    "cls": "Corrosion",
-   "name": "of corrosion",
+   "name": "curse of corrosion",
    "cat": "curses",
    "desc": "Armor of corrosion is capable of bursting with corrosive fluid, coating everything in the area with sticky acidic ooze."
   },
   {
    "id": "displacement",
    "cls": "Displacement",
-   "name": "of displacement",
+   "name": "curse of displacement",
    "cat": "curses",
    "desc": "The curse of displacement attempts to move the wearer to safety when they are attacked. It is a bit too effective however, randomly teleporting the user around the level."
   },
   {
    "id": "metabolism",
    "cls": "Metabolism",
-   "name": "of metabolism",
+   "name": "curse of metabolism",
    "cat": "curses",
    "desc": "The metabolism curse directly converts satiety into health when the wearer is injured, providing a boost of healing, but quickly causing starvation."
   },
   {
    "id": "multiplicity",
    "cls": "Multiplicity",
-   "name": "of multiplicity",
+   "name": "curse of multiplicity",
    "cat": "curses",
    "desc": "Armor cursed with multiplicity contains dangerous duplication magic. It will sometimes create a mirror image of the wearer, but is equally likely to duplicate the attacker!"
   },
   {
    "id": "overgrowth",
    "cls": "Overgrowth",
-   "name": "of overgrowth",
+   "name": "curse of overgrowth",
    "cat": "curses",
    "desc": "Armor of overgrowth is covered in various blooming plants. While this effect certainly looks interesting, it does nothing for defense, and these plants will randomly activate in combat!"
   },
   {
    "id": "stench",
    "cls": "Stench",
-   "name": "of stench",
+   "name": "curse of stench",
    "cat": "curses",
    "desc": "Armor cursed with stench will release clouds of noxious gas, which is hazardous to everything caught in the cloud."
   },
@@ -4649,461 +4649,98 @@
  },
  "mobs": [
   {
-   "id": "acidic",
-   "cls": "Acidic",
-   "name": "acidic scorpio",
-   "kind": "enemy",
-   "desc": "These huge arachnid-like demonic creatures avoid close combat, preferring to fire crippling serrated spikes from long distances. This one appears to be dripping with corrosive ooze.",
-   "hp": 110,
-   "damage": [
-    30,
-    40
-   ],
-   "accuracy": 36,
-   "armor": [
-    0,
-    12
-   ],
-   "evasion": 24,
-   "exp": 14,
-   "maxLvl": 27,
-   "props": [
-    "ACIDIC",
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/acidic.png",
-   "imgSize": [
-    47,
-    42
-   ],
-   "depths": [
-    23,
-    26
-   ],
-   "region": "halls"
-  },
-  {
-   "id": "albino",
-   "cls": "Albino",
-   "name": "albino rat",
-   "kind": "enemy",
-   "desc": "This is a rare breed of marsupial rat, with pure white fur and jagged teeth.",
-   "hp": 12,
-   "damage": [
-    1,
-    4
-   ],
-   "accuracy": 8,
-   "armor": [
-    0,
-    1
-   ],
-   "evasion": 2,
-   "exp": 2,
-   "maxLvl": 5,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/albino.png",
-   "imgSize": [
-    47,
-    36
-   ],
-   "depths": [
-    1,
-    2,
-    3
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "armoredbrute",
-   "cls": "ArmoredBrute",
-   "name": "armored brute",
-   "kind": "enemy",
-   "desc": "The most senior gnoll brutes often wear powerful armor to show their status. The armor makes these brutes much more resilient to physical damage, and their greater discipline means they can rage for much longer before succumbing to their wounds.",
-   "hp": 40,
-   "damage": [
-    15,
-    40
-   ],
-   "accuracy": 20,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": 15,
-   "exp": 8,
-   "maxLvl": 16,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/armoredbrute.png",
-   "imgSize": [
-    44,
-    50
-   ],
-   "depths": [
-    11,
-    12,
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
-   "id": "armoredstatue",
-   "cls": "ArmoredStatue",
-   "name": "armored statue",
-   "kind": "enemy",
-   "desc": "You would think that it's just another one of this dungeon's inanimate statues, but its red glowing eyes give it away.\n\nIt seems to be in great condition because of the armor it's wearing, it might be very hard to kill.",
-   "hp": null,
+   "id": "goo",
+   "cls": "Goo",
+   "token": "Goo",
+   "name": "Goo",
+   "kind": "boss",
+   "rare": false,
+   "desc": "Little is known about The Goo. It's quite possible that it is not even a creature, but rather a conglomerate of vile substances from the sewers that somehow gained basic intelligence. Regardless, dark magic is certainly what has allowed Goo to exist.\n\nIts gelatinous nature has let it absorb lots of dark energy, you feel a chill just from being near. If Goo is able to attack with this energy you won't live for long.",
+   "hp": 100,
    "damage": null,
    "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [
-    "INORGANIC"
-   ],
-   "group": "",
-   "depths": [],
-   "region": "other",
-   "img": "img/mobs/armoredstatue.png",
-   "imgSize": [
-    22,
-    64
-   ],
-   "where": "Guards armor vaults"
-  },
-  {
-   "id": "bandit",
-   "cls": "Bandit",
-   "name": "crazy bandit",
-   "kind": "enemy",
-   "desc": "An elite thief, distinguished by their more opulent purple robe. Despite their greater skill, they've become just as mindless as regular thieves.\n\nIn addition to stealing from you, crazed bandits will briefly blind, cripple, and poison you! They're much more likely to be carrying extra loot than a regular thief though.",
-   "hp": 20,
-   "damage": [
-    1,
-    10
-   ],
-   "accuracy": 12,
    "armor": [
     0,
-    3
-   ],
-   "evasion": 12,
-   "exp": 5,
-   "maxLvl": 11,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/bandit.png",
-   "imgSize": [
-    37,
-    40
-   ],
-   "depths": [
-    6,
-    7,
-    8,
-    10
-   ],
-   "region": "prison"
-  },
-  {
-   "id": "bat",
-   "cls": "Bat",
-   "name": "vampire bat",
-   "kind": "enemy",
-   "desc": "These brisk and tenacious inhabitants of the caves are much more dangerous than they seem. They replenish their health with each successful attack, which allows them to defeat much larger opponents.",
-   "hp": 30,
-   "damage": [
-    5,
-    18
-   ],
-   "accuracy": 16,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 15,
-   "exp": 7,
-   "maxLvl": 15,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/bat.png",
-   "imgSize": [
-    48,
-    42
-   ],
-   "depths": [
-    11,
-    12,
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
-   "id": "bee",
-   "cls": "Bee",
-   "name": "golden bee",
-   "kind": "enemy",
-   "desc": "Despite their small size, golden bees tend to protect their home fiercely. This one is very mad, better keep your distance.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/bee.png",
-   "imgSize": [
-    36,
-    40
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Released from a honeypot"
-  },
-  {
-   "id": "brute",
-   "cls": "Brute",
-   "name": "gnoll brute",
-   "kind": "enemy",
-   "desc": "Brutes are the largest, strongest, and toughest of all gnolls. When mortally wounded, they go berserk, gaining temporary shielding and a large boost to damage.",
-   "hp": 40,
-   "damage": [
-    15,
-    40
-   ],
-   "accuracy": 20,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": 15,
-   "exp": 8,
-   "maxLvl": 16,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/brute.png",
-   "imgSize": [
-    44,
-    50
-   ],
-   "depths": [
-    11,
-    12,
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
-   "id": "causticslime",
-   "cls": "CausticSlime",
-   "name": "caustic slime",
-   "kind": "enemy",
-   "desc": "This slime seems to have been tainted by the dark magic emanating from below. It has lost its usual green color, and drips with caustic ooze.",
-   "hp": 20,
-   "damage": [
-    2,
-    5
-   ],
-   "accuracy": 12,
-   "armor": null,
-   "evasion": 5,
-   "exp": 4,
-   "maxLvl": 9,
-   "props": [
-    "ACIDIC"
-   ],
-   "group": "",
-   "img": "img/mobs/causticslime.png",
-   "imgSize": [
-    47,
-    38
-   ],
-   "depths": [
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "crab",
-   "cls": "Crab",
-   "name": "sewer crab",
-   "kind": "enemy",
-   "desc": "These huge crabs are at the top of the food chain in the sewers. They are extremely fast and their thick carapace can withstand heavy blows.",
-   "hp": 15,
-   "damage": [
-    1,
-    7
-   ],
-   "accuracy": 12,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 5,
-   "exp": 4,
-   "maxLvl": 9,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/crab.png",
-   "imgSize": [
-    50,
-    38
-   ],
-   "depths": [
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "crystalmimic",
-   "cls": "CrystalMimic",
-   "name": "crystal mimic",
-   "kind": "enemy",
-   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nCrystal mimics are trickier than their regular cousins, and prefer to avoid conflict while stealing loot. They will attempt to sprint away once discovered, and have the ability to reposition enemies when they attack.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/crystalmimic.png",
-   "imgSize": [
-    56,
-    39
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Hides as a chest in any region"
-  },
-  {
-   "id": "dm100",
-   "cls": "DM100",
-   "name": "DM-100",
-   "kind": "enemy",
-   "desc": "The DM-100 is an early model of dwarven 'defense machine' which was designed to protect dwarven miners in the caves below this prison. Their electrical shocks proved too weak however, and so they were gifted to the human city above. They went unused for years and eventually found their way to the prison, where the warden initially deemed them too cruel to use. However, as the prisoners became more unruly they became a necessity.",
-   "hp": 20,
-   "damage": [
-    2,
-    8
-   ],
-   "accuracy": 11,
-   "armor": [
-    0,
-    4
+    2
    ],
    "evasion": 8,
-   "exp": 6,
-   "maxLvl": 13,
+   "exp": 10,
+   "maxLvl": null,
    "props": [
-    "ELECTRIC",
-    "INORGANIC"
-   ],
-   "group": "",
-   "img": "img/mobs/dm100.png",
-   "imgSize": [
-    35,
-    42
+    "ACIDIC",
+    "BOSS",
+    "DEMONIC"
    ],
    "depths": [
-    7,
-    8,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/goo.png"
+  },
+  {
+   "id": "tengu",
+   "cls": "Tengu",
+   "token": "Tengu",
+   "name": "Tengu",
+   "kind": "boss",
+   "rare": false,
+   "desc": "A famous and enigmatic assassin, named for the mask grafted to his face.\n\nTengu is held down with large clasps on his wrists and knees, though he seems to have gotten rid of his chains long ago.\n\nHe will try to use traps, deceptive magic, and precise attacks to eliminate the only thing stopping his escape: you.",
+   "hp": 200,
+   "damage": [
+    6,
+    12
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 15,
+   "exp": 20,
+   "maxLvl": null,
+   "props": [
+    "BOSS"
+   ],
+   "depths": [
     10
    ],
-   "region": "prison"
+   "region": "prison",
+   "img": "img/mobs/tengu.png"
   },
   {
-   "id": "dm200",
-   "cls": "DM200",
-   "name": "DM-200",
-   "kind": "enemy",
-   "desc": "The DM-200 is the second generation of dwarven 'defense machine', which was designed to protect dwarven miners in the caves and city below. They are much larger and bulkier than their predecessors, and attack with devastating hydraulic fists.\n\nTheir increased size is also their primary weakness, as they are unable to fit into the narrow tunnels and doorways of the dungeon. The dwarves were able to compensate for the DM-200's lack of mobility by allowing them to vent their toxic exhaust fumes at distant enemies, or enemies they cannot reach.",
-   "hp": 80,
-   "damage": [
-    10,
-    25
-   ],
-   "accuracy": 20,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": 12,
-   "exp": 9,
-   "maxLvl": 17,
+   "id": "pylon",
+   "cls": "Pylon",
+   "token": "Pylon",
+   "name": "power pylon",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "",
+   "hp": 50,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
    "props": [
-    "INORGANIC",
-    "LARGE"
-   ],
-   "group": "",
-   "img": "img/mobs/dm200.png",
-   "imgSize": [
-    46,
-    56
-   ],
-   "depths": [
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
-   "id": "dm201",
-   "cls": "DM201",
-   "name": "DM-201",
-   "kind": "enemy",
-   "desc": "The dwarves briefly experimented with more heavily emphasizing the DM-200's lack of mobility and created some DM models that are entirely stationary. The DM-201 is a retrofitted DM-200 which acts as a sentry turret that has no movement ability. In exchange for the lack of mobility, DM-201s have significantly more durability and attacking power.\n\nAs DM-201s have no engine to vent exhaust from, the dwarves instead outfitted them with corrosive gas grenades! DM-201s are careful with these grenades however, and will only lob them when attacked from a distance.",
-   "hp": 120,
-   "damage": [
-    15,
-    25
-   ],
-   "accuracy": 20,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": 12,
-   "exp": 9,
-   "maxLvl": 17,
-   "props": [
+    "BOSS_MINION",
+    "ELECTRIC",
     "IMMOVABLE",
     "INORGANIC",
-    "LARGE"
+    "MINIBOSS",
+    "STATIC"
    ],
-   "group": "",
-   "img": "img/mobs/dm201.png",
-   "imgSize": [
-    46,
-    56
-   ],
-   "depths": [
-    13,
-    15
-   ],
-   "region": "caves"
+   "depths": [],
+   "region": "caves",
+   "img": "img/mobs/pylon.png"
   },
   {
    "id": "dm300",
    "cls": "DM300",
+   "token": "DM300",
    "name": "DM-300",
    "kind": "boss",
+   "rare": false,
    "desc": "The DM-300 is the largest and most powerful 'defense machine' that the dwarves ever built. Such an awesome machine is difficult to manufacture, so the dwarves only ever made a few to guard the entrances to their underground metropolis.\n\nIt is equipped with vents to jet its toxic exhaust fumes and a high power drill that it can use both to attack and disrupt the earth. DM-300 can also connect to an energy grid, further enhancing its power.",
    "hp": 300,
    "damage": [
@@ -5123,53 +4760,19 @@
     "INORGANIC",
     "LARGE"
    ],
-   "group": "",
-   "img": "img/mobs/dm300.png",
-   "imgSize": [
-    55,
-    62
-   ],
    "depths": [
     15
    ],
-   "region": "caves"
-  },
-  {
-   "id": "demonspawner",
-   "cls": "DemonSpawner",
-   "name": "demon spawner",
-   "kind": "miniboss",
-   "desc": "This twisting amalgam of dwarven flesh is responsible for creating ripper demons from the dwarves that have died in this region. Clearly the demons see no issue with using every resource they can against their enemies.\n\nWhile visually terrifying, demon spawners have no means of moving or directly defending themselves. Their considerable mass makes them hard to kill quickly however, and they will spawn ripper demons more quickly when they are under threat.\n\n_Demon spawners seem to be connected to some central source of demonic power. Killing them may weaken it._",
-   "hp": 120,
-   "damage": null,
-   "accuracy": null,
-   "armor": [
-    0,
-    12
-   ],
-   "evasion": null,
-   "exp": 15,
-   "maxLvl": 29,
-   "props": [
-    "DEMONIC",
-    "IMMOVABLE",
-    "MINIBOSS",
-    "STATIC"
-   ],
-   "group": "",
-   "img": "img/mobs/demonspawner.png",
-   "imgSize": [
-    44,
-    50
-   ],
-   "depths": [],
-   "region": "halls"
+   "region": "caves",
+   "img": "img/mobs/dm300.png"
   },
   {
    "id": "dwarfking",
    "cls": "DwarfKing",
+   "token": "DwarfKing",
    "name": "King of Dwarves",
    "kind": "boss",
+   "rare": false,
    "desc": "Many years ago one of the highest wizards in the dwarven court uncovered secrets which gave him tremendous power over life and death. He soon put this power to use, subjugating and corrupting his peers, his king, and eventually every dwarven citizen. Now he is king, ruler over a legion of undead subjects.\n\nThe King of Dwarves is an aggressive foe, who will attempt to surround and overwhelm his enemies with his horde of undead minions.",
    "hp": 300,
    "damage": [
@@ -5186,624 +4789,257 @@
    "maxLvl": null,
    "props": [
     "BOSS",
-    "BOSS_MINION",
     "IMMOVABLE",
     "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/dwarfking.png",
-   "imgSize": [
-    32,
-    44
    ],
    "depths": [
     20
    ],
-   "region": "city"
+   "region": "city",
+   "img": "img/mobs/dwarfking.png"
   },
   {
-   "id": "ebonymimic",
-   "cls": "EbonyMimic",
-   "name": "ebony mimic",
-   "kind": "enemy",
-   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nEbony mimics are stealthy mimics with the ability to make themselves almost invisible. They lurk on things that adventurers are likely to interact with, but do contain loot of their own as well. They aren't any tougher than a regular mimic once discovered, but their surprise bite is devastating.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/ebonymimic.png",
-   "imgSize": [
-    56,
-    39
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Hides as a chest in any region"
-  },
-  {
-   "id": "eye",
-   "cls": "Eye",
-   "name": "evil eye",
-   "kind": "enemy",
-   "desc": "Evil Eyes are floating balls of pent up demonic energy. While they are capable of melee combat, their true strength comes from their magic.\n\nAfter building energy for a short time an Evil Eye will unleash a devastating beam of energy called the _deathgaze._ Anything within the Evil Eye's sights will take tremendous damage, wise adventurers will run for cover.",
-   "hp": 100,
+   "id": "larva",
+   "cls": "Larva",
+   "token": "YogDzewa.Larva",
+   "name": "god's larva",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "These tiny spawn of Yog-Dzewa are simple minions that are easy to produce. While individually weak, they are summoned quickly and can become overwhelming in large numbers.",
+   "hp": 20,
    "damage": [
-    20,
-    30
+    15,
+    25
    ],
    "accuracy": 30,
    "armor": [
     0,
-    10
-   ],
-   "evasion": 20,
-   "exp": 13,
-   "maxLvl": 26,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/eye.png",
-   "imgSize": [
-    48,
-    48
-   ],
-   "depths": [
-    21,
-    22,
-    23,
-    26
-   ],
-   "region": "halls"
-  },
-  {
-   "id": "fetidrat",
-   "cls": "FetidRat",
-   "name": "fetid rat",
-   "kind": "miniboss",
-   "desc": "Something is clearly wrong with this rat. Its greasy black fur and rotting skin are very different from the healthy rats you've seen previously. Its pale green eyes make it seem especially menacing.\n\nThe rat carries a cloud of horrible stench with it, it's overpoweringly strong up close.\n\nDark ooze dribbles from the rat's mouth, it eats through the floor but seems to dissolve in water.",
-   "hp": 20,
-   "damage": [
-    1,
     4
    ],
-   "accuracy": 12,
-   "armor": [
-    0,
-    2
-   ],
-   "evasion": 5,
-   "exp": 4,
-   "maxLvl": 5,
-   "props": [
-    "DEMONIC",
-    "MINIBOSS"
-   ],
-   "group": "",
-   "img": "img/mobs/fetidrat.png",
-   "imgSize": [
-    47,
-    36
-   ],
-   "depths": [
-    1,
-    2,
-    3
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "ghoul",
-   "cls": "Ghoul",
-   "name": "dwarven ghoul",
-   "kind": "enemy",
-   "desc": "As dwarven society slowly began to collapse, and the current king of the dwarves seized absolute power, those who were weak or who resisted him were not treated well. As the king grew more adept at wielding dark magic, he bent these dwarves to his will, and now they make up the footsoldiers of his army.\n\nGhouls are not especially strong on their own, but always travel in groups and are much harder to kill in large numbers. _When a ghoul is defeated, it will rise again after a few turns as long as another ghoul is nearby._",
-   "hp": 45,
-   "damage": [
-    16,
-    22
-   ],
-   "accuracy": 24,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 20,
+   "evasion": 12,
    "exp": 5,
-   "maxLvl": 20,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/ghoul.png",
-   "imgSize": [
-    30,
-    44
-   ],
-   "depths": [
-    16,
-    17,
-    18
-   ],
-   "region": "city"
-  },
-  {
-   "id": "gnoll",
-   "cls": "Gnoll",
-   "name": "gnoll scout",
-   "kind": "enemy",
-   "desc": "Gnolls are hyena-like humanoids. They dwell in sewers and dungeons, venturing up to raid the surface from time to time. Gnoll scouts are regular members of their pack, they are not as strong as brutes and not as intelligent as shamans.",
-   "hp": 12,
-   "damage": [
-    1,
-    6
-   ],
-   "accuracy": 10,
-   "armor": [
-    0,
-    2
-   ],
-   "evasion": 4,
-   "exp": 2,
-   "maxLvl": 8,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/gnoll.png",
-   "imgSize": [
-    39,
-    47
-   ],
-   "depths": [
-    2,
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "gnollexile",
-   "cls": "GnollExile",
-   "name": "gnoll exile",
-   "kind": "enemy",
-   "desc": "This grey-furred gnoll has a large mark on its shoulder, denoting it as an exile. Gnolls are usually exiled from their society for ignoring orders or breaking laws. Exiles have to be strong and shrewd to survive, this one looks like it knows how to use the spear it's holding.",
-   "hp": 24,
-   "damage": [
-    1,
-    10
-   ],
-   "accuracy": 15,
-   "armor": [
-    0,
-    1
-   ],
-   "evasion": 6,
-   "exp": 2,
-   "maxLvl": 8,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/gnollexile.png",
-   "imgSize": [
-    39,
-    47
-   ],
-   "depths": [
-    2,
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "gnolltrickster",
-   "cls": "GnollTrickster",
-   "name": "gnoll trickster",
-   "kind": "miniboss",
-   "desc": "A strange looking creature, even by gnoll standards. It hunches forward with a wicked grin, almost cradling the satchel hanging over its shoulder. Its eyes are wide with a strange mix of fear and excitement.\n\nThere is a large collection of poorly made darts in its satchel, they all seem to be tipped with various harmful substances.",
-   "hp": 20,
-   "damage": [
-    1,
-    6
-   ],
-   "accuracy": 16,
-   "armor": [
-    0,
-    2
-   ],
-   "evasion": 5,
-   "exp": 5,
-   "maxLvl": 8,
-   "props": [
-    "MINIBOSS"
-   ],
-   "group": "",
-   "img": "img/mobs/gnolltrickster.png",
-   "imgSize": [
-    39,
-    47
-   ],
-   "depths": [
-    2,
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "goldenmimic",
-   "cls": "GoldenMimic",
-   "name": "golden mimic",
-   "kind": "enemy",
-   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nGolden mimics are tougher mimics which try to attract the strongest adventurers. They have better loot, but are also much stronger than regular mimics.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
    "maxLvl": null,
    "props": [
+    "BOSS_MINION",
     "DEMONIC"
    ],
-   "group": "",
-   "img": "img/mobs/goldenmimic.png",
-   "imgSize": [
-    56,
-    39
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/larva.png"
+  },
+  {
+   "id": "burningfist",
+   "cls": "BurningFist",
+   "token": "YogFist.BurningFist",
+   "name": "burning fist",
+   "kind": "boss",
+   "rare": false,
+   "desc": "This fist is formed out of chaotic fiery magic. As it moves it will constantly set terrain around it ablaze. It is also capable of shooting blasts of fiery power, which spread flames where they impact.\n\nThe fist's ability to spread flames is suppressed when near water, but its heat is so great that any water around it will evaporate after a short while!",
+   "hp": 300,
+   "damage": [
+    18,
+    36
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    15
+   ],
+   "evasion": 20,
+   "exp": 25,
+   "maxLvl": null,
+   "props": [
+    "BOSS",
+    "DEMONIC",
+    "FIERY"
    ],
    "depths": [],
-   "region": "other",
-   "where": "Hides as a chest in any region"
+   "region": "halls",
+   "img": "img/mobs/burningfist.png"
   },
   {
-   "id": "golem",
-   "cls": "Golem",
-   "name": "golem",
-   "kind": "enemy",
-   "desc": "Golems are an attempt to correct the previous flaws in dwarven machinery via the dwarves newfound use of magic. They are much more compact and efficient compared to the DM-300 while still being very deadly.\n\nWhile golems are still too large to fit into passageways, the dwarves have given them new magical abilities to compensate. Golems can teleport themselves between rooms, and teleport enemies to them when they are out of reach.",
-   "hp": 120,
-   "damage": [
-    25,
-    30
-   ],
-   "accuracy": 28,
-   "armor": [
-    0,
-    9
-   ],
-   "evasion": 15,
-   "exp": 12,
-   "maxLvl": 22,
-   "props": [
-    "INORGANIC",
-    "LARGE"
-   ],
-   "group": "",
-   "img": "img/mobs/golem.png",
-   "imgSize": [
-    46,
-    56
-   ],
-   "depths": [
-    18,
-    20
-   ],
-   "region": "city"
-  },
-  {
-   "id": "goo",
-   "cls": "Goo",
-   "name": "Goo",
+   "id": "soiledfist",
+   "cls": "SoiledFist",
+   "token": "YogFist.SoiledFist",
+   "name": "soiled fist",
    "kind": "boss",
-   "desc": "Little is known about The Goo. It's quite possible that it is not even a creature, but rather a conglomerate of vile substances from the sewers that somehow gained basic intelligence. Regardless, dark magic is certainly what has allowed Goo to exist.\n\nIts gelatinous nature has let it absorb lots of dark energy, you feel a chill just from being near. If Goo is able to attack with this energy you won't live for long.",
-   "hp": 100,
-   "damage": null,
-   "accuracy": null,
+   "rare": false,
+   "desc": "This fist is formed out of chaotic earthen magic. As it moves it will constantly cause vegetation to sprout around it. It can also shoot concentrated earthen blasts that will ensnare its target in rapidly growing vines and roots!\n\nThe fist derives power from this plant life, and will resist damage based on the amount of tall or furrowed vegetation near it!",
+   "hp": 300,
+   "damage": [
+    18,
+    36
+   ],
+   "accuracy": 36,
    "armor": [
     0,
-    2
+    15
    ],
-   "evasion": 8,
-   "exp": 10,
+   "evasion": 20,
+   "exp": 25,
+   "maxLvl": null,
+   "props": [
+    "BOSS",
+    "DEMONIC"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/soiledfist.png"
+  },
+  {
+   "id": "rottingfist",
+   "cls": "RottingFist",
+   "token": "YogFist.RottingFist",
+   "name": "rotting fist",
+   "kind": "boss",
+   "rare": false,
+   "desc": "This fist is formed out of living corruption. It is a towering mass of decaying flesh that can spread caustic ooze in melee and toxic gas at range. Even worse, the fist's great mass causes it to bleed instead of taking damage directly.\n\nWater can be used to wash the ooze off, but the fist is also capable of absorbing water to heal itself! Additionally, damaging the fist while it is bleeding will cause the bleed to refresh, but not stack!",
+   "hp": 300,
+   "damage": [
+    18,
+    36
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    15
+   ],
+   "evasion": 20,
+   "exp": 25,
    "maxLvl": null,
    "props": [
     "ACIDIC",
     "BOSS",
     "DEMONIC"
    ],
-   "group": "",
-   "img": "img/mobs/goo.png",
-   "imgSize": [
-    57,
-    29
-   ],
-   "depths": [
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "greatcrab",
-   "cls": "GreatCrab",
-   "name": "great crab",
-   "kind": "miniboss",
-   "desc": "This crab is gigantic, even compared to other sewer crabs. Its blue shell is covered in cracks and barnacles, showing great age. It lumbers around slowly, barely keeping balance with its massive claw.\n\nWhile the crab only has one claw, its size easily compensates. The crab holds the claw in front of any threat, shielding itself behind an impenetrable wall of carapace. However, the crab cannot block attacks it doesn't see coming, or attacks from multiple enemies at once.",
-   "hp": 25,
-   "damage": [
-    1,
-    7
-   ],
-   "accuracy": 12,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": null,
-   "exp": 6,
-   "maxLvl": 9,
-   "props": [
-    "MINIBOSS"
-   ],
-   "group": "",
-   "img": "img/mobs/greatcrab.png",
-   "imgSize": [
-    50,
-    38
-   ],
-   "depths": [
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "guard",
-   "cls": "Guard",
-   "name": "prison guard",
-   "kind": "enemy",
-   "desc": "Once keepers of the prison, these guards have long since become no different than the inmates. They shamble like zombies, brainlessly roaming through the halls in search of anything out of place, like you!\n\nThey carry chains around their hip, possibly used to pull in enemies to close range.",
-   "hp": 40,
-   "damage": [
-    4,
-    12
-   ],
-   "accuracy": 12,
-   "armor": [
-    0,
-    7
-   ],
-   "evasion": 10,
-   "exp": 7,
-   "maxLvl": 14,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/guard.png",
-   "imgSize": [
-    28,
-    48
-   ],
-   "depths": [
-    7,
-    8,
-    10
-   ],
-   "region": "prison"
-  },
-  {
-   "id": "hermitcrab",
-   "cls": "HermitCrab",
-   "name": "hermit crab",
-   "kind": "enemy",
-   "desc": "For one reason or another, this sewer crab has decided to wear the broken upper part of a barrel on its head! The extra weight has slown it down to regular speed, but has also granted it considerably more defence. You think you can hear something bouncing around inside the barrel though...",
-   "hp": 25,
-   "damage": [
-    1,
-    7
-   ],
-   "accuracy": 12,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 5,
-   "exp": 4,
-   "maxLvl": 9,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/hermitcrab.png",
-   "imgSize": [
-    50,
-    38
-   ],
-   "depths": [
-    3,
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "mimic",
-   "cls": "Mimic",
-   "name": "mimic",
-   "kind": "enemy",
-   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nMimics have a nasty bite, but often hold more treasure than a regular chest.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/mimic.png",
-   "imgSize": [
-    56,
-    39
-   ],
    "depths": [],
-   "region": "other",
-   "where": "Hides as a chest in any region"
+   "region": "halls",
+   "img": "img/mobs/rottingfist.png"
   },
   {
-   "id": "monk",
-   "cls": "Monk",
-   "name": "dwarf monk",
-   "kind": "enemy",
-   "desc": "These monks are fanatics, who have devoted themselves to protecting their king through physical might. So great is their devotion that they have totally surrendered their minds to their king, and now roam the dwarven city like mindless zombies.\n\nMonks rely solely on the art of hand-to-hand combat, and are able to use their unarmed fists both for offense and defense. When they become focused, monks will parry the next physical attack used against them, even if it was otherwise guaranteed to hit. Monks build focus more quickly while on the move, and more slowly when in direct combat.",
-   "hp": 70,
+   "id": "rustedfist",
+   "cls": "RustedFist",
+   "token": "YogFist.RustedFist",
+   "name": "rusted fist",
+   "kind": "boss",
+   "rare": false,
+   "desc": "This fist is formed out of living metal. It is a towering mass of shifting metal that has powerful melee attacks, and can cripple its targets at range. Because of its tremendous mass, the fist will take any damage dealt to it over time, instead of immediately.\n\nThe fist is inflexible however, and cannot move into tight passageways. Additionally, while it may take damage slowly, the deferred damage will continue to increase if the fist is hit multiple times.",
+   "hp": 300,
    "damage": [
-    12,
-    25
-   ],
-   "accuracy": 30,
-   "armor": [
-    0,
-    2
-   ],
-   "evasion": 30,
-   "exp": 11,
-   "maxLvl": 21,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/monk.png",
-   "imgSize": [
-    33,
+    22,
     44
    ],
-   "depths": [
-    17,
-    18,
-    20
-   ],
-   "region": "city"
-  },
-  {
-   "id": "necromancer",
-   "cls": "Necromancer",
-   "name": "necromancer",
-   "kind": "enemy",
-   "desc": "These apprentice dark mages have flocked to the prison, as it is the perfect place to practise their evil craft.\n\nNecromancers will summon and empower skeletons to fight for them. Killing the necromancer will also kill the skeleton it summons.",
-   "hp": 40,
-   "damage": null,
-   "accuracy": null,
+   "accuracy": 36,
    "armor": [
     0,
-    5
+    15
    ],
-   "evasion": 14,
-   "exp": 7,
-   "maxLvl": 14,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/necromancer.png",
-   "imgSize": [
-    35,
-    48
-   ],
-   "depths": [
-    8,
-    10
-   ],
-   "region": "prison"
-  },
-  {
-   "id": "phantompiranha",
-   "cls": "PhantomPiranha",
-   "name": "phantom piranha",
-   "kind": "enemy",
-   "desc": "Phantom piranhas are a rare breed of piranha with magical abilities and eerie translucent bodies. They are capable of teleporting as they are being attacked, either to escape or to quickly get close to their enemy!\n\nWhile they are annoying to fight, their meat is prized for its magical properties.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/phantompiranha.png",
-   "imgSize": [
-    43,
-    32
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Lurks in deep water"
-  },
-  {
-   "id": "piranha",
-   "cls": "Piranha",
-   "name": "giant piranha",
-   "kind": "enemy",
-   "desc": "These carnivorous fish are bred specifically to protect flooded areas. Their bite is deadly, so it's best to avoid confronting them directly.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/piranha.png",
-   "imgSize": [
-    43,
-    32
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Lurks in deep water"
-  },
-  {
-   "id": "pylon",
-   "cls": "Pylon",
-   "name": "power pylon",
-   "kind": "miniboss",
-   "desc": "",
-   "hp": 50,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
+   "evasion": 20,
+   "exp": 25,
    "maxLvl": null,
    "props": [
-    "BOSS_MINION",
-    "ELECTRIC",
-    "IMMOVABLE",
+    "BOSS",
+    "DEMONIC",
     "INORGANIC",
-    "MINIBOSS",
+    "LARGE"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/rustedfist.png"
+  },
+  {
+   "id": "brightfist",
+   "cls": "BrightFist",
+   "token": "YogFist.BrightFist",
+   "name": "bright fist",
+   "kind": "boss",
+   "rare": false,
+   "desc": "This fist is formed out of pure light energy. It is capable of shooting powerful rays of searing light every turn! These beams will temporarily blind you in addition to dealing heavy damage. The fist is also capable of briefly engulfing the arena in blinding light in order to escape!\n\nThe fist has no special abilities which it can use in melee range however.",
+   "hp": 300,
+   "damage": [
+    18,
+    36
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    15
+   ],
+   "evasion": 20,
+   "exp": 25,
+   "maxLvl": null,
+   "props": [
+    "BOSS",
+    "DEMONIC",
+    "ELECTRIC"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/brightfist.png"
+  },
+  {
+   "id": "darkfist",
+   "cls": "DarkFist",
+   "token": "YogFist.DarkFist",
+   "name": "dark fist",
+   "kind": "boss",
+   "rare": false,
+   "desc": "This fist is formed out of pure dark energy. It is capable of shooting powerful blasts of dark magic every turn! These blasts will weaken your light source in addition to dealing heavy damage. The fist is also capable of briefly engulfing the arena in darkness in order to escape!\n\nThe fist has no special abilities which it can use in melee range however.",
+   "hp": 300,
+   "damage": [
+    18,
+    36
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    15
+   ],
+   "evasion": 20,
+   "exp": 25,
+   "maxLvl": null,
+   "props": [
+    "BOSS",
+    "DEMONIC"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/darkfist.png"
+  },
+  {
+   "id": "yogdzewa",
+   "cls": "YogDzewa",
+   "token": "YogDzewa",
+   "name": "Yog-Dzewa",
+   "kind": "boss",
+   "rare": false,
+   "desc": "Yog-Dzewa is an Old God; a great monstrosity which reaches into mortal worlds and devours them to fuel its endless growth. The dwarves must have attracted the attention of this cosmic horror while toying with dark magics, and have been trying to keep it contained ever since.\n\nYog-Dzewa originates from a dimension of raw magical chaos, and cannot bring its true form into this world. Instead it has created avatars and summoned demonic minions to do its bidding here.\n\nThis giant eye is the focal point of Yog-Dzewa's power in this world. While the eye itself is immobile, it is capable of shooting powerful beams of demonic magic and summoning a variety of minions to aid it.",
+   "hp": 1000,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 50,
+   "maxLvl": null,
+   "props": [
+    "BOSS",
+    "DEMONIC",
+    "IMMOVABLE",
     "STATIC"
    ],
-   "group": "",
-   "img": "img/mobs/pylon.png",
-   "imgSize": [
-    40,
-    56
+   "depths": [
+    25
    ],
-   "depths": [],
-   "region": "caves"
+   "region": "halls",
+   "img": "img/mobs/yogdzewa.png"
   },
   {
    "id": "rat",
    "cls": "Rat",
+   "token": "Rat",
    "name": "marsupial rat",
    "kind": "enemy",
+   "rare": false,
    "desc": "Marsupial rats are aggressive but rather weak denizens of the sewers. They have a nasty bite, but are only life threatening in large numbers.",
    "hp": 8,
    "damage": [
@@ -5819,189 +5055,159 @@
    "exp": 1,
    "maxLvl": 5,
    "props": [],
-   "group": "",
-   "img": "img/mobs/rat.png",
-   "imgSize": [
-    47,
-    36
-   ],
    "depths": [
     1,
     2,
     3
    ],
-   "region": "sewers"
+   "region": "sewers",
+   "img": "img/mobs/rat.png"
   },
   {
-   "id": "ripperdemon",
-   "cls": "RipperDemon",
-   "name": "ripper demon",
+   "id": "snake",
+   "cls": "Snake",
+   "token": "Snake",
+   "name": "sewer snake",
    "kind": "enemy",
-   "desc": "These horrific creatures are the result of the many dwarven corpses in this region being put to use by demonic forces. Rippers are emaciated ghoulish creatures that resemble dwarves, but with broken bodies and long sharp claws made of bone.\n\nRipper demons are not particularly durable, but they are agile and dangerous. They are capable of leaping great distances to quickly reach targets before goring them with their claws.",
-   "hp": 60,
+   "rare": false,
+   "desc": "These oversized serpents are capable of quickly slithering around blows, making them quite hard to hit. Magical attacks or surprise attacks are capable of catching them off-guard however.\n\nYou can perform a surprise attack by attacking while out of the snake's vision. One way is to let a snake chase you through a doorway and then _strike just after it moves into the door._",
+   "hp": 4,
    "damage": [
-    15,
-    25
-   ],
-   "accuracy": 30,
-   "armor": [
-    0,
+    1,
     4
    ],
-   "evasion": 22,
-   "exp": 9,
-   "maxLvl": null,
-   "props": [
-    "DEMONIC",
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/ripperdemon.png",
-   "imgSize": [
-    61,
-    44
-   ],
-   "depths": [],
-   "region": "halls"
-  },
-  {
-   "id": "rotheart",
-   "cls": "RotHeart",
-   "name": "rot heart",
-   "kind": "miniboss",
-   "desc": "A Rotberry's fruit is very unique. Instead of rotting away and providing nutrients, the fruit grows, hardens, and encompasses the seed. It provides protection for the internal organs which grow inside the fruit. This giant orb is referred to as the heart of an adult rotberry plant.",
-   "hp": 80,
-   "damage": null,
-   "accuracy": 0,
-   "armor": [
-    0,
-    5
-   ],
-   "evasion": null,
-   "exp": 4,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE",
-    "MINIBOSS",
-    "STATIC"
-   ],
-   "group": "",
-   "img": "img/mobs/rotheart.png",
-   "imgSize": [
-    40,
-    45
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Rotberry garden"
-  },
-  {
-   "id": "rotlasher",
-   "cls": "RotLasher",
-   "name": "rot lasher",
-   "kind": "miniboss",
-   "desc": "The rot lasher is a part of a mature rotberry plant's root structure, and also their primary means of defense. Lashers are blind and stuck into the ground, but will violently assault any nearby threat after taking a moment to detect them. When there is no nearby enemies, they stand motionless, attempting to blend in with surrounding vegetation.",
-   "hp": 80,
-   "damage": [
-    10,
-    20
-   ],
-   "accuracy": 25,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE",
-    "MINIBOSS"
-   ],
-   "group": "",
-   "img": "img/mobs/rotlasher.png",
-   "imgSize": [
-    34,
-    48
-   ],
-   "depths": [],
-   "region": "other",
-   "where": "Rotberry garden"
-  },
-  {
-   "id": "scorpio",
-   "cls": "Scorpio",
-   "name": "scorpio",
-   "kind": "enemy",
-   "desc": "These huge arachnid-like demonic creatures avoid close combat, preferring to fire crippling serrated spikes from long distances.",
-   "hp": 110,
-   "damage": [
-    30,
-    40
-   ],
-   "accuracy": 36,
-   "armor": [
-    0,
-    12
-   ],
-   "evasion": 24,
-   "exp": 14,
-   "maxLvl": 27,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/scorpio.png",
-   "imgSize": [
-    47,
-    42
-   ],
+   "accuracy": 10,
+   "armor": null,
+   "evasion": 25,
+   "exp": 2,
+   "maxLvl": 7,
+   "props": [],
    "depths": [
-    23,
-    26
+    1,
+    2,
+    3
    ],
-   "region": "halls"
+   "region": "sewers",
+   "img": "img/mobs/snake.png"
   },
   {
-   "id": "senior",
-   "cls": "Senior",
-   "name": "senior monk",
+   "id": "gnoll",
+   "cls": "Gnoll",
+   "token": "Gnoll",
+   "name": "gnoll scout",
    "kind": "enemy",
-   "desc": "These monks are fanatics, who have devoted themselves to protecting their king through physical might. So great is their devotion that they have totally surrendered their minds to their king, and now roam the dwarven city like mindless zombies.\n\nThis monk has mastered the art of hand-to-hand combat, and is able to gain focus while moving much more quickly than regular monks. When they become focused, monks will parry the next physical attack used against them, even if it was otherwise guaranteed to hit. Monks build focus more quickly while on the move, and more slowly when in direct combat.",
-   "hp": 70,
+   "rare": false,
+   "desc": "Gnolls are hyena-like humanoids. They dwell in sewers and dungeons, venturing up to raid the surface from time to time. Gnoll scouts are regular members of their pack, they are not as strong as brutes and not as intelligent as shamans.",
+   "hp": 12,
    "damage": [
-    16,
-    25
+    1,
+    6
    ],
-   "accuracy": 30,
+   "accuracy": 10,
    "armor": [
     0,
     2
    ],
-   "evasion": 30,
-   "exp": 11,
-   "maxLvl": 21,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/senior.png",
-   "imgSize": [
-    33,
-    44
-   ],
+   "evasion": 4,
+   "exp": 2,
+   "maxLvl": 8,
+   "props": [],
    "depths": [
-    17,
-    18,
-    20
+    2,
+    3,
+    5
    ],
-   "region": "city"
+   "region": "sewers",
+   "img": "img/mobs/gnoll.png"
+  },
+  {
+   "id": "swarm",
+   "cls": "Swarm",
+   "token": "Swarm",
+   "name": "swarm of flies",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "The deadly swarm of flies buzzes angrily. Every non-magical attack will split it into two smaller but equally dangerous swarms.",
+   "hp": 50,
+   "damage": [
+    1,
+    4
+   ],
+   "accuracy": 10,
+   "armor": null,
+   "evasion": 5,
+   "exp": 3,
+   "maxLvl": 9,
+   "props": [],
+   "depths": [
+    3,
+    5,
+    6
+   ],
+   "region": "sewers",
+   "img": "img/mobs/swarm.png"
+  },
+  {
+   "id": "crab",
+   "cls": "Crab",
+   "token": "Crab",
+   "name": "sewer crab",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These huge crabs are at the top of the food chain in the sewers. They are extremely fast and their thick carapace can withstand heavy blows.",
+   "hp": 15,
+   "damage": [
+    1,
+    7
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 5,
+   "exp": 4,
+   "maxLvl": 9,
+   "props": [],
+   "depths": [
+    3,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/crab.png"
+  },
+  {
+   "id": "slime",
+   "cls": "Slime",
+   "token": "Slime",
+   "name": "slime",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Slimes are strange, slightly magical creatures with a rubbery outer body and a liquid core. The city sewers provide them with an ample supply of water and nutrients.\n\nBecause of their elastic outer membrane, it is difficult to deal more than _6 damage_ to slimes from any one attack.",
+   "hp": 20,
+   "damage": [
+    2,
+    5
+   ],
+   "accuracy": 12,
+   "armor": null,
+   "evasion": 5,
+   "exp": 4,
+   "maxLvl": 9,
+   "props": [],
+   "depths": [
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/slime.png"
   },
   {
    "id": "skeleton",
    "cls": "Skeleton",
+   "token": "Skeleton",
    "name": "skeleton",
    "kind": "enemy",
+   "rare": false,
    "desc": "Skeletons are composed of the bones of unlucky adventurers and inhabitants of the prison, animated by emanations of evil magic from the depths below. After they have been damaged enough, skeletons will disintegrate in an explosion of bones. The shrapnel from this explosion is harmful to anything nearby, but armor is very effective at mitigating it.",
    "hp": 25,
    "damage": [
@@ -6020,272 +5226,22 @@
     "INORGANIC",
     "UNDEAD"
    ],
-   "group": "",
-   "img": "img/mobs/skeleton.png",
-   "imgSize": [
-    27,
-    46
-   ],
    "depths": [
     6,
     7,
     8,
     10
    ],
-   "region": "prison"
-  },
-  {
-   "id": "slime",
-   "cls": "Slime",
-   "name": "slime",
-   "kind": "enemy",
-   "desc": "Slimes are strange, slightly magical creatures with a rubbery outer body and a liquid core. The city sewers provide them with an ample supply of water and nutrients.\n\nBecause of their elastic outer membrane, it is difficult to deal more than _6 damage_ to slimes from any one attack.",
-   "hp": 20,
-   "damage": [
-    2,
-    5
-   ],
-   "accuracy": 12,
-   "armor": null,
-   "evasion": 5,
-   "exp": 4,
-   "maxLvl": 9,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/slime.png",
-   "imgSize": [
-    47,
-    38
-   ],
-   "depths": [
-    5
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "snake",
-   "cls": "Snake",
-   "name": "sewer snake",
-   "kind": "enemy",
-   "desc": "These oversized serpents are capable of quickly slithering around blows, making them quite hard to hit. Magical attacks or surprise attacks are capable of catching them off-guard however.\n\nYou can perform a surprise attack by attacking while out of the snake's vision. One way is to let a snake chase you through a doorway and then _strike just after it moves into the door._",
-   "hp": 4,
-   "damage": [
-    1,
-    4
-   ],
-   "accuracy": 10,
-   "armor": null,
-   "evasion": 25,
-   "exp": 2,
-   "maxLvl": 7,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/snake.png",
-   "imgSize": [
-    43,
-    42
-   ],
-   "depths": [
-    1,
-    2,
-    3
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "spectralnecromancer",
-   "cls": "SpectralNecromancer",
-   "name": "spectral necromancer",
-   "kind": "enemy",
-   "desc": "While Skeletons are a necromancer\u2019s bread and butter, some prefer to look into other less corporeal minions. Spectral necromancers have chosen wraiths as their minion of choice!\n\nIndividual wraiths aren't as strong as skeletons, but these necromancers aren't afraid to summon a bunch of them!",
-   "hp": 40,
-   "damage": null,
-   "accuracy": null,
-   "armor": [
-    0,
-    5
-   ],
-   "evasion": 14,
-   "exp": 7,
-   "maxLvl": 14,
-   "props": [
-    "UNDEAD"
-   ],
-   "group": "",
-   "img": "img/mobs/spectralnecromancer.png",
-   "imgSize": [
-    35,
-    48
-   ],
-   "depths": [
-    8,
-    10
-   ],
-   "region": "prison"
-  },
-  {
-   "id": "spinner",
-   "cls": "Spinner",
-   "name": "cave spinner",
-   "kind": "enemy",
-   "desc": "These greenish furry cave spiders try to avoid direct combat. Instead they prefer to wait in the distance while their victim struggles in their excreted cobweb, slowly dying from their venomous bite. They are capable of shooting their webs great distances, and will try to block whatever path their prey is taking.",
-   "hp": 50,
-   "damage": [
-    10,
-    20
-   ],
-   "accuracy": 22,
-   "armor": [
-    0,
-    6
-   ],
-   "evasion": 17,
-   "exp": 9,
-   "maxLvl": 17,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/spinner.png",
-   "imgSize": [
-    49,
-    36
-   ],
-   "depths": [
-    12,
-    13,
-    15
-   ],
-   "region": "caves"
-  },
-  {
-   "id": "statue",
-   "cls": "Statue",
-   "name": "animated statue",
-   "kind": "enemy",
-   "desc": "You would think that it's just another one of this dungeon's inanimate statues, but its red glowing eyes give it away.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
-   "props": [
-    "INORGANIC"
-   ],
-   "group": "",
-   "depths": [],
-   "region": "other",
-   "img": "img/mobs/statue.png",
-   "imgSize": [
-    22,
-    64
-   ],
-   "where": "Guards weapon vaults"
-  },
-  {
-   "id": "succubus",
-   "cls": "Succubus",
-   "name": "succubus",
-   "kind": "enemy",
-   "desc": "Succubi are shapeshifting demons that manipulate the minds of their prey. This one has taken the form of a pale gothic humanoid, perhaps to attract dwarven warlocks?\n\nSuccubi may temporarily charm their enemy when they attack, making their enemy unable to directly attack them. When succubi attack a charmed enemy, they will steal some of their life essence.",
-   "hp": 80,
-   "damage": [
-    25,
-    30
-   ],
-   "accuracy": 40,
-   "armor": [
-    0,
-    10
-   ],
-   "evasion": 25,
-   "exp": 12,
-   "maxLvl": 25,
-   "props": [
-    "DEMONIC"
-   ],
-   "group": "",
-   "img": "img/mobs/succubus.png",
-   "imgSize": [
-    27,
-    48
-   ],
-   "depths": [
-    21,
-    22,
-    23,
-    26
-   ],
-   "region": "halls"
-  },
-  {
-   "id": "swarm",
-   "cls": "Swarm",
-   "name": "swarm of flies",
-   "kind": "enemy",
-   "desc": "The deadly swarm of flies buzzes angrily. Every non-magical attack will split it into two smaller but equally dangerous swarms.",
-   "hp": 50,
-   "damage": [
-    1,
-    4
-   ],
-   "accuracy": 10,
-   "armor": null,
-   "evasion": 5,
-   "exp": 3,
-   "maxLvl": 9,
-   "props": [],
-   "group": "",
-   "img": "img/mobs/swarm.png",
-   "imgSize": [
-    48,
-    44
-   ],
-   "depths": [
-    3,
-    5,
-    6
-   ],
-   "region": "sewers"
-  },
-  {
-   "id": "tengu",
-   "cls": "Tengu",
-   "name": "Tengu",
-   "kind": "boss",
-   "desc": "A famous and enigmatic assassin, named for the mask grafted to his face.\n\nTengu is held down with large clasps on his wrists and knees, though he seems to have gotten rid of his chains long ago.\n\nHe will try to use traps, deceptive magic, and precise attacks to eliminate the only thing stopping his escape: you.",
-   "hp": 200,
-   "damage": [
-    6,
-    12
-   ],
-   "accuracy": null,
-   "armor": [
-    0,
-    5
-   ],
-   "evasion": 15,
-   "exp": 20,
-   "maxLvl": null,
-   "props": [
-    "BOSS"
-   ],
-   "group": "",
-   "img": "img/mobs/tengu.png",
-   "imgSize": [
-    38,
-    50
-   ],
-   "depths": [
-    10
-   ],
-   "region": "prison"
+   "region": "prison",
+   "img": "img/mobs/skeleton.png"
   },
   {
    "id": "thief",
    "cls": "Thief",
+   "token": "Thief",
    "name": "crazy thief",
    "kind": "enemy",
+   "rare": false,
    "desc": "Though these inmates roam free of their cells, this place is still their prison. Over time, this place has taken their minds as well as their freedom. Long ago, these crazy thieves and bandits have forgotten who they are and why they steal.\n\nThese enemies are more likely to steal and run than they are to fight. Make sure to keep them in sight, or you might never see your stolen item again.",
    "hp": 20,
    "damage": [
@@ -6303,52 +5259,463 @@
    "props": [
     "UNDEAD"
    ],
-   "group": "",
-   "img": "img/mobs/thief.png",
-   "imgSize": [
-    37,
-    40
-   ],
    "depths": [
     6,
     7,
     8,
     10
    ],
-   "region": "prison"
+   "region": "prison",
+   "img": "img/mobs/thief.png"
   },
   {
-   "id": "tormentedspirit",
-   "cls": "TormentedSpirit",
-   "name": "tormented spirit",
+   "id": "dm100",
+   "cls": "DM100",
+   "token": "DM100",
+   "name": "DM-100",
    "kind": "enemy",
-   "desc": "Tormented spirits are otherwise good-natured spirits that have been afflicted by a curse. So long as they are cursed they will attack just like a wraith, and are more powerful as well!\n\nIt may be possible to cleanse the curse by using the right item while next to the spirit. If the curse is lifted the spirit will surely be grateful...",
-   "hp": 1,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 0,
-   "maxLvl": null,
+   "rare": false,
+   "desc": "The DM-100 is an early model of dwarven 'defense machine' which was designed to protect dwarven miners in the caves below this prison. Their electrical shocks proved too weak however, and so they were gifted to the human city above. They went unused for years and eventually found their way to the prison, where the warden initially deemed them too cruel to use. However, as the prisoners became more unruly they became a necessity.",
+   "hp": 20,
+   "damage": [
+    2,
+    8
+   ],
+   "accuracy": 11,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 8,
+   "exp": 6,
+   "maxLvl": 13,
    "props": [
-    "INORGANIC",
+    "ELECTRIC",
+    "INORGANIC"
+   ],
+   "depths": [
+    7,
+    8,
+    10
+   ],
+   "region": "prison",
+   "img": "img/mobs/dm100.png"
+  },
+  {
+   "id": "guard",
+   "cls": "Guard",
+   "token": "Guard",
+   "name": "prison guard",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Once keepers of the prison, these guards have long since become no different than the inmates. They shamble like zombies, brainlessly roaming through the halls in search of anything out of place, like you!\n\nThey carry chains around their hip, possibly used to pull in enemies to close range.",
+   "hp": 40,
+   "damage": [
+    4,
+    12
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    7
+   ],
+   "evasion": 10,
+   "exp": 7,
+   "maxLvl": 14,
+   "props": [
     "UNDEAD"
    ],
-   "group": "",
-   "img": "img/mobs/tormentedspirit.png",
-   "imgSize": [
-    30,
-    46
+   "depths": [
+    7,
+    8,
+    10
    ],
-   "depths": [],
-   "region": "other",
-   "where": "Bound to a cursed grave"
+   "region": "prison",
+   "img": "img/mobs/guard.png"
+  },
+  {
+   "id": "necromancer",
+   "cls": "Necromancer",
+   "token": "Necromancer",
+   "name": "necromancer",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These apprentice dark mages have flocked to the prison, as it is the perfect place to practise their evil craft.\n\nNecromancers will summon and empower skeletons to fight for them. Killing the necromancer will also kill the skeleton it summons.",
+   "hp": 40,
+   "damage": null,
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 14,
+   "exp": 7,
+   "maxLvl": 14,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    8,
+    10
+   ],
+   "region": "prison",
+   "img": "img/mobs/necromancer.png"
+  },
+  {
+   "id": "bat",
+   "cls": "Bat",
+   "token": "Bat",
+   "name": "vampire bat",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These brisk and tenacious inhabitants of the caves are much more dangerous than they seem. They replenish their health with each successful attack, which allows them to defeat much larger opponents.",
+   "hp": 30,
+   "damage": [
+    5,
+    18
+   ],
+   "accuracy": 16,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 15,
+   "exp": 7,
+   "maxLvl": 15,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/bat.png"
+  },
+  {
+   "id": "brute",
+   "cls": "Brute",
+   "token": "Brute",
+   "name": "gnoll brute",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Brutes are the largest, strongest, and toughest of all gnolls. When mortally wounded, they go berserk, gaining temporary shielding and a large boost to damage.",
+   "hp": 40,
+   "damage": [
+    15,
+    40
+   ],
+   "accuracy": 20,
+   "armor": [
+    0,
+    8
+   ],
+   "evasion": 15,
+   "exp": 8,
+   "maxLvl": 16,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/brute.png"
+  },
+  {
+   "id": "redshaman",
+   "cls": "RedShaman",
+   "token": "Shaman.RedShaman",
+   "name": "gnoll shaman (red)",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Gnoll shamans are intelligent gnolls who use battle spells to compensate for their lack of might. They have a very respected position in gnoll society, despite their weaker strength.\n\nThis shaman is wearing a red mask, and will use magic that temporarily _weakens your attacking power._",
+   "hp": 35,
+   "damage": [
+    5,
+    10
+   ],
+   "accuracy": 18,
+   "armor": [
+    0,
+    6
+   ],
+   "evasion": 15,
+   "exp": 8,
+   "maxLvl": 16,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/redshaman.png"
+  },
+  {
+   "id": "blueshaman",
+   "cls": "BlueShaman",
+   "token": "Shaman.BlueShaman",
+   "name": "gnoll shaman (blue)",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Gnoll shamans are intelligent gnolls who use battle spells to compensate for their lack of might. They have a very respected position in gnoll society, despite their weaker strength.\n\nThis shaman is wearing a blue mask, and will use magic that temporarily _increases the damage you take._",
+   "hp": 35,
+   "damage": [
+    5,
+    10
+   ],
+   "accuracy": 18,
+   "armor": [
+    0,
+    6
+   ],
+   "evasion": 15,
+   "exp": 8,
+   "maxLvl": 16,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/blueshaman.png"
+  },
+  {
+   "id": "purpleshaman",
+   "cls": "PurpleShaman",
+   "token": "Shaman.PurpleShaman",
+   "name": "gnoll shaman (purple)",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Gnoll shamans are intelligent gnolls who use battle spells to compensate for their lack of might. They have a very respected position in gnoll society, despite their weaker strength.\n\nThis shaman is wearing a purple mask, and will use magic that temporarily _reduces your accuracy and evasion._",
+   "hp": 35,
+   "damage": [
+    5,
+    10
+   ],
+   "accuracy": 18,
+   "armor": [
+    0,
+    6
+   ],
+   "evasion": 15,
+   "exp": 8,
+   "maxLvl": 16,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/purpleshaman.png"
+  },
+  {
+   "id": "spinner",
+   "cls": "Spinner",
+   "token": "Spinner",
+   "name": "cave spinner",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These greenish furry cave spiders try to avoid direct combat. Instead they prefer to wait in the distance while their victim struggles in their excreted cobweb, slowly dying from their venomous bite. They are capable of shooting their webs great distances, and will try to block whatever path their prey is taking.",
+   "hp": 50,
+   "damage": [
+    10,
+    20
+   ],
+   "accuracy": 22,
+   "armor": [
+    0,
+    6
+   ],
+   "evasion": 17,
+   "exp": 9,
+   "maxLvl": 17,
+   "props": [],
+   "depths": [
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/spinner.png"
+  },
+  {
+   "id": "dm200",
+   "cls": "DM200",
+   "token": "DM200",
+   "name": "DM-200",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "The DM-200 is the second generation of dwarven 'defense machine', which was designed to protect dwarven miners in the caves and city below. They are much larger and bulkier than their predecessors, and attack with devastating hydraulic fists.\n\nTheir increased size is also their primary weakness, as they are unable to fit into the narrow tunnels and doorways of the dungeon. The dwarves were able to compensate for the DM-200's lack of mobility by allowing them to vent their toxic exhaust fumes at distant enemies, or enemies they cannot reach.",
+   "hp": 80,
+   "damage": [
+    10,
+    25
+   ],
+   "accuracy": 20,
+   "armor": [
+    0,
+    8
+   ],
+   "evasion": 12,
+   "exp": 9,
+   "maxLvl": 17,
+   "props": [
+    "INORGANIC",
+    "LARGE"
+   ],
+   "depths": [
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/dm200.png"
+  },
+  {
+   "id": "ghoul",
+   "cls": "Ghoul",
+   "token": "Ghoul",
+   "name": "dwarven ghoul",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "As dwarven society slowly began to collapse, and the current king of the dwarves seized absolute power, those who were weak or who resisted him were not treated well. As the king grew more adept at wielding dark magic, he bent these dwarves to his will, and now they make up the footsoldiers of his army.\n\nGhouls are not especially strong on their own, but always travel in groups and are much harder to kill in large numbers. _When a ghoul is defeated, it will rise again after a few turns as long as another ghoul is nearby._",
+   "hp": 45,
+   "damage": [
+    16,
+    22
+   ],
+   "accuracy": 24,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 20,
+   "exp": 5,
+   "maxLvl": 20,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    16,
+    17,
+    18
+   ],
+   "region": "city",
+   "img": "img/mobs/ghoul.png"
+  },
+  {
+   "id": "fireelemental",
+   "cls": "FireElemental",
+   "token": "Elemental.FireElemental",
+   "name": "fire elemental",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Elementals are chaotic creatures that are often created when powerful occult magic isn't properly controlled. Elementals have minimal intelligence, and are usually associated with a particular type of magic.\n\nFire elementals are a common type of elemental which deals damage with fiery magic. They will set their target ablaze with melee attacks, and can occasionally shoot bolts of fire as well.",
+   "hp": 60,
+   "damage": [
+    20,
+    25
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 20,
+   "exp": 10,
+   "maxLvl": 20,
+   "props": [
+    "FIERY"
+   ],
+   "depths": [
+    16,
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/fireelemental.png"
+  },
+  {
+   "id": "frostelemental",
+   "cls": "FrostElemental",
+   "token": "Elemental.FrostElemental",
+   "name": "frost elemental",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Elementals are chaotic creatures that are often created when powerful occult magic isn't properly controlled. Elementals have minimal intelligence, and are usually associated with a particular type of magic.\n\nFrost elementals are a common type of elemental which weakens enemies with chilling magic. They will chill their target with melee and occasional ranged attacks. Their magic is much more effective in water.",
+   "hp": 60,
+   "damage": [
+    20,
+    25
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 20,
+   "exp": 10,
+   "maxLvl": 20,
+   "props": [
+    "ICY"
+   ],
+   "depths": [
+    16,
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/frostelemental.png"
+  },
+  {
+   "id": "shockelemental",
+   "cls": "ShockElemental",
+   "token": "Elemental.ShockElemental",
+   "name": "shock elemental",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Elementals are chaotic creatures that are often created when powerful occult magic isn't properly controlled. Elementals have minimal intelligence, and are usually associated with a particular type of magic.\n\nShock elementals are a less common type of elemental which disrupts its enemies with electricity and flashes of light. In melee they will arc electricity to nearby enemies, and deal bonus damage to their primary target if they are in water. They will also occasionally focus a ranged blast of light at their target, temporarily blinding them.",
+   "hp": 60,
+   "damage": [
+    20,
+    25
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 20,
+   "exp": 10,
+   "maxLvl": 20,
+   "props": [
+    "ELECTRIC"
+   ],
+   "depths": [
+    16,
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/shockelemental.png"
   },
   {
    "id": "warlock",
    "cls": "Warlock",
+   "token": "Warlock",
    "name": "dwarf warlock",
    "kind": "enemy",
+   "rare": false,
    "desc": "As the dwarves' interests shifted from engineering to arcane arts, warlocks came to power in the city. They started with elemental magic, but soon switched to demonology and necromancy. The strongest of these warlocks seized the throne of the dwarven city, and his cohorts were allowed to continue practising their dark magic, so long as they surrendered their free will to him.\n\nThese warlocks possess powerful disruptive magic, and are able to temporarily hinder the upgrade magic applied to your equipment. The more upgraded an item is, the more strongly it will be affected.",
    "hp": 70,
    "damage": [
@@ -6366,11 +5733,784 @@
    "props": [
     "UNDEAD"
    ],
-   "group": "",
-   "img": "img/mobs/warlock.png",
+   "depths": [
+    16,
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/warlock.png"
+  },
+  {
+   "id": "monk",
+   "cls": "Monk",
+   "token": "Monk",
+   "name": "dwarf monk",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These monks are fanatics, who have devoted themselves to protecting their king through physical might. So great is their devotion that they have totally surrendered their minds to their king, and now roam the dwarven city like mindless zombies.\n\nMonks rely solely on the art of hand-to-hand combat, and are able to use their unarmed fists both for offense and defense. When they become focused, monks will parry the next physical attack used against them, even if it was otherwise guaranteed to hit. Monks build focus more quickly while on the move, and more slowly when in direct combat.",
+   "hp": 70,
+   "damage": [
+    12,
+    25
+   ],
+   "accuracy": 30,
+   "armor": [
+    0,
+    2
+   ],
+   "evasion": 30,
+   "exp": 11,
+   "maxLvl": 21,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/monk.png"
+  },
+  {
+   "id": "golem",
+   "cls": "Golem",
+   "token": "Golem",
+   "name": "golem",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Golems are an attempt to correct the previous flaws in dwarven machinery via the dwarves newfound use of magic. They are much more compact and efficient compared to the DM-300 while still being very deadly.\n\nWhile golems are still too large to fit into passageways, the dwarves have given them new magical abilities to compensate. Golems can teleport themselves between rooms, and teleport enemies to them when they are out of reach.",
+   "hp": 120,
+   "damage": [
+    25,
+    30
+   ],
+   "accuracy": 28,
+   "armor": [
+    0,
+    9
+   ],
+   "evasion": 15,
+   "exp": 12,
+   "maxLvl": 22,
+   "props": [
+    "INORGANIC",
+    "LARGE"
+   ],
+   "depths": [
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/golem.png"
+  },
+  {
+   "id": "ripperdemon",
+   "cls": "RipperDemon",
+   "token": "RipperDemon",
+   "name": "ripper demon",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These horrific creatures are the result of the many dwarven corpses in this region being put to use by demonic forces. Rippers are emaciated ghoulish creatures that resemble dwarves, but with broken bodies and long sharp claws made of bone.\n\nRipper demons are not particularly durable, but they are agile and dangerous. They are capable of leaping great distances to quickly reach targets before goring them with their claws.",
+   "hp": 60,
+   "damage": [
+    15,
+    25
+   ],
+   "accuracy": 30,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 22,
+   "exp": 9,
+   "maxLvl": null,
+   "props": [
+    "DEMONIC",
+    "UNDEAD"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/ripperdemon.png"
+  },
+  {
+   "id": "demonspawner",
+   "cls": "DemonSpawner",
+   "token": "DemonSpawner",
+   "name": "demon spawner",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "This twisting amalgam of dwarven flesh is responsible for creating ripper demons from the dwarves that have died in this region. Clearly the demons see no issue with using every resource they can against their enemies.\n\nWhile visually terrifying, demon spawners have no means of moving or directly defending themselves. Their considerable mass makes them hard to kill quickly however, and they will spawn ripper demons more quickly when they are under threat.\n\n_Demon spawners seem to be connected to some central source of demonic power. Killing them may weaken it._",
+   "hp": 120,
+   "damage": null,
+   "accuracy": null,
+   "armor": [
+    0,
+    12
+   ],
+   "evasion": null,
+   "exp": 15,
+   "maxLvl": 29,
+   "props": [
+    "DEMONIC",
+    "IMMOVABLE",
+    "MINIBOSS",
+    "STATIC"
+   ],
+   "depths": [],
+   "region": "halls",
+   "img": "img/mobs/demonspawner.png"
+  },
+  {
+   "id": "succubus",
+   "cls": "Succubus",
+   "token": "Succubus",
+   "name": "succubus",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Succubi are shapeshifting demons that manipulate the minds of their prey. This one has taken the form of a pale gothic humanoid, perhaps to attract dwarven warlocks?\n\nSuccubi may temporarily charm their enemy when they attack, making their enemy unable to directly attack them. When succubi attack a charmed enemy, they will steal some of their life essence.",
+   "hp": 80,
+   "damage": [
+    25,
+    30
+   ],
+   "accuracy": 40,
+   "armor": [
+    0,
+    10
+   ],
+   "evasion": 25,
+   "exp": 12,
+   "maxLvl": 25,
+   "props": [
+    "DEMONIC"
+   ],
+   "depths": [
+    21,
+    22,
+    23,
+    26
+   ],
+   "region": "halls",
+   "img": "img/mobs/succubus.png"
+  },
+  {
+   "id": "eye",
+   "cls": "Eye",
+   "token": "Eye",
+   "name": "evil eye",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Evil Eyes are floating balls of pent up demonic energy. While they are capable of melee combat, their true strength comes from their magic.\n\nAfter building energy for a short time an Evil Eye will unleash a devastating beam of energy called the _deathgaze._ Anything within the Evil Eye's sights will take tremendous damage, wise adventurers will run for cover.",
+   "hp": 100,
+   "damage": [
+    20,
+    30
+   ],
+   "accuracy": 30,
+   "armor": [
+    0,
+    10
+   ],
+   "evasion": 20,
+   "exp": 13,
+   "maxLvl": 26,
+   "props": [
+    "DEMONIC"
+   ],
+   "depths": [
+    21,
+    22,
+    23,
+    26
+   ],
+   "region": "halls",
+   "img": "img/mobs/eye.png"
+  },
+  {
+   "id": "scorpio",
+   "cls": "Scorpio",
+   "token": "Scorpio",
+   "name": "scorpio",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These huge arachnid-like demonic creatures avoid close combat, preferring to fire crippling serrated spikes from long distances.",
+   "hp": 110,
+   "damage": [
+    30,
+    40
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    12
+   ],
+   "evasion": 24,
+   "exp": 14,
+   "maxLvl": 27,
+   "props": [
+    "DEMONIC"
+   ],
+   "depths": [
+    23,
+    26
+   ],
+   "region": "halls",
+   "img": "img/mobs/scorpio.png"
+  },
+  {
+   "id": "albino",
+   "cls": "Albino",
+   "token": "Albino",
+   "name": "albino rat",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "This is a rare breed of marsupial rat, with pure white fur and jagged teeth.",
+   "hp": 12,
+   "damage": [
+    1,
+    4
+   ],
+   "accuracy": 8,
+   "armor": [
+    0,
+    1
+   ],
+   "evasion": 2,
+   "exp": 2,
+   "maxLvl": 5,
+   "props": [],
+   "depths": [
+    1,
+    2,
+    3
+   ],
+   "region": "sewers",
+   "img": "img/mobs/albino.png"
+  },
+  {
+   "id": "gnollexile",
+   "cls": "GnollExile",
+   "token": "GnollExile",
+   "name": "gnoll exile",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "This grey-furred gnoll has a large mark on its shoulder, denoting it as an exile. Gnolls are usually exiled from their society for ignoring orders or breaking laws. Exiles have to be strong and shrewd to survive, this one looks like it knows how to use the spear it's holding.",
+   "hp": 24,
+   "damage": [
+    1,
+    10
+   ],
+   "accuracy": 15,
+   "armor": [
+    0,
+    1
+   ],
+   "evasion": 6,
+   "exp": 2,
+   "maxLvl": 8,
+   "props": [],
+   "depths": [
+    2,
+    3,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/gnollexile.png"
+  },
+  {
+   "id": "hermitcrab",
+   "cls": "HermitCrab",
+   "token": "HermitCrab",
+   "name": "hermit crab",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "For one reason or another, this sewer crab has decided to wear the broken upper part of a barrel on its head! The extra weight has slown it down to regular speed, but has also granted it considerably more defence. You think you can hear something bouncing around inside the barrel though...",
+   "hp": 25,
+   "damage": [
+    1,
+    7
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": 5,
+   "exp": 4,
+   "maxLvl": 9,
+   "props": [],
+   "depths": [
+    3,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/hermitcrab.png"
+  },
+  {
+   "id": "causticslime",
+   "cls": "CausticSlime",
+   "token": "CausticSlime",
+   "name": "caustic slime",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "This slime seems to have been tainted by the dark magic emanating from below. It has lost its usual green color, and drips with caustic ooze.",
+   "hp": 20,
+   "damage": [
+    2,
+    5
+   ],
+   "accuracy": 12,
+   "armor": null,
+   "evasion": 5,
+   "exp": 4,
+   "maxLvl": 9,
+   "props": [
+    "ACIDIC"
+   ],
+   "depths": [
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/causticslime.png"
+  },
+  {
+   "id": "bandit",
+   "cls": "Bandit",
+   "token": "Bandit",
+   "name": "crazy bandit",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "An elite thief, distinguished by their more opulent purple robe. Despite their greater skill, they've become just as mindless as regular thieves.\n\nIn addition to stealing from you, crazed bandits will briefly blind, cripple, and poison you! They're much more likely to be carrying extra loot than a regular thief though.",
+   "hp": 20,
+   "damage": [
+    1,
+    10
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    3
+   ],
+   "evasion": 12,
+   "exp": 5,
+   "maxLvl": 11,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    6,
+    7,
+    8,
+    10
+   ],
+   "region": "prison",
+   "img": "img/mobs/bandit.png"
+  },
+  {
+   "id": "spectralnecromancer",
+   "cls": "SpectralNecromancer",
+   "token": "SpectralNecromancer",
+   "name": "spectral necromancer",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "While Skeletons are a necromancer\u2019s bread and butter, some prefer to look into other less corporeal minions. Spectral necromancers have chosen wraiths as their minion of choice!\n\nIndividual wraiths aren't as strong as skeletons, but these necromancers aren't afraid to summon a bunch of them!",
+   "hp": 40,
+   "damage": null,
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 14,
+   "exp": 7,
+   "maxLvl": 14,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    8,
+    10
+   ],
+   "region": "prison",
+   "img": "img/mobs/spectralnecromancer.png"
+  },
+  {
+   "id": "armoredbrute",
+   "cls": "ArmoredBrute",
+   "token": "ArmoredBrute",
+   "name": "armored brute",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "The most senior gnoll brutes often wear powerful armor to show their status. The armor makes these brutes much more resilient to physical damage, and their greater discipline means they can rage for much longer before succumbing to their wounds.",
+   "hp": 40,
+   "damage": [
+    15,
+    40
+   ],
+   "accuracy": 20,
+   "armor": [
+    0,
+    8
+   ],
+   "evasion": 15,
+   "exp": 8,
+   "maxLvl": 16,
+   "props": [],
+   "depths": [
+    11,
+    12,
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/armoredbrute.png"
+  },
+  {
+   "id": "dm201",
+   "cls": "DM201",
+   "token": "DM201",
+   "name": "DM-201",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "The dwarves briefly experimented with more heavily emphasizing the DM-200's lack of mobility and created some DM models that are entirely stationary. The DM-201 is a retrofitted DM-200 which acts as a sentry turret that has no movement ability. In exchange for the lack of mobility, DM-201s have significantly more durability and attacking power.\n\nAs DM-201s have no engine to vent exhaust from, the dwarves instead outfitted them with corrosive gas grenades! DM-201s are careful with these grenades however, and will only lob them when attacked from a distance.",
+   "hp": 120,
+   "damage": [
+    15,
+    25
+   ],
+   "accuracy": 20,
+   "armor": [
+    0,
+    8
+   ],
+   "evasion": 12,
+   "exp": 9,
+   "maxLvl": 17,
+   "props": [
+    "IMMOVABLE",
+    "INORGANIC",
+    "LARGE"
+   ],
+   "depths": [
+    13,
+    15
+   ],
+   "region": "caves",
+   "img": "img/mobs/dm201.png"
+  },
+  {
+   "id": "chaoselemental",
+   "cls": "ChaosElemental",
+   "token": "Elemental.ChaosElemental",
+   "name": "chaos elemental",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "Elementals are chaotic creatures that are often created when powerful occult magic isn't properly controlled. Elementals have minimal intelligence, and are usually associated with a particular type of magic.\n\nChaos elementals are rare and dangerous elementals which haven't stabilized to a particular element. They will unleash wild unpredictable magic when they attack.",
+   "hp": 60,
+   "damage": [
+    20,
+    25
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 20,
+   "exp": 10,
+   "maxLvl": 20,
+   "props": [],
+   "depths": [
+    16,
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/chaoselemental.png"
+  },
+  {
+   "id": "senior",
+   "cls": "Senior",
+   "token": "Senior",
+   "name": "senior monk",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "These monks are fanatics, who have devoted themselves to protecting their king through physical might. So great is their devotion that they have totally surrendered their minds to their king, and now roam the dwarven city like mindless zombies.\n\nThis monk has mastered the art of hand-to-hand combat, and is able to gain focus while moving much more quickly than regular monks. When they become focused, monks will parry the next physical attack used against them, even if it was otherwise guaranteed to hit. Monks build focus more quickly while on the move, and more slowly when in direct combat.",
+   "hp": 70,
+   "damage": [
+    16,
+    25
+   ],
+   "accuracy": 30,
+   "armor": [
+    0,
+    2
+   ],
+   "evasion": 30,
+   "exp": 11,
+   "maxLvl": 21,
+   "props": [
+    "UNDEAD"
+   ],
+   "depths": [
+    17,
+    18,
+    20
+   ],
+   "region": "city",
+   "img": "img/mobs/senior.png"
+  },
+  {
+   "id": "acidic",
+   "cls": "Acidic",
+   "token": "Acidic",
+   "name": "acidic scorpio",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "These huge arachnid-like demonic creatures avoid close combat, preferring to fire crippling serrated spikes from long distances. This one appears to be dripping with corrosive ooze.",
+   "hp": 110,
+   "damage": [
+    30,
+    40
+   ],
+   "accuracy": 36,
+   "armor": [
+    0,
+    12
+   ],
+   "evasion": 24,
+   "exp": 14,
+   "maxLvl": 27,
+   "props": [
+    "ACIDIC",
+    "DEMONIC"
+   ],
+   "depths": [
+    23,
+    26
+   ],
+   "region": "halls",
+   "img": "img/mobs/acidic.png"
+  },
+  {
+   "id": "tormentedspirit",
+   "cls": "TormentedSpirit",
+   "token": "TormentedSpirit",
+   "name": "tormented spirit",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "Tormented spirits are otherwise good-natured spirits that have been afflicted by a curse. So long as they are cursed they will attack just like a wraith, and are more powerful as well!\n\nIt may be possible to cleanse the curse by using the right item while next to the spirit. If the curse is lifted the spirit will surely be grateful...",
+   "hp": 1,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC",
+    "UNDEAD"
+   ],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/tormentedspirit.png",
+   "where": "Bound to a cursed grave"
+  },
+  {
+   "id": "phantompiranha",
+   "cls": "PhantomPiranha",
+   "token": "PhantomPiranha",
+   "name": "phantom piranha",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "Phantom piranhas are a rare breed of piranha with magical abilities and eerie translucent bodies. They are capable of teleporting as they are being attacked, either to escape or to quickly get close to their enemy!\n\nWhile they are annoying to fight, their meat is prized for its magical properties.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/phantompiranha.png",
+   "where": "Lurks in deep water"
+  },
+  {
+   "id": "crystalmimic",
+   "cls": "CrystalMimic",
+   "token": "CrystalMimic",
+   "name": "crystal mimic",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nCrystal mimics are trickier than their regular cousins, and prefer to avoid conflict while stealing loot. They will attempt to sprint away once discovered, and have the ability to reposition enemies when they attack.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [
+    "DEMONIC"
+   ],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/crystalmimic.png",
+   "where": "Hides as a chest in any region"
+  },
+  {
+   "id": "armoredstatue",
+   "cls": "ArmoredStatue",
+   "token": "ArmoredStatue",
+   "name": "armored statue",
+   "kind": "enemy",
+   "rare": true,
+   "desc": "You would think that it's just another one of this dungeon's inanimate statues, but its red glowing eyes give it away.\n\nIt seems to be in great condition because of the armor it's wearing, it might be very hard to kill.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/armoredstatue.png",
    "imgSize": [
-    33,
-    46
+    22,
+    64
+   ],
+   "where": "Guards armor vaults"
+  },
+  {
+   "id": "fetidrat",
+   "cls": "FetidRat",
+   "token": "FetidRat",
+   "name": "fetid rat",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "Something is clearly wrong with this rat. Its greasy black fur and rotting skin are very different from the healthy rats you've seen previously. Its pale green eyes make it seem especially menacing.\n\nThe rat carries a cloud of horrible stench with it, it's overpoweringly strong up close.\n\nDark ooze dribbles from the rat's mouth, it eats through the floor but seems to dissolve in water.",
+   "hp": 20,
+   "damage": [
+    1,
+    4
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    2
+   ],
+   "evasion": 5,
+   "exp": 4,
+   "maxLvl": 5,
+   "props": [
+    "DEMONIC",
+    "MINIBOSS"
+   ],
+   "depths": [
+    1,
+    2,
+    3
+   ],
+   "region": "sewers",
+   "img": "img/mobs/fetidrat.png"
+  },
+  {
+   "id": "gnolltrickster",
+   "cls": "GnollTrickster",
+   "token": "GnollTrickster",
+   "name": "gnoll trickster",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "A strange looking creature, even by gnoll standards. It hunches forward with a wicked grin, almost cradling the satchel hanging over its shoulder. Its eyes are wide with a strange mix of fear and excitement.\n\nThere is a large collection of poorly made darts in its satchel, they all seem to be tipped with various harmful substances.",
+   "hp": 20,
+   "damage": [
+    1,
+    6
+   ],
+   "accuracy": 16,
+   "armor": [
+    0,
+    2
+   ],
+   "evasion": 5,
+   "exp": 5,
+   "maxLvl": 8,
+   "props": [
+    "MINIBOSS"
+   ],
+   "depths": [
+    2,
+    3,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/gnolltrickster.png"
+  },
+  {
+   "id": "greatcrab",
+   "cls": "GreatCrab",
+   "token": "GreatCrab",
+   "name": "great crab",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "This crab is gigantic, even compared to other sewer crabs. Its blue shell is covered in cracks and barnacles, showing great age. It lumbers around slowly, barely keeping balance with its massive claw.\n\nWhile the crab only has one claw, its size easily compensates. The crab holds the claw in front of any threat, shielding itself behind an impenetrable wall of carapace. However, the crab cannot block attacks it doesn't see coming, or attacks from multiple enemies at once.",
+   "hp": 25,
+   "damage": [
+    1,
+    7
+   ],
+   "accuracy": 12,
+   "armor": [
+    0,
+    4
+   ],
+   "evasion": null,
+   "exp": 6,
+   "maxLvl": 9,
+   "props": [
+    "MINIBOSS"
+   ],
+   "depths": [
+    3,
+    5
+   ],
+   "region": "sewers",
+   "img": "img/mobs/greatcrab.png"
+  },
+  {
+   "id": "newbornfireelemental",
+   "cls": "NewbornFireElemental",
+   "token": "Elemental.NewbornFireElemental",
+   "name": "newborn fire elemental",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "Elementals are chaotic creatures that are often created when powerful occult magic isn't properly controlled. Elementals have minimal intelligence, and are usually associated with a particular type of magic.\n\nThis fire elemental is freshly summoned, but still quite dangerous!",
+   "hp": 60,
+   "damage": [
+    10,
+    12
+   ],
+   "accuracy": null,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": 12,
+   "exp": 10,
+   "maxLvl": 20,
+   "props": [
+    "FIERY",
+    "MINIBOSS"
    ],
    "depths": [
     16,
@@ -6378,13 +6518,74 @@
     18,
     20
    ],
-   "region": "city"
+   "region": "prison",
+   "img": "img/mobs/newbornfireelemental.png"
+  },
+  {
+   "id": "rotlasher",
+   "cls": "RotLasher",
+   "token": "RotLasher",
+   "name": "rot lasher",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "The rot lasher is a part of a mature rotberry plant's root structure, and also their primary means of defense. Lashers are blind and stuck into the ground, but will violently assault any nearby threat after taking a moment to detect them. When there is no nearby enemies, they stand motionless, attempting to blend in with surrounding vegetation.",
+   "hp": 80,
+   "damage": [
+    10,
+    20
+   ],
+   "accuracy": 25,
+   "armor": [
+    0,
+    8
+   ],
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE",
+    "MINIBOSS"
+   ],
+   "depths": [],
+   "region": "prison",
+   "img": "img/mobs/rotlasher.png",
+   "where": "Rotberry garden"
+  },
+  {
+   "id": "rotheart",
+   "cls": "RotHeart",
+   "token": "RotHeart",
+   "name": "rot heart",
+   "kind": "miniboss",
+   "rare": false,
+   "desc": "A Rotberry's fruit is very unique. Instead of rotting away and providing nutrients, the fruit grows, hardens, and encompasses the seed. It provides protection for the internal organs which grow inside the fruit. This giant orb is referred to as the heart of an adult rotberry plant.",
+   "hp": 80,
+   "damage": null,
+   "accuracy": 0,
+   "armor": [
+    0,
+    5
+   ],
+   "evasion": null,
+   "exp": 4,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE",
+    "MINIBOSS",
+    "STATIC"
+   ],
+   "depths": [],
+   "region": "prison",
+   "img": "img/mobs/rotheart.png",
+   "where": "Rotberry garden"
   },
   {
    "id": "wraith",
    "cls": "Wraith",
+   "token": "Wraith",
    "name": "wraith",
    "kind": "enemy",
+   "rare": false,
    "desc": "A wraith is a vengeful spirit of a sinner, whose grave or tomb was disturbed. Being an ethereal entity, it is very hard to hit with a regular weapon.",
    "hp": 1,
    "damage": null,
@@ -6397,167 +6598,162 @@
     "INORGANIC",
     "UNDEAD"
    ],
-   "group": "",
-   "img": "img/mobs/wraith.png",
-   "imgSize": [
-    40,
-    46
-   ],
    "depths": [],
    "region": "other",
+   "img": "img/mobs/wraith.png",
    "where": "Rises from disturbed graves"
   },
   {
-   "id": "yogdzewa",
-   "cls": "YogDzewa",
-   "name": "Yog-Dzewa",
-   "kind": "boss",
-   "desc": "Yog-Dzewa is an Old God; a great monstrosity which reaches into mortal worlds and devours them to fuel its endless growth. The dwarves must have attracted the attention of this cosmic horror while toying with dark magics, and have been trying to keep it contained ever since.\n\nYog-Dzewa originates from a dimension of raw magical chaos, and cannot bring its true form into this world. Instead it has created avatars and summoned demonic minions to do its bidding here.\n\nThis giant eye is the focal point of Yog-Dzewa's power in this world. While the eye itself is immobile, it is capable of shooting powerful beams of demonic magic and summoning a variety of minions to aid it.",
-   "hp": 1000,
-   "damage": [
-    15,
-    25
-   ],
-   "accuracy": 30,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 12,
-   "exp": 50,
+   "id": "piranha",
+   "cls": "Piranha",
+   "token": "Piranha",
+   "name": "giant piranha",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "These carnivorous fish are bred specifically to protect flooded areas. Their bite is deadly, so it's best to avoid confronting them directly.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/piranha.png",
+   "where": "Lurks in deep water"
+  },
+  {
+   "id": "mimic",
+   "cls": "Mimic",
+   "token": "Mimic",
+   "name": "mimic",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nMimics have a nasty bite, but often hold more treasure than a regular chest.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
    "maxLvl": null,
    "props": [
-    "BOSS",
-    "BOSS_MINION",
-    "DEMONIC",
-    "IMMOVABLE",
-    "STATIC"
+    "DEMONIC"
    ],
-   "group": "",
-   "img": "img/mobs/yogdzewa.png",
-   "imgSize": [
-    59,
-    58
-   ],
-   "depths": [
-    25
-   ],
-   "region": "halls"
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/mimic.png",
+   "where": "Hides as a chest in any region"
   },
   {
-   "id": "vaultdm100",
-   "cls": "VaultDM100",
-   "name": "modified DM-100",
+   "id": "goldenmimic",
+   "cls": "GoldenMimic",
+   "token": "GoldenMimic",
+   "name": "golden mimic",
    "kind": "enemy",
-   "desc": "These DM-100s look almost identical to ones you'd find in the prison, but with a bright teal glow coming from their eye. Probably they have been retrofitted to use some more modern dwarven power source.\n\nThey act just like regular DM-100s. Their ability to arc lightning at a distance is still present despite the power source change, and their cleaner condition makes them a bit more durable.",
-   "hp": 20,
-   "damage": [
-    2,
-    8
-   ],
-   "accuracy": 25,
-   "armor": [
-    0,
-    4
-   ],
-   "evasion": 18,
+   "rare": false,
+   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nGolden mimics are tougher mimics which try to attract the strongest adventurers. They have better loot, but are also much stronger than regular mimics.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
    "exp": 0,
-   "maxLvl": 30,
+   "maxLvl": null,
    "props": [
-    "ELECTRIC",
+    "DEMONIC"
+   ],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/goldenmimic.png",
+   "where": "Hides as a chest in any region"
+  },
+  {
+   "id": "ebonymimic",
+   "cls": "EbonyMimic",
+   "token": "EbonyMimic",
+   "name": "ebony mimic",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "Mimics are magical creatures which can take any shape they wish. In dungeons they almost always choose a shape of a treasure chest, in order to lure in unsuspecting adventurers.\n\nEbony mimics are stealthy mimics with the ability to make themselves almost invisible. They lurk on things that adventurers are likely to interact with, but do contain loot of their own as well. They aren't any tougher than a regular mimic once discovered, but their surprise bite is devastating.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [
+    "DEMONIC"
+   ],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/ebonymimic.png",
+   "where": "Hides as a chest in any region"
+  },
+  {
+   "id": "statue",
+   "cls": "Statue",
+   "token": "Statue",
+   "name": "animated statue",
+   "kind": "enemy",
+   "rare": false,
+   "desc": "You would think that it's just another one of this dungeon's inanimate statues, but its red glowing eyes give it away.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [
     "INORGANIC"
    ],
-   "group": "quest/vault",
-   "img": "img/mobs/vaultdm100.png",
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/statue.png",
    "imgSize": [
-    35,
-    42
+    22,
+    64
    ],
-   "depths": [
-    7,
-    8,
-    10
-   ],
-   "region": "prison"
+   "where": "Guards weapon vaults"
   },
   {
-   "id": "vaultdm200",
-   "cls": "VaultDM200",
-   "name": "modified DM-200",
+   "id": "guardiantrap-guardian",
+   "cls": "Guardian",
+   "token": "GuardianTrap.Guardian",
+   "name": "summoned guardian",
    "kind": "enemy",
-   "desc": "These DM-200s look just like their counterparts from the caves, but with glowing teal eyes. They have probably been retrofitted with a more modern dwarven power source.\n\nJust like in their caves counterparts, these DM-200s are too large to fit into enclosed spaces, and are still capable of spewing gas.",
-   "hp": 80,
-   "damage": [
-    10,
-    25
-   ],
-   "accuracy": 28,
-   "armor": [
-    0,
-    8
-   ],
-   "evasion": 15,
+   "rare": false,
+   "desc": "This blue apparition seems to be a summoned echo of one of the dungeon's stone guardians.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
    "exp": 0,
-   "maxLvl": 30,
+   "maxLvl": null,
    "props": [
-    "INORGANIC",
-    "LARGE"
+    "INORGANIC"
    ],
-   "group": "quest/vault",
-   "img": "img/mobs/vaultdm200.png",
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/guardiantrap-guardian.png",
    "imgSize": [
-    46,
-    56
-   ],
-   "depths": [
-    13,
-    15
-   ],
-   "region": "caves"
+    22,
+    64
+   ]
   },
   {
-   "id": "vaultskeleton",
-   "cls": "VaultSkeleton",
-   "name": "dwarven skeleton",
+   "id": "sentryroom-sentry",
+   "cls": "Sentry",
+   "token": "SentryRoom.Sentry",
+   "name": "red sentry",
    "kind": "enemy",
-   "desc": "These would look like normal skeletons from the prison if it weren't for their stunning amount of facial hair. It seems like some dwarves weren't above necromancy even before their new King took over.\n\nThey act just like regular skeletons, including exploding into bone shards on death. Paradoxically, their beards seem to offer them a little more protection too.",
-   "hp": 25,
-   "damage": [
-    2,
-    10
-   ],
-   "accuracy": 24,
-   "armor": [
-    0,
-    5
-   ],
-   "evasion": 20,
-   "exp": 0,
-   "maxLvl": 30,
-   "props": [
-    "INORGANIC",
-    "UNDEAD"
-   ],
-   "group": "quest/vault",
-   "img": "img/mobs/vaultskeleton.png",
-   "imgSize": [
-    27,
-    46
-   ],
-   "depths": [
-    6,
-    7,
-    8,
-    10
-   ],
-   "region": "prison"
-  },
-  {
-   "id": "anvil",
-   "cls": "Anvil",
-   "name": "anvil",
-   "kind": "npc",
-   "desc": "A heavy iron anvil. With the right materials you can reforge, enhance and repair your gear here.",
+   "rare": false,
+   "desc": "This blood-red sentry seems to be positioned here to guard the treasure at the other end of this room. It will fire beams of disintegration magic at you if you step in the area it defends.\n\nIt's immune to all harmful effects and can see through invisibility, but seems to take a while to charge up before it starts firing.\n\nSomehow the sentry only wants to fire on you, as if it knows that the denizens of the dungeon are no threat to the treasure.",
    "hp": null,
    "damage": null,
    "accuracy": null,
@@ -6566,23 +6762,105 @@
    "exp": 1,
    "maxLvl": null,
    "props": [
-    "IMMOVABLE",
-    "INORGANIC"
-   ],
-   "group": "npcs",
-   "img": "img/mobs/anvil.png",
-   "imgSize": [
-    16,
-    16
+    "IMMOVABLE"
    ],
    "depths": [],
-   "region": "npc"
+   "region": "other",
+   "img": "img/mobs/sentryroom-sentry.png"
+  },
+  {
+   "id": "ghost",
+   "cls": "Ghost",
+   "token": "Ghost",
+   "name": "sad ghost",
+   "kind": "npc",
+   "rare": false,
+   "desc": "The ghost is barely visible. It looks like a shapeless spot of faint light with a sorrowful face.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "LARGE"
+   ],
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/ghost.png"
+  },
+  {
+   "id": "ratking",
+   "cls": "RatKing",
+   "token": "RatKing",
+   "name": "rat king",
+   "kind": "npc",
+   "rare": false,
+   "desc": "This rat is a little bigger than a regular marsupial rat. It's wearing a tiny crown on its head.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/ratking.png"
+  },
+  {
+   "id": "shopkeeper",
+   "cls": "Shopkeeper",
+   "token": "Shopkeeper",
+   "name": "shopkeeper",
+   "kind": "npc",
+   "rare": false,
+   "desc": "This stout guy looks more appropriate for a trade district in some large city than for a dungeon. His prices explain why he prefers to do business here.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE"
+   ],
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/shopkeeper.png"
+  },
+  {
+   "id": "wandmaker",
+   "cls": "Wandmaker",
+   "token": "Wandmaker",
+   "name": "old wandmaker",
+   "kind": "npc",
+   "rare": false,
+   "desc": "This old yet hale gentleman wears a slightly confused expression. He is protected by a magic shield.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE"
+   ],
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/wandmaker.png"
   },
   {
    "id": "blacksmith",
    "cls": "Blacksmith",
+   "token": "Blacksmith",
    "name": "troll blacksmith",
    "kind": "npc",
+   "rare": false,
    "desc": "This troll blacksmith looks like all trolls look: he is tall and lean, and his skin resembles stone in both color and texture. The troll blacksmith is tinkering with disproportionally small tools.",
    "hp": null,
    "damage": null,
@@ -6594,14 +6872,322 @@
    "props": [
     "IMMOVABLE"
    ],
-   "group": "npcs",
-   "img": "img/mobs/blacksmith.png",
-   "imgSize": [
-    27,
-    48
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/blacksmith.png"
+  },
+  {
+   "id": "imp",
+   "cls": "Imp",
+   "token": "Imp",
+   "name": "ambitious imp",
+   "kind": "npc",
+   "rare": false,
+   "desc": "This little red person look like an Imp. Imps are lesser demons, notable for their intelligence and not their strength.\n\nYou've only heard about demons in ancient folk tales though, which usually describe them as travelers from another world. You've never seen any evidence demons actually exist, but this Imp is clearly real and seems very happy to see you.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE"
    ],
    "depths": [],
-   "region": "npc"
+   "region": "npc",
+   "img": "img/mobs/imp.png"
+  },
+  {
+   "id": "sheep",
+   "cls": "Sheep",
+   "token": "Sheep",
+   "name": "sheep",
+   "kind": "npc",
+   "rare": false,
+   "desc": "This is a magic sheep. What's so magical about it? You can't kill it. It will stand there until it magically fades away, all the while chewing cud with a blank stare.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "npc",
+   "img": "img/mobs/sheep.png"
+  },
+  {
+   "id": "bee",
+   "cls": "Bee",
+   "token": "Bee",
+   "name": "golden bee",
+   "kind": "npc",
+   "rare": false,
+   "desc": "Despite their small size, golden bees tend to protect their home fiercely. This one is very mad, better keep your distance.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 0,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "other",
+   "img": "img/mobs/bee.png",
+   "where": "Released from a honeypot"
+  },
+  {
+   "id": "mirrorimage",
+   "cls": "MirrorImage",
+   "token": "MirrorImage",
+   "name": "mirror image",
+   "kind": "ally",
+   "rare": false,
+   "desc": "This illusion bears a close resemblance to you, even seeming to wield your current weapon and armor.\n\nMirror images will seek and attack enemies using their mimicked weapon, which behaves the same as yours, but deals less damage. They start out nearly invisible, but must take on a form that's more easily seen in order to attack.\n\nWhile their offensive power can be potent, mirror images have no durability, and will fade the moment they take damage.",
+   "hp": 1,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": 1,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/mirrorimage.png",
+   "imgSize": [
+    22,
+    64
+   ]
+  },
+  {
+   "id": "prismaticimage",
+   "cls": "PrismaticImage",
+   "token": "PrismaticImage",
+   "name": "prismatic image",
+   "kind": "ally",
+   "rare": false,
+   "desc": "This shimmering illusion bears a close resemblance to you, even seeming to wield your current weapon and armor.\n\nPrismatic images will attempt to seek and draw focus from enemies, using their enhanced defense and health to protect you. While they do not have the same offensive power as mirror images, they have enhanced durability, including receiving benefits from your armor.\n\nWhen reduced to 0 hp, prismatic images will fade over several turns, and can still be healed during this time. When no enemies are present, prismatic images will fade and rejoin their master.",
+   "hp": 10,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": 1,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/prismaticimage.png",
+   "imgSize": [
+    22,
+    64
+   ]
+  },
+  {
+   "id": "driedrose-ghosthero",
+   "cls": "GhostHero",
+   "token": "DriedRose.GhostHero",
+   "name": "sad ghost (Dried Rose)",
+   "kind": "ally",
+   "rare": false,
+   "desc": "A frail looking ethereal figure with a humanoid shape. Their power seems tied to the rose you have.\n\nThis ghost may not be much, they seem to be your only true friend down here.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC",
+    "UNDEAD"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/driedrose-ghosthero.png"
+  },
+  {
+   "id": "wandofwarding-ward",
+   "cls": "Ward",
+   "token": "WandOfWarding.Ward",
+   "name": "ward",
+   "kind": "ally",
+   "rare": false,
+   "desc": "This ward will automatically zap any enemy which comes into its range of vision.\n\nZapping this ward with your wand of warding will upgrade it.\n\nWards have a limited number of zaps before dissipating.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE",
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/wandofwarding-ward.png",
+   "imgSize": [
+    15,
+    16
+   ]
+  },
+  {
+   "id": "wandofwarding-ward-wardsentry",
+   "cls": "WardSentry",
+   "token": "WandOfWarding.Ward.WardSentry",
+   "name": "ward sentry",
+   "kind": "ally",
+   "rare": false,
+   "desc": "This sentry has the same firepower as a ward, but has health instead of a set number of charges. It resembles the gem at the tip of your wand of warding.\n\nZapping this sentry with your wand of warding will upgrade and heal it.\n\nThis sentry will spend some health each time it zaps an enemy, but can be healed by using your wand of warding on it.",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "IMMOVABLE",
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/wandofwarding-ward-wardsentry.png",
+   "imgSize": [
+    8,
+    15
+   ]
+  },
+  {
+   "id": "wandoflivingearth-earthguardian",
+   "cls": "EarthGuardian",
+   "token": "WandOfLivingEarth.EarthGuardian",
+   "name": "earthen guardian",
+   "kind": "ally",
+   "rare": false,
+   "desc": "The rocks from your wand of living earth have formed into a protective earthen guardian! This rocky protector will attack nearby enemies, which will force them to attack the guardian instead of you. When all nearby threats are gone, the guardian will re-form around you, and will return when you next use your wand.",
+   "hp": 0,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/wandoflivingearth-earthguardian.png"
+  },
+  {
+   "id": "shadowclone-shadowally",
+   "cls": "ShadowAlly",
+   "token": "ShadowClone.ShadowAlly",
+   "name": "shadow rogue",
+   "kind": "ally",
+   "rare": false,
+   "desc": "A copy of the Rogue, made from shadowy darkness. It stands stock still, with empty eyes and tiny wisps of darkness rising from it like steam.\n\nThe clone is not a perfect copy of the Rogue, but is still a decent fighter, and can benefit from the Rogue's equipment with the right talents.",
+   "hp": 80,
+   "damage": [
+    10,
+    20
+   ],
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/shadowclone-shadowally.png",
+   "imgSize": [
+    21,
+    55
+   ]
+  },
+  {
+   "id": "smokebomb-ninjalog",
+   "cls": "NinjaLog",
+   "token": "SmokeBomb.NinjaLog",
+   "name": "wooden decoy",
+   "kind": "ally",
+   "rare": false,
+   "desc": "Somehow, enemies are easily convinced that this wooden decoy is the real Rogue!",
+   "hp": null,
+   "damage": null,
+   "accuracy": null,
+   "armor": null,
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/smokebomb-ninjalog.png"
+  },
+  {
+   "id": "spirithawk-hawkally",
+   "cls": "HawkAlly",
+   "token": "SpiritHawk.HawkAlly",
+   "name": "spirit hawk",
+   "kind": "ally",
+   "rare": false,
+   "desc": "A magical hawk, summoned by the Huntress. It glows a bright ethereal blue, its head constantly shifts around as it surveys the area.\n\nWhile it isn't much of a fighter its speed and vision make it excellent for scouting and distracting enemies.",
+   "hp": 10,
+   "damage": null,
+   "accuracy": 60,
+   "armor": null,
+   "evasion": 60,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/spirithawk-hawkally.png"
+  },
+  {
+   "id": "powerofmany-lightally",
+   "cls": "LightAlly",
+   "token": "PowerOfMany.LightAlly",
+   "name": "light ally",
+   "kind": "ally",
+   "rare": false,
+   "desc": "A copy of one of the Cleric's adventuring companions, made out of solid light. While it has the shape of another hero, it does not have any of their unique abilities. This ally will persist for as long as Power of Many is applied to them.\n\nThis ally can be directed at no cost by re-using the Power of Many armor ability.",
+   "hp": 80,
+   "damage": [
+    5,
+    30
+   ],
+   "accuracy": null,
+   "armor": [
+    1,
+    5
+   ],
+   "evasion": null,
+   "exp": 1,
+   "maxLvl": null,
+   "props": [
+    "INORGANIC"
+   ],
+   "depths": [],
+   "region": "allies",
+   "img": "img/mobs/powerofmany-lightally.png",
+   "imgSize": [
+    29,
+    72
+   ]
   },
   {
    "id": "furnace",
@@ -6630,11 +7216,11 @@
    "region": "npc"
   },
   {
-   "id": "ghost",
-   "cls": "Ghost",
-   "name": "sad ghost",
+   "id": "anvil",
+   "cls": "Anvil",
+   "name": "anvil",
    "kind": "npc",
-   "desc": "The ghost is barely visible. It looks like a shapeless spot of faint light with a sorrowful face.",
+   "desc": "A heavy iron anvil. With the right materials you can reforge, enhance and repair your gear here.",
    "hp": null,
    "damage": null,
    "accuracy": null,
@@ -6643,205 +7229,14 @@
    "exp": 1,
    "maxLvl": null,
    "props": [
-    "LARGE"
+    "IMMOVABLE",
+    "INORGANIC"
    ],
    "group": "npcs",
-   "img": "img/mobs/ghost.png",
+   "img": "img/mobs/anvil.png",
    "imgSize": [
-    30,
-    46
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "imp",
-   "cls": "Imp",
-   "name": "ambitious imp",
-   "kind": "npc",
-   "desc": "This little red person look like an Imp. Imps are lesser demons, notable for their intelligence and not their strength.\n\nYou've only heard about demons in ancient folk tales though, which usually describe them as travelers from another world. You've never seen any evidence demons actually exist, but this Imp is clearly real and seems very happy to see you.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE"
-   ],
-   "group": "npcs",
-   "img": "img/mobs/imp.png",
-   "imgSize": [
-    38,
-    44
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "impshopkeeper",
-   "cls": "ImpShopkeeper",
-   "name": "ambitious imp",
-   "kind": "npc",
-   "desc": "The imp has set up a little shop on the border of the inner halls. It's nice to see a friendly face, but his prices certainly don't seem friendly.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE"
-   ],
-   "group": "npcs",
-   "img": "img/mobs/impshopkeeper.png",
-   "imgSize": [
-    38,
-    44
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "mirrorimage",
-   "cls": "MirrorImage",
-   "name": "mirror image",
-   "kind": "npc",
-   "desc": "This illusion bears a close resemblance to you, even seeming to wield your current weapon and armor.\n\nMirror images will seek and attack enemies using their mimicked weapon, which behaves the same as yours, but deals less damage. They start out nearly invisible, but must take on a form that's more easily seen in order to attack.\n\nWhile their offensive power can be potent, mirror images have no durability, and will fade the moment they take damage.",
-   "hp": 1,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": 1,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [],
-   "group": "npcs",
-   "depths": [],
-   "region": "npc",
-   "img": "img/mobs/mirrorimage.png",
-   "imgSize": [
-    22,
-    64
-   ]
-  },
-  {
-   "id": "prismaticimage",
-   "cls": "PrismaticImage",
-   "name": "prismatic image",
-   "kind": "npc",
-   "desc": "This shimmering illusion bears a close resemblance to you, even seeming to wield your current weapon and armor.\n\nPrismatic images will attempt to seek and draw focus from enemies, using their enhanced defense and health to protect you. While they do not have the same offensive power as mirror images, they have enhanced durability, including receiving benefits from your armor.\n\nWhen reduced to 0 hp, prismatic images will fade over several turns, and can still be healed during this time. When no enemies are present, prismatic images will fade and rejoin their master.",
-   "hp": 10,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": 1,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [],
-   "group": "npcs",
-   "depths": [],
-   "region": "npc",
-   "img": "img/mobs/prismaticimage.png",
-   "imgSize": [
-    22,
-    64
-   ]
-  },
-  {
-   "id": "ratking",
-   "cls": "RatKing",
-   "name": "rat king",
-   "kind": "npc",
-   "desc": "This rat is a little bigger than a regular marsupial rat. It's wearing a tiny crown on its head.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [],
-   "group": "npcs",
-   "img": "img/mobs/ratking.png",
-   "imgSize": [
-    39,
-    47
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "sheep",
-   "cls": "Sheep",
-   "name": "sheep",
-   "kind": "npc",
-   "desc": "This is a magic sheep. What's so magical about it? You can't kill it. It will stand there until it magically fades away, all the while chewing cud with a blank stare.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [],
-   "group": "npcs",
-   "img": "img/mobs/sheep.png",
-   "imgSize": [
-    42,
-    40
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "shopkeeper",
-   "cls": "Shopkeeper",
-   "name": "shopkeeper",
-   "kind": "npc",
-   "desc": "This stout guy looks more appropriate for a trade district in some large city than for a dungeon. His prices explain why he prefers to do business here.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE"
-   ],
-   "group": "npcs",
-   "img": "img/mobs/shopkeeper.png",
-   "imgSize": [
-    38,
-    47
-   ],
-   "depths": [],
-   "region": "npc"
-  },
-  {
-   "id": "wandmaker",
-   "cls": "Wandmaker",
-   "name": "old wandmaker",
-   "kind": "npc",
-   "desc": "This old yet hale gentleman wears a slightly confused expression. He is protected by a magic shield.",
-   "hp": null,
-   "damage": null,
-   "accuracy": null,
-   "armor": null,
-   "evasion": null,
-   "exp": 1,
-   "maxLvl": null,
-   "props": [
-    "IMMOVABLE"
-   ],
-   "group": "npcs",
-   "img": "img/mobs/wandmaker.png",
-   "imgSize": [
-    24,
-    46
+    16,
+    16
    ],
    "depths": [],
    "region": "npc"

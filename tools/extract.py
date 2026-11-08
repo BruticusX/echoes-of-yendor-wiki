@@ -217,6 +217,8 @@ for root, _, files in os.walk(item_root):
             continue
         if "%s" in name:
             name = name.replace("%s", "").strip()
+            if name.startswith("of "):  # "%s of obfuscation" -> "glyph of obfuscation" / "curse of ..."
+                name = ("curse " if "curses" in rel else "glyph ") + name
         if "%" in name:
             continue
         desc = MSG.get(key + ".desc") or ""
@@ -478,6 +480,227 @@ REMOVED = {"CrystalGuardian", "CrystalSpire", "CrystalWisp", "FungalCore", "Fung
            "VaultSentry", "VaultTokenDoor", "VaultShaman"}
 mobs = [m for m in mobs if m["cls"] not in REMOVED]
 
+# ================= the Bestiary is the master list of creatures =================
+# (journal/Bestiary.java). Many creatures are inner classes (Shaman.RedShaman, YogFist.BurningFist, ...),
+# so names, stats and sprites are resolved through a small Java class model.
+def find_block(src, name):
+    """(parent, body) of 'class <name>' inside src, by brace matching"""
+    m = re.search(r"class\s+%s\b([^{]*)\{" % re.escape(name), src)
+    if not m:
+        return None, None
+    pm = re.search(r"extends\s+([\w.]+)", m.group(1))
+    i, depth = m.end(), 1
+    while depth and i < len(src):
+        depth += {"{": 1, "}": -1}.get(src[i], 0); i += 1
+    return (pm.group(1) if pm else None), src[m.end():i - 1]
+
+def strip_nested(body):
+    """remove nested class bodies so the outer class's own fields are read, not its inner classes'"""
+    out, i = [], 0
+    for m in re.finditer(r"\bclass\s+\w+[^{;]*\{", body):
+        if m.start() < i:
+            continue
+        out.append(body[i:m.start()]); j, depth = m.end(), 1
+        while depth and j < len(body):
+            depth += {"{": 1, "}": -1}.get(body[j], 0); j += 1
+        i = j
+    out.append(body[i:])
+    return "".join(out)
+
+JC = {}
+def jclass(token, ctx_outer=None):
+    """resolve 'Outer' or 'Outer.Inner(.Inner)' (or a bare inner name within ctx_outer) to
+    {name, parent, body, key, outer, path}"""
+    if token in JC:
+        return JC[token]
+    parts = token.split(".")
+    if parts[0] not in CLASSES and ctx_outer:
+        parts = ctx_outer.split(".")[:1] + parts
+    if parts[0] not in CLASSES:
+        return None
+    path = CLASSES[parts[0]][0]
+    src = strip_comments(read(path))
+    parent, body = find_block(src, parts[0])
+    for inner in parts[1:]:
+        parent, body = find_block(body or "", inner)
+    if body is None:
+        return None
+    rel = os.path.relpath(os.path.dirname(path), SRC).replace("\\", "/").replace("/", ".")
+    key = rel + "." + "$".join(p.lower() for p in parts)
+    info = dict(name=parts[-1], token=".".join(parts), parent=parent, body=strip_nested(body), key=key, outer=parts[0])
+    JC[token] = info
+    return info
+
+def jchain(token):
+    """the class and its ancestors, nearest first"""
+    out, cur, ctx = [], jclass(token), token
+    while cur and len(out) < 10:
+        out.append(cur)
+        if not cur["parent"] or cur["parent"] in ("Mob", "Char", "NPC", "Actor", "MobSprite", "CharSprite", "Object"):
+            break
+        nxt = jclass(cur["parent"], cur["token"])
+        if not nxt and "." not in cur["parent"]:
+            nxt = jclass(cur["outer"] + "." + cur["parent"])
+        cur = nxt
+    return out
+
+def jmsg(chain, suffix):
+    for c in chain:
+        v = MSG.get(c["key"] + "." + suffix)
+        if v:
+            return v
+    return None
+
+def jfind(chain, rx, group=1):
+    for c in chain:
+        m = re.search(rx, c["body"], re.S)
+        if m:
+            return m if group is None else m.group(group)
+    return None
+
+def sprite_frame(token):
+    ch = jchain(token)
+    if not ch:
+        return None
+    m = jfind(ch, r"hdFilm\(\s*Assets\.Sprites\.(\w+)\s*,\s*(\d+)", None)
+    if m:
+        asset, fw = m.group(1), int(m.group(2)); fh = fw
+    else:
+        mt = jfind(ch, r"texture\(\s*Assets\.Sprites\.(\w+)\s*\)", None)
+        mf = jfind(ch, r"new TextureFilm\(\s*texture\s*,\s*(\d+)\s*,\s*(\d+)", None)
+        if not mt or not mf:
+            return None
+        asset, fw, fh = mt.group(1), int(mf.group(1)), int(mf.group(2))
+    path = ASSETS.get(asset)
+    if not path:
+        return None
+    c = 0
+    cexpr = jfind(ch, r"int c\s*=\s*([^;]+);")
+    if cexpr:
+        off = jfind(ch, r"texOffset\(\)\s*\{\s*return\s+([^;]+);")
+        e = cexpr.replace("texOffset()", "(%s)" % (off or "0")).replace("/", "//")
+        try:
+            c = int(eval(e, {}, {}))
+        except Exception:
+            c = 0
+    mi = jfind(ch, r"idle\.frames\(\s*\w+\s*,\s*(row\(\s*c\s*,\s*|c\s*\+\s*)?(\d+)", None)
+    f = int(mi.group(2)) if mi else 0
+    idx = f + (c if mi and mi.group(1) else 0)
+    im = Image.open(os.path.join(AST, path)).convert("RGBA")
+    cols = max(1, im.width // fw)
+    x, y = (idx % cols) * fw, (idx // cols) * fh
+    crop = im.crop((x, y, x + fw, y + fh))
+    if not crop.getbbox():
+        crop = im.crop((0, 0, fw, fh))
+    return crop.crop(crop.getbbox()) if crop.getbbox() else None
+
+bsrc = strip_comments(read(os.path.join(SRC, "journal/Bestiary.java")))
+BEST = {}
+for cat, body in re.findall(r"(\w+)\.addEntities\((.*?)\);", bsrc, re.S):
+    BEST[cat] = re.findall(r"([\w.]+)\.class", body)
+REMOVED_TOK = lambda t: t.split(".")[-1] in REMOVED or t.startswith("Vault")
+
+QUEST_REGION = {"FetidRat": "sewers", "GnollTrickster": "sewers", "GreatCrab": "sewers", "NewbornFireElemental": "prison",
+                "RotLasher": "prison", "RotHeart": "prison"}
+BOSS_REGION = {"Goo": "sewers", "Tengu": "prison", "Pylon": "caves", "DM300": "caves", "DwarfKing": "city"}
+old_by_cls = {m["cls"]: m for m in mobs}
+new_mobs, seen_tok = [], set()
+for cat in ["BOSSES", "REGIONAL", "RARE", "QUEST", "UNIVERSAL", "NEUTRAL", "ALLY"]:
+    for tok in BEST.get(cat, []):
+        if REMOVED_TOK(tok) or tok in seen_tok:
+            continue
+        seen_tok.add(tok)
+        ch = jchain(tok)
+        if not ch:
+            print("unresolved", tok); continue
+        name = jmsg(ch, "name")
+        if tok.startswith("WandOfWarding.Ward"):  # wards are named by tier; use the generic text
+            sentry = tok.endswith("WardSentry")
+            name = "ward sentry" if sentry else "ward"
+            MSG[ch[0]["key"] + ".desc"] = MSG.get("items.wands.wandofwarding$ward.desc_generic_" + ("sentry" if sentry else "ward"), "")
+        if not name:
+            print("no name", tok); continue
+        desc = jmsg(ch, "desc") or ""
+        extra = MSG.get(ch[0]["key"] + ".spell_desc")
+        if extra:
+            desc += "\n\n" + extra
+        cls = ch[0]["name"]
+        # variants that share a name with their parent get the variant in brackets (e.g. gnoll shaman (red))
+        label = name
+        if tok == "DriedRose.GhostHero":
+            label = name + " (Dried Rose)"
+        elif tok.count(".") and ch[0]["key"] + ".name" not in MSG and not tok.startswith("WandOfWarding"):
+            v = re.sub(r"(Shaman|Elemental|Fist)$", "", cls)
+            label = "%s (%s)" % (name, re.sub(r"(?<!^)([A-Z])", r" \1", v).lower())
+        hp = jfind(ch, r"HP\s*=\s*HT\s*=\s*(?:[^;?]*\?\s*\d+\s*:\s*)?(\d+)\s*;")
+        dm = jfind(ch, r"damageRoll\(\)\s*\{[^}]*?NormalIntRange\(\s*(\d+)\s*,\s*(\d+)\s*\)", None)
+        ac = jfind(ch, r"attackSkill\(\s*Char \w+\s*\)\s*\{\s*return\s+(\d+)\s*;")
+        ar = jfind(ch, r"drRoll\(\)\s*\{[^}]*?NormalIntRange\(\s*(\d+)\s*,\s*(\d+)\s*\)", None)
+        props = sorted(set(sum([re.findall(r"properties\.add\(\s*Property\.(\w+)", c["body"]) for c in ch], [])))
+        kind = {"BOSSES": "boss", "NEUTRAL": "npc", "ALLY": "ally"}.get(cat, "enemy")
+        if kind == "boss" and "BOSS" not in props:
+            kind = "miniboss"
+        if cat == "QUEST" and kind == "enemy":
+            kind = "miniboss" if "MINIBOSS" in props else "enemy"
+        if "MINIBOSS" in props and kind == "enemy":
+            kind = "miniboss"
+        slug = re.sub(r"[^a-z0-9]+", "-", tok.replace(".", "-").lower()).strip("-")
+        if "." in tok and tok.split(".")[0] in ("Shaman", "Elemental", "YogFist", "YogDzewa"):
+            slug = re.sub(r"[^a-z0-9]+", "-", cls.lower())
+        depths = set()
+        for c in ch:
+            depths |= DEPTHS.get(c["name"], set())
+        if cls in BOSS_DEPTH:
+            depths.add(BOSS_DEPTH[cls])
+        mob = dict(id=slug, cls=cls, token=tok, name=label, kind=kind, rare=(cat == "RARE"), desc=clean(desc),
+                   hp=int(hp) if hp else None, damage=[int(dm.group(1)), int(dm.group(2))] if dm else None,
+                   accuracy=int(ac) if ac else None, armor=[int(ar.group(1)), int(ar.group(2))] if ar else None,
+                   evasion=int(jfind(ch, r"defenseSkill\s*=\s*(\d+)\s*;") or 0) or None,
+                   exp=int(jfind(ch, r"EXP\s*=\s*(\d+)\s*;") or 1), maxLvl=int(jfind(ch, r"maxLvl\s*=\s*(\d+)\s*;") or 0) or None,
+                   props=props, depths=sorted(depths))
+        # region
+        r = None
+        if cat in ("UNIVERSAL",):
+            r = "other"
+        elif cat in ("NEUTRAL",):
+            r = "npc"
+        elif cat == "ALLY":
+            r = "allies"
+        elif cls in QUEST_REGION:
+            r = QUEST_REGION[cls]
+        elif cls in BOSS_REGION:
+            r = BOSS_REGION[cls]
+        else:
+            for c in ch:
+                if c["name"] in GROUP_REGION:
+                    r = GROUP_REGION[c["name"]]; break
+            if not r and mob["depths"]:
+                d = min(mob["depths"])
+                r = next(rid for rid, _, lo, hi in REGIONS if lo <= d <= hi)
+            if not r and tok.startswith(("YogFist", "YogDzewa")):
+                r = "halls"
+        mob["region"] = r or "other"
+        if cls == "Bee":
+            mob["region"] = "other"
+        sp = jfind(ch, r"spriteClass\s*=\s*([\w.]+)\.class")
+        if sp:
+            fr = sprite_frame(sp if "." in sp or sp in CLASSES else ch[0]["outer"] + "." + sp)
+            if fr is not None:
+                fr.save(os.path.join(IMG, "mobs", slug + ".png"))
+                mob["img"] = "img/mobs/%s.png" % slug
+        new_mobs.append(mob)
+# mod-only NPCs that the bestiary doesn't list: the furnace and anvil
+for extra in ("Furnace", "Anvil"):
+    if extra in old_by_cls:
+        m = old_by_cls[extra]; m["region"] = "npc"; m["kind"] = "npc"; new_mobs.append(m)
+# drop stale images from the old pass
+keep = {m["id"] for m in new_mobs}
+for fn in os.listdir(os.path.join(IMG, "mobs")):
+    if fn[:-4] not in keep:
+        os.remove(os.path.join(IMG, "mobs", fn))
+mobs = new_mobs
+print("bestiary mobs", len(mobs), "no img", [m["token"] for m in mobs if not m.get("img")])
+
 # creatures drawn from the HD hero sheets in code (StatueSprite, MirrorSprite, PrismaticSprite):
 # first idle frame of an armor row, trimmed
 def hero_frame(sheet, frame, row):
@@ -497,6 +720,11 @@ HERO_SPRITES = {
     "ArmoredStatue": lambda: hero_frame("hero_hd_warrior_stone.png", 72, 3), # wears armor; mail is its fallback
     "MirrorImage": lambda: hero_frame("hero_hd_warrior.png", 72, 0),         # looks like the hero
     "PrismaticImage": lambda: tint(hero_frame("hero_hd_warrior.png", 72, 0), 0.55, 0.35, 1.0, 0.5),  # shifting tint
+    "Guardian": lambda: tint(hero_frame("hero_hd_warrior_stone.png", 72, 0), 0, 0, 1, 0.2),           # GuardianSprite: blue-tinted statue
+    "ShadowAlly": lambda: tint(hero_frame("hero_hd_rogue.png", 64, 0), 0.08, 0.06, 0.12, 0.75),      # a shadowy rogue
+    "Ward": lambda: Image.open(os.path.join(AST, "sprites/wards.png")).convert("RGBA").crop((22, 0, 37, 16)),   # WardSprite tier 3
+    "WardSentry": lambda: Image.open(os.path.join(AST, "sprites/wards.png")).convert("RGBA").crop((52, 0, 60, 15)),  # tier 6
+    "LightAlly": lambda: tint(hero_frame("hero_hd_cleric.png", 80, 0), 1, 0.97, 0.8, 0.55),          # a hero made of light
 }
 for m in mobs:
     if m["cls"] in HERO_SPRITES and not m.get("img"):
