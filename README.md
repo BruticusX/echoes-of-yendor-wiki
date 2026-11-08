@@ -5,6 +5,12 @@ The game wiki for [Echoes of Yendor](https://github.com/BruticusX/echoes-of-yend
 - `site/` is the whole website: plain static files (HTML, CSS, JS, images), no build step. Upload its contents to any web host.
 - `site/data/game.json` and the sprites in `site/img/` are generated from the game's source by `tools/extract.py`, so stats match the game.
 
+## Google Play button
+
+The header and home page show a Google Play button. It says "Coming soon" until the game is published.
+When it's live, open `site/js/config.js` and change `published: false` to `published: true`.
+The link already points at the app ID `io.github.bruticusx.echoesofyendor`.
+
 ## Updating after game changes
 
 ```sh

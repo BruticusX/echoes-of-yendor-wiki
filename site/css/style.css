@@ -192,6 +192,20 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .clear { clear: both; }
 .formula { font-size: 16px; background: rgba(0,0,0,.35); padding: 6px 10px; border: 2px solid #33332f; display: inline-block; }
 
+/* ---------- Google Play button ---------- */
+.play-btn { display: inline-flex !important; align-items: center; gap: 8px; padding: 0 8px 0 2px !important; line-height: 1.05; white-space: nowrap; }
+.play-btn .play-ico { width: 26px; height: 26px; flex: none; filter: drop-shadow(1px 1px 0 #000); }
+.play-btn .play-txt { display: flex; flex-direction: column; text-align: left; }
+.play-btn small { font-size: 12px; color: #e8d7a8; letter-spacing: .5px; text-transform: uppercase; }
+.play-btn b { font-weight: normal; font-size: 19px; color: var(--title); }
+.play-btn.big .play-ico { width: 36px; height: 36px; }
+.play-btn.big small { font-size: 14px; }
+.play-btn.big b { font-size: 26px; }
+.play-btn.soon { cursor: default; filter: saturate(.75); }
+.play-btn.soon:hover { filter: saturate(.75); }
+.play-row { text-align: center; margin: 4px 0 14px; }
+#playTop .play-btn { margin-left: 4px; }
+
 /* ---------- small screens ---------- */
 @media (max-width: 820px) {
   body { font-size: 17px; }
@@ -202,6 +216,7 @@ th.sort::after { content: " \2195"; color: #77776f; }
   .window { border-width: 28px; padding: 0 2px; }
   .wrap { grid-template-columns: 1fr; }
   #menuBtn { display: inline-block; }
+  #playTop { display: none; }
   nav.side { display: none; position: static; max-height: none; }
   nav.side.open { display: block; }
   .infobox { float: none; width: auto; margin: 0 0 12px; }
