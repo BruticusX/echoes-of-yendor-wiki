@@ -96,8 +96,8 @@
   function pageHome() {
     var n = D.items.length, m = D.mobs.filter(function (x) { return x.kind !== "npc" && x.kind !== "ally"; }).length;
     var h = '<div class="hero-banner"><div class="logo-anim" id="logoAnim">' + img("img/ui/title_logo.png", "logo-img", "Echoes of Yendor") +
-      img("img/ui/title_brazier.png", "brazier left") + img("img/ui/title_brazier.png", "brazier right") +
-      '<canvas class="flame left"></canvas><canvas class="flame right"></canvas>' + img("img/ui/title_logo_glow.png", "logo-glow") + "</div></div>";
+      '<canvas class="flame left"></canvas><canvas class="flame right"></canvas>' + 
+      img("img/ui/title_brazier.png", "brazier left") + img("img/ui/title_brazier.png", "brazier right") + img("img/ui/title_logo_glow.png", "logo-glow") + "</div></div>";
     h += '<div class="play-row">' + playButton(true) + "</div>";
     h += "<h1>Welcome to the Echoes of Yendor Wiki</h1>";
     h += "<p><span class=\"hl\">Echoes of Yendor</span> is a roguelike dungeon crawler built on Shattered Pixel Dungeon. Descend through five regions of the dungeon, forge your gear from the metals you find, master your weapons and claim the <a href=\"#/item/amulet\">Amulet of Yendor</a>.</p>";

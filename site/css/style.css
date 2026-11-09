@@ -185,7 +185,7 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .logo-anim .brazier { position: absolute; width: 15.3%; top: 44.8%; transform: translateX(-50%); image-rendering: pixelated; pointer-events: none; }
 .logo-anim .brazier.left { left: 16.8%; }
 .logo-anim .brazier.right { left: 82.2%; }
-.logo-anim .flame { position: absolute; width: 27.6%; aspect-ratio: 1; top: 49%; transform: translate(-50%, -100%); image-rendering: pixelated; pointer-events: none; }
+.logo-anim .flame { position: absolute; width: 27.6%; aspect-ratio: 1; top: 51.5%; transform: translate(-50%, -100%); image-rendering: pixelated; pointer-events: none; }
 .logo-anim .flame.left { left: 16.8%; }
 .logo-anim .flame.right { left: 82.2%; transform: translate(-50%, -100%) scaleX(-1); }
 .callouts { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 10px; }
