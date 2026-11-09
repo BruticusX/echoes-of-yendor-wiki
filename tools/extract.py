@@ -889,7 +889,8 @@ for f in ["title_logo.png", "eoy_icon.png", "arcs1.png", "arcs2.png", "title_log
 os.makedirs(os.path.join(WIKI, "audio"), exist_ok=True)
 shutil.copy(os.path.join(AST, "music/menu_theme.ogg"), os.path.join(WIKI, "audio/menu_theme.ogg"))
 os.system('ffmpeg -v error -y -i "%s" -codec:a libmp3lame -b:a 112k "%s"' % (os.path.join(WIKI, "audio/menu_theme.ogg"), os.path.join(WIKI, "audio/menu_theme.mp3")))
-shutil.copy(os.path.join(AST, "effects/fireball-short.png"), os.path.join(ui, "fireball.png"))  # title torches
+shutil.copy(os.path.join(AST, "effects/fireball-short.png"), os.path.join(ui, "fireball.png"))  # title flames (purple)
+shutil.copy(os.path.join(AST, "interfaces/title_brazier.png"), os.path.join(ui, "title_brazier.png"))  # their braziers
 # the title-screen background art (ui/TitleBackground.java), animated by site/js/title-bg.js
 for f in ["echoes_bg", "echoes_fog", "echoes_glow"]:
     shutil.copy(os.path.join(AST, "splashes/title/%s.png" % f), os.path.join(ui, f.replace("echoes_", "title_") + ".png"))

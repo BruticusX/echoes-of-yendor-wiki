@@ -179,10 +179,15 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .logo-anim { position: relative; display: inline-block; width: min(380px, 86%); }
 .logo-anim img { display: block; width: 100%; image-rendering: pixelated; }
 .logo-anim .logo-glow { position: absolute; inset: 0; mix-blend-mode: plus-lighter; opacity: 0; pointer-events: none; }
-/* torches on the ornaments beside "ECHOES OF": centred at 16% / 84% across, standing on 53% down */
-.logo-anim .flame { position: absolute; width: 30%; aspect-ratio: 1; top: 53%; transform: translate(-50%, -100%); image-rendering: pixelated; pointer-events: none; }
-.logo-anim .flame.left { left: 16%; }
-.logo-anim .flame.right { left: 84%; transform: translate(-50%, -100%) scaleX(-1); }
+/* purple flames in gold braziers on the gem ornaments beside "ECHOES OF" (same layout as the game's title):
+   gem centres at 43 / 210.5 of the logo's 256px, brazier 28x13 logo px at 1.4x standing on y 133,
+   flame 47 game units (= 27.6% of the logo) rising out of the bowl rim */
+.logo-anim .brazier { position: absolute; width: 15.3%; top: 44.8%; transform: translateX(-50%); image-rendering: pixelated; pointer-events: none; }
+.logo-anim .brazier.left { left: 16.8%; }
+.logo-anim .brazier.right { left: 82.2%; }
+.logo-anim .flame { position: absolute; width: 27.6%; aspect-ratio: 1; top: 49%; transform: translate(-50%, -100%); image-rendering: pixelated; pointer-events: none; }
+.logo-anim .flame.left { left: 16.8%; }
+.logo-anim .flame.right { left: 82.2%; transform: translate(-50%, -100%) scaleX(-1); }
 .callouts { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 10px; }
 .callout { padding: 4px; border: 8px solid transparent; border-image: url("../img/ui/hd/slot.svg") 8 fill / 8px stretch; color: var(--text); display: flex; gap: 10px; align-items: center; }
 .callout img { width: 48px; height: 48px; object-fit: contain; flex: none; }
