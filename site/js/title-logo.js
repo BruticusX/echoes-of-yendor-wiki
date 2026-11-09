@@ -5,7 +5,7 @@
   "use strict";
   function src(p) { return (window.__IMG && window.__IMG[p]) || p; }
   var FRAME = 47, COLS = 5, FRAMES = 24, FPS = 24;
-  var sheet = new Image(); sheet.src = src("img/ui/flame_purple.png");
+  var sheet = new Image(); sheet.src = src("img/ui/torch_purple.png");
   var running = null;
 
   function mount(root) {
