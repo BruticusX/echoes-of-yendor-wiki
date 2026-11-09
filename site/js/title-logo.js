@@ -1,10 +1,10 @@
-/* The animated title logo from the game's TitleScene: two purple flames (effects/Fireball, 24 frames at 12fps,
-   the second flipped and half a cycle ahead) in gold braziers on the gem ornaments either side of "ECHOES OF", and the glow layer
+/* The animated title logo from the game's TitleScene: two purple torch flames (the old green ones, recoloured) (effects/Fireball, 24 frames at 24fps,
+   the second flipped and half a cycle ahead) on the ornaments either side of "ECHOES OF", and the glow layer
    that fades in and out with light blending: brightness = max(0, sin t), restarting every 1.5 pi seconds. */
 (function () {
   "use strict";
   function src(p) { return (window.__IMG && window.__IMG[p]) || p; }
-  var FRAME = 47, COLS = 5, FRAMES = 24, FPS = 12;   // calmer flicker, as in the game
+  var FRAME = 47, COLS = 5, FRAMES = 24, FPS = 24;
   var sheet = new Image(); sheet.src = src("img/ui/flame_purple.png");
   var running = null;
 
