@@ -70,9 +70,13 @@ for m in re.finditer(r"static final int (\w+)\s*=\s*([^;]+);", icons_src):
 for k in list(ICON):
     CONST.pop(k, None) if k in CONST and False else None
 icon_sheet = Image.open(os.path.join(AST, "sprites/item_icons.png")).convert("RGBA")
+ICON_CELL = icon_sheet.width // 16  # 8px originally, 32px since the type badges were redrawn at 4x
 def overlay(base, icon_idx):
-    x, y = (icon_idx % 16) * 8, (icon_idx // 16) * 8
-    ic = icon_sheet.crop((x, y, x + 8, y + 8)).resize((16, 16), Image.NEAREST)
+    x, y = (icon_idx % 16) * ICON_CELL, (icon_idx // 16) * ICON_CELL
+    # the badge covers the top-left quarter of the item, as in the game
+    size = max(1, base.width // 2)
+    ic = icon_sheet.crop((x, y, x + ICON_CELL, y + ICON_CELL))
+    ic = ic.resize((size, size), Image.NEAREST if ICON_CELL < size else Image.LANCZOS)
     base = base.copy(); base.alpha_composite(ic, (0, 0)); return base
 BASE_FOR = {"scrolls": "SCROLL_KAUNAN", "exotic-scrolls": "EXOTIC_KAUNAN", "potions": "POTION_CRIMSON",
             "exotic-potions": "EXOTIC_CRIMSON", "rings": "RING_GARNET"}
@@ -839,11 +843,16 @@ for it in items:
                           if next(mt for mt in MATS if mt["id"] == k)["kind"] == kind}
 
 # heroes
-HERO_FRAMES = {"warrior": 72, "mage": 54, "rogue": 64, "huntress": 78, "duelist": 72, "cleric": 80}
+# frame size comes from each sheet (7 armour rows), so redrawn heroes are picked up automatically
+HERO_FRAMES = {h: None for h in ("warrior", "mage", "rogue", "huntress", "duelist", "cleric", "occultist")}
 heroes = []
 os.makedirs(os.path.join(IMG, "heroes"), exist_ok=True)
 for h, fr in HERO_FRAMES.items():
-    im = Image.open(os.path.join(AST, "sprites/hero_hd_%s.png" % h)).convert("RGBA")
+    hp = os.path.join(AST, "sprites/hero_hd_%s.png" % h)
+    if not os.path.exists(hp):
+        continue
+    im = Image.open(hp).convert("RGBA")
+    fr = im.height // 7
     row = 2  # a mid-tier armor row looks best
     c = im.crop((0, row * fr, fr, row * fr + fr))
     if not c.getbbox():

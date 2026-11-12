@@ -2297,7 +2297,7 @@
    "cls": "MagicTome",
    "name": "magic tome",
    "cat": "melee",
-   "desc": "A heavy spellbook bound in worn leather, held open in one hand. Its pages hold spells that can be cast again and again, each needing time to recover between casts. It makes a poor club.\n\nHeroes other than the Mage need _magic proficiency 1_ to make sense of it (wand kills train magic). A spare tome can be _deciphered_: for most heroes this takes 10 turns and grants a level of magic proficiency; for the Mage it takes 5 turns, raises _every_ spell his own tome knows by one rank and teaches it one new spell. Every shop stocks a spare tome.",
+   "desc": "A heavy spellbook bound in worn leather, held open in one hand. Its pages hold spells that can be cast again and again, each needing time to recover between casts. It makes a poor club.\n\nHeroes other than the Mage need _magic proficiency 1_ to make sense of it (wand kills train magic). A spare tome can be _deciphered_: for most heroes this takes 10 turns and grants a level of magic proficiency; for the Mage it takes 5 turns, raises _every_ spell his own tome knows by one rank and has a _50% chance_ to teach it a new spell. Every shop stocks a spare tome.",
    "stats_desc": "Tap the tome to choose a spell to cast.",
    "img": "img/items/magictome.png",
    "sprite": 102
@@ -3844,6 +3844,16 @@
    }
   },
   {
+   "id": "occultistarmor",
+   "cls": "OccultistArmor",
+   "name": "hero's shroud",
+   "cat": "armor",
+   "desc": "While wearing this curse-stitched shroud, the Occultist can perform a special ability.",
+   "img": "img/items/occultistarmor.png",
+   "sprite": 191,
+   "variants": {}
+  },
+  {
    "id": "platearmor",
    "cls": "PlateArmor",
    "name": "plate armor",
@@ -4549,6 +4559,15 @@
    "desc": "A priceless magical cloak, stolen from the royal armory many years ago by the Rogue. When worn, it can be used to turn completely invisible for a short time.\n\nThe more the cloak is used, the stronger it will become, allowing the Rogue to become invisible more frequently and for longer durations.",
    "img": "img/items/cloakofshadows.png",
    "sprite": 240
+  },
+  {
+   "id": "cursedreliquary",
+   "cls": "CursedReliquary",
+   "name": "cursed reliquary",
+   "cat": "artifacts",
+   "desc": "A small bone-and-iron casket that hungers for curses. The Occultist uses it to draw the curse out of cursed gear, which leaves the item clean and fills the reliquary with dark charge.\n\nThe reliquary remembers every kind of curse it eats. Weapon curses become spells that spend charge, and armor curses become wards that are always on and grow stronger the more charge it holds. Eating the same curse again ranks it up, to rank 3.",
+   "img": "img/items/cursedreliquary.png",
+   "sprite": 265
   },
   {
    "id": "driedrose",
@@ -7287,8 +7306,8 @@
    "region": "allies",
    "img": "img/mobs/powerofmany-lightally.png",
    "imgSize": [
-    29,
-    72
+    34,
+    67
    ]
   },
   {
@@ -7311,8 +7330,8 @@
    "group": "npcs",
    "img": "img/mobs/furnace.png",
    "imgSize": [
-    14,
-    15
+    81,
+    92
    ],
    "depths": [],
    "region": "npc"
@@ -7337,8 +7356,8 @@
    "group": "npcs",
    "img": "img/mobs/anvil.png",
    "imgSize": [
-    16,
-    16
+    76,
+    92
    ],
    "depths": [],
    "region": "npc"
@@ -8304,7 +8323,7 @@
     {
      "id": "warlock",
      "name": "warlock",
-     "desc": "The Warlock has a chance to inflict a soul mark on characters when he uses wands on them. The chance to apply a soul mark and its duration increase with wand level.\n\nWhen an enemy is soul marked, the Warlock will heal 2 hp for every 5 damage he deals to them, but only with attacks from melee or thrown weapons, not from wands!"
+     "desc": "The Warlock can _cast spells from his tome while it sits in his bag_ (his strongest tome is used), so he can fight with a melee weapon in hand.\n\nThe Warlock has a chance to inflict a soul mark on characters when he uses wands on them. The chance to apply a soul mark and its duration increase with wand level.\n\nWhen an enemy is soul marked, the Warlock will heal 2 hp for every 5 damage he deals to them, but only with attacks from melee or thrown weapons, not from wands!"
     }
    ]
   },
@@ -8385,6 +8404,26 @@
      "id": "paladin",
      "name": "paladin",
      "desc": "The Paladin gains a variety of new and upgraded spells that emphasize melee combat and synergy with weapons and armor.\n\nThe Paladin's _Holy Weapon_ and _Holy Ward_ spells grant larger bonuses, no longer override existing enchantments and glyphs, and can be extended by casting other spells.\n\nThe Paladin also gains the _Smite_ spell, which lets them perform a guaranteed melee hit with bonus damage and enchantment power.\n\nThe Paladin learns the prayers _Lay on Hands, Aura of Protection and Wall of Light_ right away; they grow stronger at levels 22 and 25."
+    }
+   ]
+  },
+  {
+   "id": "occultist",
+   "name": "occultist",
+   "desc": "The Occultist starts with a _unique cursed reliquary_. Every so often he can _devour the curse on an item_, leaving the item clean and filling the reliquary with charge.\n\nEach kind of curse the reliquary eats is remembered. _Weapon curses become spells_ that spend charge, and _armor curses become wards_ that are always on and hit harder the more charge is stored. Eating the same curse again ranks it up.\n\nThe Occultist _feels whether gear is cursed_ the moment he picks it up. He starts with _a cursed +1 dagger_ and _cursed cloth armor_ (his first two meals, which he can eat back to back), a waterskin, and a velvet pouch. Curses are drawn to him: gear he finds is _cursed more often_.",
+   "short": "The Occultist is a curse eater. He _devours the curses on cursed gear_ with his unique _cursed reliquary_, which remembers every kind of curse it eats and turns it into a spell or a ward.",
+   "unlock": "To unlock the Occultist _let a curse bind itself to you_ by equipping a cursed item.",
+   "img": "img/heroes/occultist.png",
+   "subclasses": [
+    {
+     "id": "hexeater",
+     "name": "hexeater",
+     "desc": "The Hexeater turns the curses he eats into protection.\n\nHis _wards trigger 50% more often_, and he can _devour a curse a third sooner_."
+    },
+    {
+     "id": "maledict",
+     "name": "maledict",
+     "desc": "The Maledict turns the curses he eats into weapons.\n\nHis _spells cost 25% less charge_ and _recover a third faster_."
     }
    ]
   }

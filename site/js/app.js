@@ -102,7 +102,7 @@
     h += "<p><span class=\"hl\">Echoes of Yendor</span> is a roguelike dungeon crawler built on Shattered Pixel Dungeon. Descend through five regions of the dungeon, forge your gear from the metals you find, master your weapons and claim the <a href=\"#/item/amulet\">Amulet of Yendor</a>.</p>";
     h += "<p>This wiki covers every hero, item, enemy and system in the game. Stats are pulled straight from the game's own data, so they match what you'll see when you play.</p>";
     h += '<div class="callouts">';
-    [["#/heroes", "img/heroes/warrior.png", "Heroes", "Six heroes, their subclasses and starting gear"],
+    [["#/heroes", "img/heroes/warrior.png", "Heroes", "Seven heroes, their subclasses and starting gear"],
      ["#/items/melee", itemImg("longsword"), "Weapons", D.items.filter(function (i) { return i.stats && i.cat === "melee"; }).length + " melee weapons, every one in every metal"],
      ["#/items/armor", itemImg("platearmor"), "Armor", "Cloth, leather and metal armor"],
      ["#/enemies/sewers", mobImg("gnoll"), "Bestiary", m + " creatures across the dungeon"],
@@ -380,7 +380,7 @@
         h += "<h2>What it does</h2><ul><li>Accuracy: &times;0.85 at level 0, up to &times;1.35 at level 10.</li><li>Damage: +2% per level.</li><li><span class=\"hl\">Glancing blows</span>: a miss can still land for 40% damage. The chance is 20% at level 0 plus 5% per level (70% at 10), and 10% less per tier of gear above what you've trained for.</li><li>Each level gives one <a href=\"#/mechanics/skills\">skill point</a>. Ultimates need level 8.</li></ul>";
         h += "<h2>Experience needed</h2>" + '<div class="scroll-x"><table class="data"><thead><tr><th>Level</th>' + THRESH.map(function (t, i) { return '<th class="n">' + (i + 1) + "</th>"; }).join("") + "</tr></thead><tbody><tr><td>Total XP</td>" + THRESH.map(function (t) { return '<td class="n">' + t + "</td>"; }).join("") + "</tr></tbody></table></div>";
         h += "<p class=\"dim\">About one XP per kill. The <a href=\"#/item/scrolloffocus\">Scroll of Focus</a> doubles proficiency gain for 300 turns, and the Duelist trains every family 25% faster.</p>";
-        h += "<h2>Starting families</h2><ul><li>Warrior: Swords</li><li>Mage: Magic (his tome)</li><li>Rogue: Daggers</li><li>Huntress: Ranged and Fist</li><li>Duelist: Swords</li><li>Cleric: Blunt</li></ul>";
+        h += "<h2>Starting families</h2><ul><li>Warrior: Swords</li><li>Mage: Magic (his tome)</li><li>Rogue: Daggers</li><li>Huntress: Ranged and Fist</li><li>Duelist: Swords</li><li>Cleric: Blunt</li><li>Occultist: Daggers</li></ul>";
         h += "<h2>Families</h2>" + familyTable();
         break;
       case "skills":
@@ -416,7 +416,7 @@
       case "changes":
         h += "<p>Echoes of Yendor is a modification of Shattered Pixel Dungeon v4.0.2 by Evan Debenham, itself based on Pixel Dungeon by Watabou. Here's what changes:</p>";
         h += "<h2>Gear &amp; combat</h2><ul><li>No strength requirements. Gear is made of <a href=\"#/mechanics/metals\">metals</a> up to rare umbralite, and every metal works with every weapon type.</li><li>All gear has <a href=\"#/mechanics/durability\">durability</a>.</li><li>Melt gear at the <a href=\"#/mechanics/forging\">furnace</a>, repair and enhance at the anvil. Scrolls of Upgrade are gone; Potions of Strength give +10 max HP.</li><li><a href=\"#/mechanics/proficiency\">Weapon proficiency</a> and <a href=\"#/mechanics/skills\">weapon skills</a>, with glancing blows.</li><li>Shields in an off-hand slot; two-handed weapons.</li><li>Thrown weapons use metals and wear out.</li><li>New weapon and armor types, each with their own perks.</li></ul>";
-        h += "<h2>Heroes</h2><ul><li>Reworked talents for every hero, with a new fourth tier.</li><li>The Mage uses a magic tome of spells with cooldowns, deciphered as he grows stronger.</li><li>The Duelist's talents are built around weapon skills.</li><li>Cleric prayers unlock as she levels.</li></ul>";
+        h += "<h2>Heroes</h2><ul><li>Reworked talents for every hero, with a new fourth tier.</li><li>The Mage uses a magic tome of spells with cooldowns, deciphered as he grows stronger.</li><li>The Duelist's talents are built around weapon skills.</li><li>Cleric prayers unlock as he levels.</li><li>A new hero, the Occultist: a curse eater who removes curses from items to power his Cursed Reliquary.</li></ul>";
         h += "<h2>Items</h2><ul><li>New scrolls: <a href=\"#/item/scrollofmending\">Mending</a>, <a href=\"#/item/scrolloffocus\">Focus</a> and <a href=\"#/item/scrollofsmelting\">Smelting</a>.</li><li>New enchantments with painted elemental effects.</li><li>Chests show their contents so you choose what to take.</li></ul>";
         h += "<h2>The dungeon</h2><ul><li><a href=\"#/mechanics/enemies-rules\">Tougher enemies</a> and elites.</li><li>The Blacksmith quest is back to the classic version: mine dark gold from the Caves walls.</li><li>Mimics look exactly like the chest they imitate.</li></ul>";
         h += "<h2>Art &amp; sound</h2><ul><li>Every hero, creature and boss redrawn in high detail; heroes hold their weapons, shields and tomes.</li><li>High-resolution art for all items, and redrawn tiles for every region.</li><li>A new 31-track soundtrack.</li></ul>";
