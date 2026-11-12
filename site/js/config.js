@@ -6,5 +6,9 @@ window.EOY_CONFIG = {
     published: false,
     // The store page for the app ID io.github.bruticusx.echoesofyendor (from the game's android/build.gradle)
     url: "https://play.google.com/store/apps/details?id=io.github.bruticusx.echoesofyendor"
+  },
+  // The "Follow for updates" button next to the Google Play button. Set url to "" to hide it.
+  instagram: {
+    url: "https://www.instagram.com/bruticusx/"
   }
 };

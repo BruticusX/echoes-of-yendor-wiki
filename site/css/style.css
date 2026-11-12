@@ -203,7 +203,7 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .play-btn.big b { font-size: 26px; }
 .play-btn.soon { cursor: default; filter: saturate(.75); }
 .play-btn.soon:hover { filter: saturate(.75); }
-.play-row { text-align: center; margin: 4px 0 14px; }
+.play-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 4px 0 14px; }
 #playTop .play-btn { margin-left: 4px; }
 
 /* ---------- music toggle (js/music.js), bottom-right corner ---------- */

@@ -59,6 +59,15 @@
       : '<span class="btn play-btn soon' + (big ? " big" : "") + '" aria-disabled="true" title="Echoes of Yendor isn\'t on Google Play yet">' + inner + "</span>";
   }
 
+  // ---------- Instagram button (settings in js/config.js) ----------
+  var IG_ICON = '<svg class="play-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="#e9b949" stroke="#3a2408" stroke-width="1"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#3a2408" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="#3a2408"/><path d="M6 6.5c1.5-2 4-2.4 6-2.2" stroke="#fff2b0" stroke-width="1.4" fill="none" opacity=".6" stroke-linecap="round"/></svg>';
+  function igButton(big) {
+    var c = (window.EOY_CONFIG && window.EOY_CONFIG.instagram) || {};
+    if (!c.url) return "";
+    return '<a class="btn on play-btn ig-btn' + (big ? " big" : "") + '" href="' + esc(c.url) + '" target="_blank" rel="noopener" title="Follow Echoes of Yendor on Instagram">' +
+      IG_ICON + '<span class="play-txt"><small>Follow for updates</small><b>Instagram</b></span></a>';
+  }
+
   function itemImg(id) { var it = byId(D.items, id); return it && it.img; }
   function mobImg(id) { var m = byId(D.mobs, id); return m && m.img; }
   function iconFor(key) {
@@ -97,7 +106,7 @@
     var n = D.items.length, m = D.mobs.filter(function (x) { return x.kind !== "npc" && x.kind !== "ally"; }).length;
     var h = '<div class="hero-banner"><div class="logo-anim" id="logoAnim">' + img("img/ui/title_logo.png", "logo-img", "Echoes of Yendor") +
       '<canvas class="flame left"></canvas><canvas class="flame right"></canvas>' + img("img/ui/title_logo_glow.png", "logo-glow") + "</div></div>";
-    h += '<div class="play-row">' + playButton(true) + "</div>";
+    h += '<div class="play-row">' + playButton(true) + igButton(true) + "</div>";
     h += "<h1>Welcome to the Echoes of Yendor Wiki</h1>";
     h += "<p><span class=\"hl\">Echoes of Yendor</span> is a roguelike dungeon crawler built on Shattered Pixel Dungeon. Descend through five regions of the dungeon, forge your gear from the metals you find, master your weapons and claim the <a href=\"#/item/amulet\">Amulet of Yendor</a>.</p>";
     h += "<p>This wiki covers every hero, item, enemy and system in the game. Stats are pulled straight from the game's own data, so they match what you'll see when you play.</p>";
@@ -525,7 +534,7 @@
   $("#menuBtn").addEventListener("click", function () { nav.classList.toggle("open"); });
   fetch("data/game.json").then(function (r) { return r.json(); }).then(function (data) {
     D = data;
-    var pt = document.getElementById("playTop"); if (pt) pt.innerHTML = playButton(false);
+    var pt = document.getElementById("playTop"); if (pt) pt.innerHTML = playButton(false) + igButton(false);
     D.metalsSorted = D.materials.filter(function (m) { return m.kind === "metal"; }).sort(function (a, b) { return a.damageMult - b.damageMult; });
     buildNav(); buildIndex(); setupSearch(); route();
     window.addEventListener("hashchange", route);
