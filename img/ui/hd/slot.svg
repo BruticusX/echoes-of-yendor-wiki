@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff2b0"/><stop offset=".35" stop-color="#f0c24a"/>
+  <stop offset=".7" stop-color="#b9822a"/><stop offset="1" stop-color="#7a4f17"/>
+</linearGradient>
+<linearGradient id="goldH" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#fff2b0"/><stop offset=".35" stop-color="#f0c24a"/>
+  <stop offset=".7" stop-color="#b9822a"/><stop offset="1" stop-color="#7a4f17"/>
+</linearGradient>
+<radialGradient id="gem" cx=".35" cy=".3" r=".8">
+  <stop offset="0" stop-color="#f1d6ff"/><stop offset=".3" stop-color="#b26cf0"/>
+  <stop offset=".75" stop-color="#5a1f98"/><stop offset="1" stop-color="#2a0b4a"/>
+</radialGradient>
+<radialGradient id="gemRed" cx=".35" cy=".3" r=".8">
+  <stop offset="0" stop-color="#ffd6cc"/><stop offset=".3" stop-color="#f05a4a"/>
+  <stop offset=".75" stop-color="#981f1f"/><stop offset="1" stop-color="#4a0b0b"/>
+</radialGradient>
+</defs><rect width="48" height="48" rx="4" fill="#141210"/><rect x="2" y="2" width="44" height="44" rx="3" fill="#2a2724"/><path d="M3 45 V3 H45" fill="none" stroke="#4a4640" stroke-width="1.6"/><path d="M3 45 H45 V3" fill="none" stroke="#181614" stroke-width="1.6"/></svg>
