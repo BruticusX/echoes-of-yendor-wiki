@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Echoes of Yendor in-game news, newest first. The game downloads this file from the wiki repository
+     (site/feeds/news.xml on main) and shows its packaged copy when offline.
+     icon: "ITEM: <item sprite index>" or "ICON: <icon name>" -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Echoes of Yendor</title>
+  <entry>
+    <title>Mimics Learn to Hide</title>
+    <published>2026-11-08</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 36"/>
+    <summary>Hidden mimics now use exactly the same art as the chest they imitate, so you'll have to rely on your instincts. All of the dungeon's plants have been redrawn in high detail, music fades smoothly between floors (resuming where it left off), and heroes no longer freeze mid-throw.</summary>
+  </entry>
+  <entry>
+    <title>A New Soundtrack</title>
+    <published>2026-11-08</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ICON: AUDIO"/>
+    <summary>Every track in the game is new: 31 original pieces covering each region's floors, its danger theme and its bosses, plus the ending and a new main menu theme. Each one is cut to loop seamlessly.</summary>
+  </entry>
+  <entry>
+    <title>The Classic Blacksmith Returns</title>
+    <published>2026-11-07</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 468"/>
+    <summary>The troll blacksmith's quest is back to its original form. Borrow his pickaxe and mine dark gold from the glittering veins in the Caves walls, then bring him what you've found.</summary>
+  </entry>
+  <entry>
+    <title>The Dungeon, Redrawn</title>
+    <published>2026-11-07</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ICON: STAIRS"/>
+    <summary>Every region of the dungeon, from the Sewers to the Demon Halls, has redrawn tiles in the same detailed style as the new heroes and creatures, with seamless floors, still water and new doors.</summary>
+  </entry>
+  <entry>
+    <title>Welcome to Echoes of Yendor</title>
+    <published>2026-11-06</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 61"/>
+    <summary>Descend for the Amulet of Yendor with gear forged from metals, weapon proficiency and skills, shields in your off hand, new talents and a fully redrawn world. Open Changes from the main menu for an overview of everything that's different.</summary>
+  </entry>
+</feed>
