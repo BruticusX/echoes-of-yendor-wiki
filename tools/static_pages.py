@@ -5,8 +5,8 @@ import os, sys, markdown, json
 GAME = sys.argv[1]
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 SOURCE_DIR = "src-277sg332gs"   # unlisted: linked only from the game's About screen
-# the zips are uploaded straight to the server in src-277sg332gs-files/ (outside the deployed files,
-# so site deploys leave them alone); versions.json links to them there
+# the zips are uploaded straight to the server in dl-files/src-277sg332gs/ (dl-files is a subdomain folder,
+# which site deploys leave alone); versions.json links to them there
 
 def page(title, body_html, depth=0, noindex=False):
     up = "../" * depth
