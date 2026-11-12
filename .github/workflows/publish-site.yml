@@ -1,5 +1,7 @@
 # Keeps the "deploy" branch equal to the contents of site/, so the web host can serve that branch
-# straight from its root (echoesofyendor.wiki pulls it).
+# straight from its root (echoesofyendor.wiki pulls it). The branch gets a normal commit on top (no
+# force-push), so the host does a plain pull and files uploaded straight to the server (the source
+# zips in the unlisted source folder) are left alone.
 name: Publish site branch
 
 on:
@@ -16,12 +18,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Push site/ as the deploy branch
+        with:
+          path: src
+      - uses: actions/checkout@v4
+        with:
+          ref: deploy
+          path: deploy
+      - name: Commit site/ onto the deploy branch
         run: |
-          cd site
-          git init -q -b deploy
+          rsync -a --delete --exclude .git src/site/ deploy/
+          cd deploy
           git config user.name "BruticusX"
           git config user.email "352013509+BruticusX@users.noreply.github.com"
           git add -A
+          git diff --cached --quiet && { echo "no changes"; exit 0; }
           git commit -q -m "Site from ${GITHUB_SHA::7}"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" deploy
+          git push origin HEAD:deploy
