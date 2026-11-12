@@ -5,6 +5,8 @@ import os, sys, markdown, json
 GAME = sys.argv[1]
 SITE = os.path.join(os.path.dirname(__file__), "..", "site")
 SOURCE_DIR = "src-277sg332gs"   # unlisted: linked only from the game's About screen
+# the zips are uploaded straight to the server in src-277sg332gs-files/ (outside the deployed files,
+# so site deploys leave them alone); versions.json links to them there
 
 def page(title, body_html, depth=0, noindex=False):
     up = "../" * depth
@@ -41,7 +43,7 @@ open(os.path.join(SITE, "trademarks.html"), "w").write(page("Name and Logo Notic
 # source page: one row per released version listed in versions.json
 vers_path = os.path.join(SITE, SOURCE_DIR, "versions.json")
 versions = json.load(open(vers_path)) if os.path.exists(vers_path) else []
-rows = "".join(f'<tr><td>v{v["version"]}</td><td>{v["date"]}</td><td><a href="{v["file"]}">{v["file"]}</a></td></tr>' for v in versions) \
+rows = "".join(f'<tr><td>v{v["version"]}</td><td>{v["date"]}</td><td><a href="{v["file"]}">{v["file"].split("/")[-1]}</a></td></tr>' for v in versions) \
        or '<tr><td colspan="3">The first release\'s source will appear here when version 1.0.0 is published.</td></tr>'
 body = f"""<h1>Source code</h1>
 <p>Echoes of Yendor is free software: you can redistribute it and/or modify it under the terms of the
