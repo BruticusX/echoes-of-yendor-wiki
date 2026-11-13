@@ -10,5 +10,9 @@ window.EOY_CONFIG = {
   // The "Follow for updates" button next to the Google Play button. Set url to "" to hide it.
   instagram: {
     url: "https://www.instagram.com/bruticusx/"
+  },
+  // The TikTok button next to the Instagram button. Set url to "" to hide it.
+  tiktok: {
+    url: "https://www.tiktok.com/@_bruticusx"
   }
 };
