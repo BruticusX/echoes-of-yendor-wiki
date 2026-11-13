@@ -193,18 +193,26 @@ th.sort::after { content: " \2195"; color: #77776f; }
 .formula { font-size: 16px; background: rgba(0,0,0,.35); padding: 6px 10px; border: 2px solid #33332f; display: inline-block; }
 
 /* ---------- Google Play button ---------- */
-.play-btn { display: inline-flex !important; align-items: center; gap: 8px; padding: 0 8px 0 2px !important; line-height: 1.05; white-space: nowrap; }
+.play-btn { display: inline-flex !important; align-items: center; justify-content: center; min-width: 196px; box-sizing: border-box; gap: 8px; padding: 0 8px 0 2px !important; line-height: 1.05; white-space: nowrap; }
 .play-btn .play-ico { width: 26px; height: 26px; flex: none; filter: drop-shadow(1px 1px 0 #000); }
 .play-btn .play-txt { display: flex; flex-direction: column; text-align: left; }
 .play-btn small { font-size: 12px; color: #e8d7a8; letter-spacing: .5px; text-transform: uppercase; }
 .play-btn b { font-weight: normal; font-size: 19px; color: var(--title); }
+.play-btn.big { min-width: 228px; }
 .play-btn.big .play-ico { width: 36px; height: 36px; }
 .play-btn.big small { font-size: 14px; }
 .play-btn.big b { font-size: 26px; }
 .play-btn.soon { cursor: default; filter: saturate(.75); }
 .play-btn.soon:hover { filter: saturate(.75); }
 .play-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 4px 0 14px; }
-#playTop .play-btn { margin-left: 4px; }
+#playTop { display: inline-flex; flex: none; white-space: nowrap; }
+#playTop .play-btn { margin-left: 4px; min-width: 168px; gap: 6px; }
+#playTop .play-btn small { font-size: 11px; letter-spacing: .3px; }
+#playTop .play-btn b { font-size: 17px; }
+#playTop .play-btn .play-ico { width: 22px; height: 22px; }
+header.top .brand b { white-space: nowrap; }
+/* the three header buttons only fit on wide screens; narrower screens use the ones on the home page */
+@media (max-width: 1259px) { #playTop { display: none; } }
 
 /* ---------- music toggle (js/music.js), bottom-right corner ---------- */
 .music-btn { position: fixed; right: 14px; bottom: 14px; z-index: 50; width: 64px; height: 64px; padding: 0 !important;
