@@ -5,6 +5,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Echoes of Yendor</title>
   <entry>
+    <title>Unique Weapons and Armor</title>
+    <published>2026-11-18</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 530"/>
+    <summary>Every weapon family now has a unique weapon with its own perk, from Mercy, a dagger that finishes off weakened enemies, to the Gale Crossbow, and every armor family has a unique armor, like the fireproof Ashen Wrap and Gravewrought Plate, which raises the dead to fight for you. Shields are now carried on your arm and can be augmented for more blocking, gloves follow your hands, and there's less spare food.</summary>
+  </entry>
+  <entry>
+    <title>Armor Families</title>
+    <published>2026-11-15</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 178"/>
+    <summary>Cloth, leather, mail and plate armor each have their own proficiency, trained by the attacks you take. Every family has three passives and an ultimate skill to unlock, and your armor's ultimate sits right at the top when you set up a skill button.</summary>
+  </entry>
+  <entry>
+    <title>A New Hero: the Occultist</title>
+    <published>2026-11-11</published>
+    <link href="https://echoesofyendor.wiki/"/>
+    <category term="EOY_ICON: ITEM: 265"/>
+    <summary>The Occultist eats curses. He feeds cursed gear to his Cursed Reliquary to grow stronger, with his own armor abilities, talents and two subclasses, the Hexeater and the Maledict. Find him on the hero select screen.</summary>
+  </entry>
+  <entry>
     <title>Mimics Learn to Hide</title>
     <published>2026-11-08</published>
     <link href="https://echoesofyendor.wiki/"/>
